@@ -23,6 +23,7 @@ import "@italodeandra/ui/bootstrap/suppressConsoleLog";
 import "@italodeandra/ui/bootstrap/setupFocusManager";
 import { NuqsAdapter } from "nuqs/adapters/next/pages";
 import { Dialogs } from "@italodeandra/ui/components/Dialog";
+import "@fontsource-variable/dm-sans";
 
 dayjs.extend(relativeTime);
 dayjs.extend(localizedFormat);

@@ -1,0 +1,17 @@
+{
+  "version": "v1",
+  "packages": {
+    "@italodeandra/ui": {
+      "signature": "d1f6e8b8f63512b1cd8b8220187c9533",
+      "file": true
+    },
+    "@italodeandra/next": {
+      "signature": "d9d0e4bb85364f493376491d95d50dfd",
+      "file": true
+    },
+    "@italodeandra/auth": {
+      "signature": "a59bab64635448c61d1167a418b2410b",
+      "file": true
+    }
+  }
+}

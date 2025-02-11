@@ -1,5 +1,9 @@
 export function Home() {
   return (
-    <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8"></div>
+    <div className="mx-auto h-full w-full max-w-screen-xl bg-[url('/primary-bg.png')]">
+      <div className="flex w-full h-full bg-[url('/noise.png')]">
+
+      </div>
+    </div>
   );
 }

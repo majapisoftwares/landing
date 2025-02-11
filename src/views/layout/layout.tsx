@@ -5,7 +5,6 @@ export default function getLayout(children: ReactNode) {
   return (
     <>
       <Header />
-      <div className="h-16" />
       {children}
     </>
   );

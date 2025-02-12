@@ -15,7 +15,7 @@ export default function Header() {
             className="max-h-8"
           />
         </Link>
-        <div>
+        <div className="flex gap-4">
           <Button variant="text" className="font-dm text-white">
             About
           </Button>

@@ -10,6 +10,9 @@ const config: Partial<Config> = {
         dm: ["DM Sans Variable", ...defaultTheme.fontFamily.sans],
       },
     },
+    backgroundImage: {
+      "primary-bg": "url('/bg-fullhd.png')",
+    },
   },
 };
 

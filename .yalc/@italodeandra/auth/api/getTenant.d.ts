@@ -1,5 +1,6 @@
 import { AuthConfig } from "./index";
 export declare const authGetTenantApi: {
+    queryKey: string;
     handler: import("next").NextApiHandler;
     unwrappedHandler: (_args: void, req: import("next").NextApiRequest, _res: import("next").NextApiResponse, { connectDb }: AuthConfig) => Promise<import("mongodb").WithId<Pick<{
         _id: import("bson").ObjectId;
@@ -21,7 +22,17 @@ export declare const authGetTenantApi: {
         } | null, Error, {
             enabledFeatures?: import("../collections/tenant/Tenant").TenantFeature[] | undefined;
             _id: string;
-        } | null, import("@tanstack/query-core").QueryKey>>;
+        } | null, readonly unknown[]>>;
+        InfiniteQueryOptions: Omit<import("@tanstack/react-query/src/types").UseInfiniteQueryOptions<{
+            enabledFeatures?: import("../collections/tenant/Tenant").TenantFeature[] | undefined;
+            _id: string;
+        } | null, Error, {
+            enabledFeatures?: import("../collections/tenant/Tenant").TenantFeature[] | undefined;
+            _id: string;
+        } | null, {
+            enabledFeatures?: import("../collections/tenant/Tenant").TenantFeature[] | undefined;
+            _id: string;
+        } | null, readonly unknown[], unknown>, "queryKey">;
         MutationOptions: Partial<import("@tanstack/react-query").UseMutationOptions<{
             enabledFeatures?: import("../collections/tenant/Tenant").TenantFeature[] | undefined;
             _id: string;
@@ -33,10 +44,23 @@ export declare const authGetTenantApi: {
     } | null, Error, {
         enabledFeatures?: import("../collections/tenant/Tenant").TenantFeature[] | undefined;
         _id: string;
-    } | null, import("@tanstack/query-core").QueryKey>> | undefined) => import("@tanstack/react-query").UseQueryResult<{
+    } | null, readonly unknown[]>> | undefined) => import("@tanstack/react-query").UseQueryResult<{
         enabledFeatures?: import("../collections/tenant/Tenant").TenantFeature[] | undefined;
         _id: string;
     } | null, Error>;
+    useInfiniteQuery: (args: void, options: Omit<import("@tanstack/react-query/src/types").UseInfiniteQueryOptions<{
+        enabledFeatures?: import("../collections/tenant/Tenant").TenantFeature[] | undefined;
+        _id: string;
+    } | null, Error, {
+        enabledFeatures?: import("../collections/tenant/Tenant").TenantFeature[] | undefined;
+        _id: string;
+    } | null, {
+        enabledFeatures?: import("../collections/tenant/Tenant").TenantFeature[] | undefined;
+        _id: string;
+    } | null, readonly unknown[], unknown>, "queryKey">) => import("@tanstack/react-query").UseInfiniteQueryResult<import("@tanstack/query-core").InfiniteData<{
+        enabledFeatures?: import("../collections/tenant/Tenant").TenantFeature[] | undefined;
+        _id: string;
+    } | null, unknown>, Error>;
     useMutation: (options?: Partial<import("@tanstack/react-query").UseMutationOptions<{
         enabledFeatures?: import("../collections/tenant/Tenant").TenantFeature[] | undefined;
         _id: string;

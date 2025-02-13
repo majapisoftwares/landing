@@ -15,6 +15,7 @@ export const badRequest = (res, body) => {
  * Respond with an unauthorized response.
  */
 export const unauthorized = (res, body) => {
+    body = { ...(body || {}), noLog: true };
     const error = { status: 401, message: "Unauthorized" };
     res.status(error.status).send({ ...error, ...body });
     return {
@@ -26,6 +27,7 @@ export const unauthorized = (res, body) => {
  * Respond with a not found response.
  */
 export const notFound = (res, body) => {
+    body = { ...(body || {}), noLog: true };
     const error = { status: 404, message: "Not Found" };
     res.status(error.status).send({ ...error, ...body });
     return {

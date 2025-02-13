@@ -15,7 +15,7 @@ export default async function authPanelUserCreateHandler(args, req, res, { conne
     }
     const tenantId = multitenantMode ? (await getReqTenant(req))?._id : undefined;
     const existingNewEmail = await User.countDocuments({
-        tenantId,
+        ...(multitenantMode ? { tenantId } : {}),
         email: args.email,
     });
     if (existingNewEmail) {
@@ -23,7 +23,7 @@ export default async function authPanelUserCreateHandler(args, req, res, { conne
     }
     const _id = isomorphicObjectId();
     await createUser({
-        tenantId,
+        ...(multitenantMode ? { tenantId } : {}),
         _id,
         email: args.email,
         name: args.name,

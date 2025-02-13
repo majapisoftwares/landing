@@ -7,20 +7,16 @@ import { NextSeo } from "next-seo";
 import { useForm } from "react-hook-form";
 import emailRegExp from "@italodeandra/ui/utils/emailRegExp";
 import { useAuthSignIn } from "../api/signIn";
-import { useQueryClient } from "@tanstack/react-query";
-import { setData_authGetUser } from "../api/getUser";
 import { useRouter } from "next/router";
 import Stack from "@italodeandra/ui/components/Stack";
 import { useAuthContext } from "../AuthContext";
 export default function SignInView({ backgroundImage, disableSignUp, }) {
     const { Routes, intl } = useAuthContext();
     const t = useTranslation(intl);
-    const queryClient = useQueryClient();
     const router = useRouter();
     const { register, handleSubmit, formState: { errors }, setError, } = useForm();
     const { mutate: signIn, isPending: isSigningIn } = useAuthSignIn({
-        async onSuccess(user) {
-            setData_authGetUser(queryClient, user);
+        async onSuccess() {
             await router.replace(Routes.Home);
         },
         async onError(error) {

@@ -14,6 +14,7 @@ export default function panelUserGetHandler(args: Jsonify<{
     passwordSalt: string;
     createdAt: Date;
     updatedAt: Date;
+    username?: string | undefined;
     emailVerified?: Date | undefined;
     name?: string | undefined;
     phoneNumber?: string | undefined;

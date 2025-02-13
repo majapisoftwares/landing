@@ -4,5 +4,5 @@ export type TableRowProps = {
     onClick?: MouseEventHandler<HTMLTableRowElement>;
     className?: string;
 };
-declare const _default: import("react").ForwardRefExoticComponent<TableRowProps & import("react").RefAttributes<HTMLTableRowElement>>;
-export default _default;
+declare function TableRow({ children, onClick, className, ...props }: TableRowProps): import("react").JSX.Element;
+export default TableRow;

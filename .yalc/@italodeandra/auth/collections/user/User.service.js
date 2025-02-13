@@ -62,10 +62,10 @@ export async function createUser(doc) {
         passwordSalt,
     });
 }
-export function getAuthCookieToken(req, res) {
-    const cookies = getCookies({ req, res });
+export async function getAuthCookieToken(req, res) {
+    const cookies = await getCookies({ req, res });
     try {
-        return cookies.auth ? JSON.parse(cookies.auth).token : null;
+        return cookies?.auth ? JSON.parse(cookies.auth).token : null;
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
     }
     catch (e) {
@@ -77,7 +77,7 @@ export async function getUserFromCookies(req, res, multitenantMode) {
     const tenantId = multitenantMode
         ? (await getReqTenant(req))?._id
         : undefined;
-    const token = getAuthCookieToken(req, res);
+    const token = await getAuthCookieToken(req, res);
     if (!token) {
         return null;
     }
@@ -103,7 +103,7 @@ export async function getUserFromCookies(req, res, multitenantMode) {
 export async function getFullUserFromCookies(req, res, multitenantMode) {
     const User = getUser();
     const tenantId = multitenantMode ? (await getReqTenant(req))?._id : undefined;
-    const token = getAuthCookieToken(req, res);
+    const token = await getAuthCookieToken(req, res);
     if (!token) {
         return null;
     }
@@ -121,6 +121,7 @@ export async function getFullUserFromCookies(req, res, multitenantMode) {
                 phoneNumber: 1,
                 customData: 1,
                 profilePicture: 1,
+                username: 1,
             },
         });
         if (!user) {

@@ -1,6 +1,5 @@
-import { forwardRef } from "react";
 import clsx from "../../utils/clsx";
-function Stack({ className, ...props }, ref) {
-    return (<div {...props} className={clsx("flex flex-col gap-2", className)} ref={ref}/>);
+function Stack({ className, ...props }) {
+    return <div {...props} className={clsx("flex flex-col gap-2", className)}/>;
 }
-export default forwardRef(Stack);
+export default Stack;

@@ -1,6 +1,6 @@
 import UnstyledButton from "./UnstyledButton";
 import clsx from "../../utils/clsx";
-import { cloneElement, forwardRef } from "react";
+import { cloneElement } from "react";
 import Loading from "../Loading";
 const styles = {
     root: clsx("appearance-none select-none border transition-colors inline-flex items-center justify-center font-medium leading-4 focus:outline-none", "ring-offset-zinc-100 focus-visible:ring-2 focus:ring-primary-500 focus:ring-offset-2", "dark:ring-offset-zinc-900"),
@@ -91,7 +91,7 @@ const styles = {
         },
     },
 };
-const Button = ({ variant = "outlined", color = "default", size = "md", className, trailingClassName, leadingClassName, icon, type = "button", leading, trailing, children, loading, disabled, rounded, ...props }, ref) => {
+const Button = ({ variant = "outlined", color = "default", size = "md", className, trailingClassName, leadingClassName, icon, type = "button", leading, trailing, children, loading, disabled, rounded, ...props }) => {
     if (loading) {
         if (icon) {
             children = <Loading className="my-auto"/>;
@@ -100,7 +100,7 @@ const Button = ({ variant = "outlined", color = "default", size = "md", classNam
             trailing = <Loading className="mr-0 h-auto w-auto"/>;
         }
     }
-    return (<UnstyledButton ref={ref} {...props} className={clsx(styles.root, styles.variant[variant], variant !== "custom" && styles.color[color], variant !== "custom" && styles.variantColor[`${variant}-${color}`], icon ? styles.icon[size].button : styles.size[size].button, rounded ? "rounded-full" : "rounded", {
+    return (<UnstyledButton {...props} className={clsx(styles.root, styles.variant[variant], variant !== "custom" && styles.color[color], variant !== "custom" && styles.variantColor[`${variant}-${color}`], icon ? styles.icon[size].button : styles.size[size].button, rounded ? "rounded-full" : "rounded", {
             [styles.disabled]: disabled,
         }, className)} type={type} disabled={disabled}>
       {leading &&
@@ -114,13 +114,16 @@ const Button = ({ variant = "outlined", color = "default", size = "md", classNam
                     key,
                     className: clsx(styles.icon[size].icon, child?.props?.className),
                 }))
-                : cloneElement(children, {
-                    className: clsx(styles.icon[size].icon, children?.props?.className),
-                })}
+                : (() => {
+                    const child = children;
+                    return cloneElement(child, {
+                        className: clsx(styles.icon[size].icon, child?.props?.className),
+                    });
+                })()}
       {trailing &&
             cloneElement(trailing, {
                 className: clsx(styles.icon[size].icon, styles.icon[size].trailing, trailing?.props?.className, trailingClassName),
             })}
     </UnstyledButton>);
 };
-export default forwardRef(Button);
+export default Button;

@@ -1,4 +1,4 @@
 import type { DetailedHTMLProps, HTMLAttributes } from "react";
 export type StackProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
-declare const _default: import("react").ForwardRefExoticComponent<Omit<StackProps, "ref"> & import("react").RefAttributes<HTMLDivElement>>;
-export default _default;
+declare function Stack({ className, ...props }: StackProps): import("react").JSX.Element;
+export default Stack;

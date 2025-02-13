@@ -13,7 +13,7 @@ export default async function authPanelUserListHandler(args, req, res, { connect
     }
     const tenantId = multitenantMode ? (await getReqTenant(req))?._id : undefined;
     return User.find({
-        tenantId,
+        ...(multitenantMode ? { tenantId } : {}),
         ...(args?.search ? { $text: { $search: args.search } } : {}),
     }, {
         projection: {

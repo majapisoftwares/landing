@@ -1,4 +1,4 @@
-import Hero from "./home/hero";
+import Hero from "./home/Hero";
 import WhyChooseUs from "./home/WhyChooseUs";
 
 export function Home() {

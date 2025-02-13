@@ -21,7 +21,10 @@ export type DataTableProps<RowData> = {
         onClick?: (item: RowData) => void;
         wrapper?: ComponentType<{
             item: RowData;
-            children: ReactNode;
+            children: ReactElement<{
+                className?: string;
+                onClick: () => void;
+            }>;
         }>;
         target?: string;
     }[];
@@ -30,7 +33,9 @@ export type DataTableProps<RowData> = {
     onRowClick?: (item: RowData) => void;
     rowWrapper?: ComponentType<{
         item: RowData;
-        children: ReactNode;
+        children: ReactElement<{
+            className?: string;
+        }>;
     }>;
     pagination?: boolean;
     currentPage?: number;

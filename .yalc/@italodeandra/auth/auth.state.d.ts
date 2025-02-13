@@ -3,9 +3,7 @@ declare const authState: {
     previousToken: string | null;
 };
 export declare function clearAuthState(): void;
-export declare const hydrateAuthState: (cookies?: {
-    state?: string;
-}) => void;
+export declare const hydrateAuthState: (cookies?: object) => void;
 export declare const useAuthSnapshot: () => {
     readonly token: string | null;
     readonly previousToken: string | null;

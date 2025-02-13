@@ -5,7 +5,6 @@ export declare const defaultTextStyles: {
         default: string;
         label: string;
         secondary: string;
-        link: string;
     };
     size: {
         xs: string;
@@ -17,9 +16,9 @@ export declare const defaultTextStyles: {
     };
 };
 export type TextProps = {
-    variant?: keyof (typeof defaultTextStyles)["variant"];
+    variant?: keyof (typeof defaultTextStyles)["variant"] | "link";
     size?: keyof (typeof defaultTextStyles)["size"];
     inline?: boolean;
 } & Partial<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> & DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement> & ComponentProps<typeof NextLink>>;
-declare const _default: import("react").ForwardRefExoticComponent<Omit<TextProps, "ref"> & import("react").RefAttributes<HTMLDivElement | HTMLAnchorElement>>;
-export default _default;
+declare function Text({ inline, variant, className, href, target, size, ...props }: TextProps): import("react").JSX.Element;
+export default Text;

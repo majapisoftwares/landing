@@ -47,7 +47,7 @@ export default function UnstyledAutocomplete({ placeholder, emptyText, items = [
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [value]);
     return (<Combobox onChange={setSelectedItem} value={selectedItem} nullable>
-      {({ open }) => (<>
+      {({ open }) => (<div>
           <div className="relative">
             <ComponentInput 
         /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
@@ -68,6 +68,6 @@ export default function UnstyledAutocomplete({ placeholder, emptyText, items = [
             </Combobox.Options>)}
 
           {open && emptyText && query !== "" && filteredItems.length === 0 && (<p className={emptyTextClassName}>{emptyText}</p>)}
-        </>)}
+        </div>)}
     </Combobox>);
 }

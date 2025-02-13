@@ -1,4 +1,4 @@
-import { useId, useRef, useState } from "react";
+import { useCallback, useEffect, useId, useRef, useState, } from "react";
 import ReactCrop from "react-image-crop";
 import useDebounceEffect from "../../hooks/useDebounceEffect";
 import { canvasPreview } from "./canvasPreview";
@@ -8,29 +8,52 @@ import { PhotoIcon } from "@heroicons/react/24/outline";
 import clsx from "clsx";
 import { CheckIcon, TrashIcon } from "@heroicons/react/20/solid";
 import Tooltip from "../Tooltip";
-export default function PictureCropInput({ value, onChange, loading, className, previewSizeClassNames = "h-52 w-52", previewContainerClassName, cropButtonClassName, aspect = 1, }) {
+import { useLatest } from "react-use";
+export default function PictureCropInput({ value, onChange, loading, className, previewSizeClassNames = "h-52 w-52", previewContainerClassName, cropButtonClassName, aspect = 1, ref, }) {
     const id = useId();
     const [src, setSrc] = useState();
     const [crop, setCrop] = useState();
+    const cropRef = useLatest(crop);
     const [completedCrop, setCompletedCrop] = useState();
     const previewCanvasRef = useRef(null);
     const imgRef = useRef(null);
-    const onFileSelect = async (event) => {
+    const parentRef = useRef(null);
+    const autoCrop = useCallback(() => {
+        const smallestSide = Math.min(imgRef.current?.getBoundingClientRect().width || 0, imgRef.current?.getBoundingClientRect().height || 0);
+        setCrop({
+            unit: "px",
+            x: 0,
+            y: 0,
+            width: smallestSide,
+            height: smallestSide,
+        });
+    }, []);
+    const onFileSelect = useCallback(async (event) => {
         const file = event.target.files?.[0];
         if (file) {
             setSrc(URL.createObjectURL(file));
             setTimeout(() => {
-                const smallestSide = Math.min(imgRef.current?.getBoundingClientRect().width || 0, imgRef.current?.getBoundingClientRect().height || 0);
-                setCrop({
-                    unit: "px",
-                    x: 0,
-                    y: 0,
-                    width: smallestSide,
-                    height: smallestSide,
-                });
+                autoCrop();
             }, 100);
         }
-    };
+    }, [autoCrop]);
+    useEffect(() => {
+        const resizeObserver = new ResizeObserver(() => {
+            if (cropRef.current) {
+                autoCrop();
+            }
+        });
+        const el = parentRef.current;
+        if (el) {
+            resizeObserver.observe(el);
+        }
+        return () => {
+            if (el) {
+                resizeObserver.unobserve(el);
+            }
+        };
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
     useDebounceEffect(async () => {
         if (completedCrop?.width &&
             completedCrop?.height &&
@@ -40,7 +63,7 @@ export default function PictureCropInput({ value, onChange, loading, className, 
             await canvasPreview(imgRef.current, previewCanvasRef.current, completedCrop);
         }
     }, 100, [completedCrop]);
-    const cropToBlobUrl = async () => {
+    const cropToBlobUrl = useCallback(async () => {
         const image = imgRef.current;
         const previewCanvas = previewCanvasRef.current;
         if (!image || !previewCanvas || !completedCrop) {
@@ -63,16 +86,24 @@ export default function PictureCropInput({ value, onChange, loading, className, 
             type: "image/png",
         });
         return URL.createObjectURL(blob);
-    };
-    const handleCrop = async () => {
+    }, [completedCrop]);
+    const handleCrop = useCallback(async () => {
         onChange(await cropToBlobUrl());
         setSrc(undefined);
-    };
-    const handleClear = () => {
+    }, [cropToBlobUrl, onChange]);
+    useEffect(() => {
+        if (ref) {
+            ref.current = {
+                handleCrop,
+                completedCrop,
+            };
+        }
+    }, [completedCrop, handleCrop, ref]);
+    const handleClear = useCallback(() => {
         setCrop(undefined);
         setSrc(undefined);
-    };
-    return (<div className={clsx("flex gap-2", className)}>
+    }, []);
+    return (<div ref={parentRef} className={clsx("flex gap-2", className)}>
       {loading && <Skeleton className={previewSizeClassNames}/>}
       {src && (<>
           <ReactCrop crop={crop} onChange={(c) => setCrop(c)} onComplete={(c) => setCompletedCrop(c)} aspect={aspect} minWidth={50 * aspect} minHeight={50 * aspect} className="max-h-96 max-w-96" keepSelection>

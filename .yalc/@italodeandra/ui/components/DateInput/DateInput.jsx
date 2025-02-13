@@ -1,9 +1,9 @@
-import { forwardRef, useMemo } from "react";
+import { useMemo } from "react";
 import Input from "../Input";
 import { CalendarIcon } from "@heroicons/react/20/solid";
 import { useRefValue } from "./useRefValue";
 import dayjs from "dayjs";
-function DateInput({ readOnly, value, onValueChange, ...props }, ref) {
+function DateInput({ readOnly, value, onValueChange, ref, ...props }) {
     const realRef = useRefValue(ref);
     const formattedValue = useMemo(() => (value && value.includes("T") ? value.split("T")[0] : value) || "", [value]);
     return (<Input {...props} onChange={(e) => onValueChange?.(e.target.value
@@ -16,4 +16,4 @@ function DateInput({ readOnly, value, onValueChange, ...props }, ref) {
                 .split("T")[1]}`
             : e.target.value)} ref={realRef} type="date" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" trailing={!readOnly ? <CalendarIcon className="w-5"/> : undefined} inputClassName="!pr-3" readOnly={readOnly} value={formattedValue}/>);
 }
-export default forwardRef(DateInput);
+export default DateInput;

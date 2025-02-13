@@ -1,6 +1,8 @@
 import { ReactElement, ReactNode } from "react";
 export default function NavigationItem({ icon, children, href, exact, alternativeActiveHrefs, className, disabled, active, }: {
-    icon?: ReactElement;
+    icon?: ReactElement<{
+        className?: string;
+    }>;
     children: ReactNode;
     href: string;
     exact?: boolean;

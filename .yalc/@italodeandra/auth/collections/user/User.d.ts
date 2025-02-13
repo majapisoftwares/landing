@@ -13,6 +13,7 @@ declare const userSchema: [{
     passwordSalt: string;
     createdAt: Date;
     updatedAt: Date;
+    username?: string | undefined;
     emailVerified?: Date | undefined;
     name?: string | undefined;
     phoneNumber?: string | undefined;
@@ -34,6 +35,7 @@ declare const getUser: () => import("papr").Model<{
     passwordSalt: string;
     createdAt: Date;
     updatedAt: Date;
+    username?: string | undefined;
     emailVerified?: Date | undefined;
     name?: string | undefined;
     phoneNumber?: string | undefined;

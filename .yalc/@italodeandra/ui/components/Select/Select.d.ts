@@ -1,24 +1,24 @@
-import React, { ComponentProps, ForwardedRef } from "react";
+import { ComponentProps } from "react";
 import * as RSelect from "@radix-ui/react-select";
 import Button from "../Button";
-declare function SelectContent({ className, children, ...props }: ComponentProps<typeof RSelect.Content>): React.JSX.Element;
-declare function SelectSeparator({ className, ...props }: ComponentProps<typeof RSelect.Separator>): React.JSX.Element;
-declare function SelectItemComponent({ children, className, indicatorClassName, ...props }: ComponentProps<typeof RSelect.Item> & {
+declare function SelectContent({ className, children, ...props }: ComponentProps<typeof RSelect.Content>): import("react").JSX.Element;
+declare function SelectSeparator({ className, ...props }: ComponentProps<typeof RSelect.Separator>): import("react").JSX.Element;
+declare function SelectItem({ children, className, indicatorClassName, ...props }: ComponentProps<typeof RSelect.Item> & {
     indicatorClassName?: string;
-}, forwardedRef: ForwardedRef<HTMLDivElement>): React.JSX.Element;
-declare function SelectTrigger({ className, placeholder, children, readOnly, ...props }: ComponentProps<typeof RSelect.Trigger> & ComponentProps<typeof Button> & {
+}): import("react").JSX.Element;
+declare function SelectTrigger({ className, placeholder, children, readOnly, ref, ...props }: ComponentProps<typeof RSelect.Trigger> & ComponentProps<typeof Button> & {
     placeholder?: string;
-}, ref: ForwardedRef<HTMLButtonElement>): React.JSX.Element;
-declare function SelectLabel({ className, ...props }: ComponentProps<typeof RSelect.Label>): React.JSX.Element;
+}): import("react").JSX.Element;
+declare function SelectLabel({ className, ...props }: ComponentProps<typeof RSelect.Label>): import("react").JSX.Element;
 declare const Select: {
-    Root: React.FC<RSelect.SelectProps>;
-    Item: typeof SelectItemComponent;
+    Root: import("react").FC<RSelect.SelectProps>;
+    Item: typeof SelectItem;
     Trigger: typeof SelectTrigger;
     Content: typeof SelectContent;
-    Group: React.ForwardRefExoticComponent<RSelect.SelectGroupProps & React.RefAttributes<HTMLDivElement>>;
+    Group: import("react").ForwardRefExoticComponent<RSelect.SelectGroupProps & import("react").RefAttributes<HTMLDivElement>>;
     Label: typeof SelectLabel;
     Separator: typeof SelectSeparator;
-    Icon: React.ForwardRefExoticComponent<RSelect.SelectIconProps & React.RefAttributes<HTMLSpanElement>>;
-    Value: React.ForwardRefExoticComponent<RSelect.SelectValueProps & React.RefAttributes<HTMLSpanElement>>;
+    Icon: import("react").ForwardRefExoticComponent<RSelect.SelectIconProps & import("react").RefAttributes<HTMLSpanElement>>;
+    Value: import("react").ForwardRefExoticComponent<RSelect.SelectValueProps & import("react").RefAttributes<HTMLSpanElement>>;
 };
 export default Select;

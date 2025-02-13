@@ -14,8 +14,8 @@ export default async function authPanelUserStopImpersonateHandler(_args, req, re
     if (!reqUser && !checkUserType(reqUser, [UserType.ADMIN])) {
         throw unauthorized;
     }
-    const cookies = getCookies({ req, res });
-    const previousToken = cookies.auth
+    const cookies = await getCookies({ req, res });
+    const previousToken = cookies?.auth
         ? JSON.parse(cookies.auth).previousToken
         : null;
     setCookie("auth", {

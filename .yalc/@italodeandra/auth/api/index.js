@@ -13,18 +13,12 @@ import getFullUser from "./getFullUser";
 import impersonate from "./panel/user/impersonate";
 import stopImpersonate from "./panel/user/stop-impersonate";
 import { authGetTenantApi } from "./getTenant";
+import userUpdateApiHandler from "./user/update/handler";
+import intlPtBr from "../intl/pt-br";
 export default function Auth(config) {
     config.fallbackLocale = config.fallbackLocale || "en-US";
     config.intl = {
-        "en-US": {
-            "Reset your password": "Reset your password",
-            "To reset your password click the link below": "To reset your password click the link below",
-            "Click here": "Click here",
-            "If you didn't request to reset your password, please ignore this email": "If you didn't request to reset your password, please ignore this email",
-            "Kind regards": "Kind regards",
-            "or copy and paste the following link on your browser": "or copy and paste the following link on your browser",
-            "We received a request to reset your password": "We received a request to reset your password",
-        },
+        "pt-BR": intlPtBr,
         ...config.intl,
     };
     return apiHandlerWrapper((args, req, res) => {
@@ -46,6 +40,9 @@ export default function Auth(config) {
                     impersonate,
                     stopImpersonate,
                 },
+            },
+            user: {
+                update: userUpdateApiHandler,
             },
         }, route.join("."))(args, req, res, config);
     });

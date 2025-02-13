@@ -1,16 +1,13 @@
-import { forwardRef } from "react";
 import NextLink from "next/link";
-const UnstyledButton = ({ href, as, ...props }, ref) => {
+const UnstyledButton = ({ href, as, ...props }) => {
     if (as) {
         const Component = as;
-        return (<Component {...props} {...{
-            ref,
-        }}/>);
+        return <Component {...props}/>;
     }
     if (href) {
         const props2 = props;
-        return (<NextLink {...props2} href={href} ref={ref} tabIndex={props2.disabled ? -1 : undefined}/>);
+        return (<NextLink {...props2} href={href} tabIndex={props2.disabled ? -1 : undefined}/>);
     }
-    return (<button {...props} ref={ref}/>);
+    return (<button {...props}/>);
 };
-export default forwardRef(UnstyledButton);
+export default UnstyledButton;

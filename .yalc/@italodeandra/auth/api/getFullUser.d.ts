@@ -10,6 +10,7 @@ export default function getFullUserHandler(_args: void, req: NextApiRequest, res
     passwordSalt: string;
     createdAt: Date;
     updatedAt: Date;
+    username?: string | undefined;
     emailVerified?: Date | undefined;
     name?: string | undefined;
     phoneNumber?: string | undefined;
@@ -17,10 +18,10 @@ export default function getFullUserHandler(_args: void, req: NextApiRequest, res
     tenantId?: import("bson").ObjectId | undefined;
     disabled?: boolean | undefined;
     customData?: import("../collections/user/User").UserCustomData | undefined;
-}, "_id" | "email" | "type" | "name" | "phoneNumber" | "profilePicture" | "customData">>;
+}, "_id" | "email" | "username" | "type" | "name" | "phoneNumber" | "profilePicture" | "customData">>;
 export type AuthGetFullUserApiResponse = InferApiResponse<typeof getFullUserHandler>;
 export declare const useAuthGetFullUser: (required?: boolean) => UseQueryResult<AuthGetFullUserApiResponse, {
     code: 401;
 }>;
 export declare const invalidate_authGetFullUser: (queryClient: QueryClient) => Promise<void>;
-export declare const setData_authGetFullUser: (queryClient: QueryClient, data: null) => unknown;
+export declare const setData_authGetFullUser: (queryClient: QueryClient, data: AuthGetFullUserApiResponse | null) => unknown;

@@ -1,18 +1,11 @@
 import Routes from "../Routes";
 import prepareSendMail from "@italodeandra/next/mailer/sendMail";
 import { IUserType } from "../collections/user/User";
+import AuthIntl from "../intl/AuthIntl";
 export interface AuthConfig {
     connectDb: () => Promise<void>;
     primaryColor: string;
-    intl?: Record<string, {
-        "Reset your password": string;
-        "To reset your password click the link below": string;
-        "Click here": string;
-        "If you didn't request to reset your password, please ignore this email": string;
-        "Kind regards": string;
-        "or copy and paste the following link on your browser": string;
-        "We received a request to reset your password": string;
-    }>;
+    intl?: Record<string, AuthIntl>;
     routes: Routes;
     fallbackLocale?: string;
     sendMail: ReturnType<typeof prepareSendMail>;

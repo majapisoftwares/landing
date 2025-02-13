@@ -14,6 +14,7 @@ export default function authPanelUserListHandler(args: {
     passwordSalt: string;
     createdAt: Date;
     updatedAt: Date;
+    username?: string | undefined;
     emailVerified?: Date | undefined;
     name?: string | undefined;
     phoneNumber?: string | undefined;

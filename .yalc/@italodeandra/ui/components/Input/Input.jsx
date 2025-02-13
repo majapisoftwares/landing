@@ -2,7 +2,7 @@ import UnstyledInput from "../Input/UnstyledInput";
 import { defaultTextStyles } from "../Text";
 import { ExclamationCircleIcon } from "@heroicons/react/20/solid";
 import InputIcon from "./InputIcon";
-import { cloneElement, forwardRef } from "react";
+import { cloneElement } from "react";
 import recursiveChildrenMap from "../../utils/recursiveChildrenMap";
 import clsx from "../../utils/clsx";
 export const defaultLabelClassName = `ui-input-label block ${defaultTextStyles.variant.label} mb-1`;
@@ -13,7 +13,7 @@ export const defaultTrailingClassName = "pointer-events-none absolute inset-y-0 
 export const defaultLeadingClassName = "pointer-events-none absolute inset-y-0 left-0 flex items-center pl-2.5 text-zinc-500 text-sm";
 export const defaultLeadingInputClassName = "pl-10";
 export const defaultTrailingInputClassName = "pr-10";
-function Input({ error, trailing, labelClassName, inputClassName, helpTextClassName, trailingClassName, leadingClassName, leadingInputClassName, trailingInputClassName, required, label, loading, readOnly, children, disabled, helpText, ...props }, ref) {
+function Input({ error, trailing, labelClassName, inputClassName, helpTextClassName, trailingClassName, leadingClassName, leadingInputClassName, trailingInputClassName, required, label, loading, readOnly, children, disabled, helpText, ref, ...props }) {
     trailing =
         trailing ||
             (error ? (<InputIcon className="text-error-500">
@@ -47,7 +47,9 @@ function Input({ error, trailing, labelClassName, inputClassName, helpTextClassN
     return (<UnstyledInput 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     {...props} trailing={trailing} labelClassName={labelClassName} inputClassName={inputClassName} helpTextClassName={helpTextClassName} trailingClassName={trailingClassName} leadingClassName={leadingClassName} leadingInputClassName={leadingInputClassName} trailingInputClassName={trailingInputClassName} ref={ref} required={required} label={label} readOnly={readOnly} disabled={disabled} data-disabled={disabled || undefined} helpText={helpText}>
-      {recursiveChildrenMap(children, (child) => cloneElement(child, { disabled: readOnly || disabled }))}
+      {recursiveChildrenMap(children, (child) => cloneElement(child, {
+            disabled: readOnly || disabled || child.props.disabled,
+        }))}
     </UnstyledInput>);
 }
-export default forwardRef(Input);
+export default Input;

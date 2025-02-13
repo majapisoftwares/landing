@@ -36,7 +36,10 @@ declare function ModalActions({ children, className, }: {
     children?: ReactNode;
     className?: string;
 }): import("react").JSX.Element;
-declare function ModalIcon({ children }: {
-    children?: ReactElement;
+declare function ModalIcon({ children, }: {
+    children?: ReactElement<{
+        className?: string;
+        "aria-hidden"?: string;
+    }>;
 }): import("react").JSX.Element;
 declare function ModalCloseButton({ className, ...props }: ComponentPropsWithoutRef<typeof Button>): import("react").JSX.Element;

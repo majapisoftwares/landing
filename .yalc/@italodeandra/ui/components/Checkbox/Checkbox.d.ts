@@ -10,5 +10,5 @@ export type CheckboxProps = {
     helpText?: ReactNode;
     indeterminate?: boolean;
 } & DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
-declare const _default: import("react").ForwardRefExoticComponent<Omit<CheckboxProps, "ref"> & import("react").RefAttributes<HTMLInputElement>>;
-export default _default;
+declare function Checkbox({ id, label, description, className, labelClassName, descriptionClassName, inputClassName, labelOuterClassName, type, error, helpText, indeterminate, ref, ...props }: CheckboxProps): import("react").JSX.Element;
+export default Checkbox;

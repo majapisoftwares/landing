@@ -4,6 +4,7 @@ import { useMutation } from "@tanstack/react-query";
 import { badRequest } from "@italodeandra/next/api/errors";
 import { mutationFnWrapper, } from "@italodeandra/next/api/apiHandlerWrapper";
 import { getReqTenant } from "../collections/tenant/Tenant.service";
+import getTranslation from "@italodeandra/next/utils/getTranslation";
 const appEnv = process.env.APP_ENV || "development";
 export default async function requestPasswordResetHandler(args, req, _res, { routes, connectDb, intl, fallbackLocale, primaryColor, sendMail, multitenantMode, }) {
     if (!routes.ResetPassword) {
@@ -21,7 +22,7 @@ export default async function requestPasswordResetHandler(args, req, _res, { rou
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     fallbackLocale);
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    const t = intl[locale];
+    const t = getTranslation(intl[locale]);
     await connectDb();
     const User = getUser();
     const tenantId = multitenantMode ? (await getReqTenant(req))?._id : undefined;
@@ -41,25 +42,25 @@ export default async function requestPasswordResetHandler(args, req, _res, { rou
     const protocol = /^localhost(:\d+)?$/.test(host) ? "http" : "https";
     const token = generateResetPasswordToken(user.email);
     const url = `${protocol}://${host}${routes.ResetPassword(token)}`;
-    await sendMail(user.email, t["Reset your password"], {
-        title: t["Reset your password"],
-        intro: t["We received a request to reset your password"],
+    await sendMail(user.email, t("Reset your password"), {
+        title: t("Reset your password"),
+        intro: t("We received a request to reset your password"),
         action: [
             {
-                instructions: t["To reset your password click the link below"],
+                instructions: t("To reset your password click the link below"),
                 button: {
                     color: primaryColor,
                     link: url,
-                    text: t["Click here"],
+                    text: t("Click here"),
                 },
             },
         ],
         outro: [
-            `${t["or copy and paste the following link on your browser"]}: `,
+            `${t("or copy and paste the following link on your browser")}: `,
             `<span style="word-wrap: break-word; color: gray; user-select: all;">${url}</span>`,
-            `${t["If you didn't request to reset your password, please ignore this email"]}.`,
+            `${t("If you didn't request to reset your password, please ignore this email")}.`,
         ],
-        signature: t["Kind regards"],
+        signature: t("Kind regards"),
     });
     if (appEnv === "development") {
         console.info("Reset password in URL:", url);

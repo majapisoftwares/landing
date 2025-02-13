@@ -1,4 +1,3 @@
-import React, { forwardRef } from "react";
 import * as RSelect from "@radix-ui/react-select";
 import { CheckIcon, ChevronDownIcon, ChevronUpIcon, } from "@heroicons/react/16/solid";
 import Button from "../Button";
@@ -22,16 +21,15 @@ function SelectContent({ className, children, ...props }) {
 function SelectSeparator({ className, ...props }) {
     return (<RSelect.Separator {...props} className={clsx(dropdownSeparatorClassName, "ui-select-separator", className)}/>);
 }
-function SelectItemComponent({ children, className, indicatorClassName, ...props }, forwardedRef) {
-    return (<RSelect.Item className={clsx(dropdownItemClassName, "ui-select-item", className)} {...props} ref={forwardedRef}>
+function SelectItem({ children, className, indicatorClassName, ...props }) {
+    return (<RSelect.Item className={clsx(dropdownItemClassName, "ui-select-item", className)} {...props}>
       <RSelect.ItemIndicator className={clsx(dropdownItemIndicatorClassName, "ui-select-item-indicator", indicatorClassName)}>
         <CheckIcon />
       </RSelect.ItemIndicator>
       <RSelect.ItemText>{children}</RSelect.ItemText>
     </RSelect.Item>);
 }
-const SelectItem = forwardRef(SelectItemComponent);
-function SelectTrigger({ className, placeholder, children, readOnly, ...props }, ref) {
+function SelectTrigger({ className, placeholder, children, readOnly, ref, ...props }) {
     return (<RSelect.Trigger asChild {...props} className={className} ref={children ? ref : undefined}>
       {children || (<Button trailing={!readOnly ? (<RSelect.Icon>
                 <ChevronDownIcon />
@@ -46,7 +44,7 @@ function SelectLabel({ className, ...props }) {
 const Select = {
     Root: RSelect.Root,
     Item: SelectItem,
-    Trigger: forwardRef(SelectTrigger),
+    Trigger: SelectTrigger,
     Content: SelectContent,
     Group: RSelect.Group,
     Label: SelectLabel,

@@ -83,6 +83,14 @@ const config = {
                         opacity: "1",
                     },
                 },
+                shiny: {
+                    "0%": {
+                        backgroundPosition: "100%",
+                    },
+                    "100%": {
+                        backgroundPosition: "-100%",
+                    },
+                },
             },
             animation: {
                 slideDownAndFade: "slideDownAndFade 150ms cubic-bezier(0.16, 1, 0.3, 1)",
@@ -95,6 +103,7 @@ const config = {
                 elasticSlideRightAndFade: "elasticSlideRightAndFade 350ms cubic-bezier(0.16, 1, 0.3, 1)",
                 fadeOut: "fadeOut 150ms ease-in",
                 fadeIn: "fadeIn 150ms ease-in",
+                shiny: "shiny 2s infinite linear",
             },
         },
     },

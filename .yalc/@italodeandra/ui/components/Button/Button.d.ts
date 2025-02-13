@@ -1,5 +1,5 @@
 import { UnstyledButtonProps } from "./UnstyledButton";
-import { ReactElement } from "react";
+import { ReactElement, Ref } from "react";
 declare const styles: {
     root: string;
     variant: {
@@ -94,25 +94,18 @@ export type ButtonProps<T extends HTMLElement = HTMLButtonElement> = Omit<Unstyl
     color?: keyof (typeof styles)["color"];
     size?: keyof (typeof styles)["size"];
     icon?: boolean;
-    leading?: ReactElement;
-    trailing?: ReactElement;
+    leading?: ReactElement<{
+        className?: string;
+    }>;
+    trailing?: ReactElement<{
+        className?: string;
+    }>;
     loading?: boolean;
     disabled?: boolean;
     rounded?: boolean;
     trailingClassName?: string;
     leadingClassName?: string;
+    ref?: Ref<T>;
 };
-declare const _default: import("react").ForwardRefExoticComponent<Omit<UnstyledButtonProps<HTMLElement>, "size"> & {
-    variant?: keyof (typeof styles)["variant"];
-    color?: keyof (typeof styles)["color"];
-    size?: keyof (typeof styles)["size"];
-    icon?: boolean;
-    leading?: ReactElement;
-    trailing?: ReactElement;
-    loading?: boolean;
-    disabled?: boolean;
-    rounded?: boolean;
-    trailingClassName?: string;
-    leadingClassName?: string;
-} & import("react").RefAttributes<HTMLElement>>;
-export default _default;
+declare const Button: <T extends HTMLElement = HTMLButtonElement>({ variant, color, size, className, trailingClassName, leadingClassName, icon, type, leading, trailing, children, loading, disabled, rounded, ...props }: ButtonProps<T>) => import("react").JSX.Element;
+export default Button;

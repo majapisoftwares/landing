@@ -7,9 +7,10 @@ export default function TableActionButton({ children, className, title, onClick,
         e.stopPropagation();
         onClick?.(e);
     };
+    const child = children;
     const button = (<Button icon variant="text" className={clsx("!p-1", className)} onClick={handleClick} {...props}>
-      {cloneElement(children, {
-            className: clsx("!h-[20px] !w-[20px]", children?.props?.className),
+      {cloneElement(child, {
+            className: clsx("!h-[20px] !w-[20px]", child.props.className),
         })}
     </Button>);
     if (title) {

@@ -19,7 +19,7 @@ export declare const unauthorized: (res: NextApiResponse, body?: {
 }) => {
     body: {
         [key: string]: any;
-    } | undefined;
+    };
     status: number;
     message: string;
 };
@@ -31,7 +31,7 @@ export declare const notFound: (res: NextApiResponse, body?: {
 }) => {
     body: {
         [key: string]: any;
-    } | undefined;
+    };
     status: number;
     message: string;
 };

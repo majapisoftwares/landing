@@ -1,9 +1,12 @@
 import { FileInputFile } from "./FileInput";
-export declare function PreviewFile({ file, readOnly, handleDeleteClick, downloadText, openText, preview, }: {
+import { ReactNode } from "react";
+export declare function PreviewFile({ file, readOnly, handleDeleteClick, downloadText, openText, display, additionalInfo, index, }: {
     file: FileInputFile;
     readOnly?: boolean;
     handleDeleteClick: () => void;
     downloadText: string;
     openText: string;
-    preview?: boolean;
+    display?: "info" | "preview" | "both";
+    additionalInfo?: (file: FileInputFile, index: number) => ReactNode;
+    index: number;
 }): import("react").JSX.Element;

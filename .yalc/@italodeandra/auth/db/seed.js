@@ -22,7 +22,7 @@ export default async function authSeed(multiTenant) {
         }
         if (!(await User.countDocuments({ email: "italodeandra@gmail.com" })))
             await createUser({
-                ...(tenant ? { tenantId: tenant?._id } : {}),
+                ...(tenant ? { tenantId: tenant._id } : {}),
                 _id: userId,
                 email: "italodeandra@gmail.com",
                 password: "12345678",

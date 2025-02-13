@@ -1,5 +1,5 @@
 /* eslint-disable no-var */
-import { createTestAccount, createTransport, getTestMessageUrl, } from "nodemailer";
+import { createTestAccount, createTransport, getTestMessageUrl } from "nodemailer";
 import { render } from "@react-email/components";
 import { onlyServer } from "../utils/isServer";
 const _global = (onlyServer(() => global) || {});
@@ -34,7 +34,7 @@ export default function prepareSendMail(props) {
             }
             _global._nodemailerTransporter = createTransport(smtp.server);
         }
-        const htmlString = render(emailBody, {
+        const htmlString = await render(emailBody, {
             pretty: true,
         });
         const info = await _global._nodemailerTransporter.sendMail({

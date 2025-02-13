@@ -14,6 +14,7 @@ export default function getUserHandler(_args: void, req: NextApiRequest, res: Ne
     passwordSalt: string;
     createdAt: Date;
     updatedAt: Date;
+    username?: string | undefined;
     emailVerified?: Date | undefined;
     name?: string | undefined;
     phoneNumber?: string | undefined;
@@ -38,6 +39,7 @@ export declare const useAuthGetUser: (required?: boolean, options?: Omit<UseQuer
     isLoadingError: false;
     isRefetchError: true;
     isSuccess: false;
+    isPlaceholderData: false;
     status: "error";
     dataUpdatedAt: number;
     errorUpdatedAt: number;
@@ -49,7 +51,6 @@ export declare const useAuthGetUser: (required?: boolean, options?: Omit<UseQuer
     isFetching: boolean;
     isInitialLoading: boolean;
     isPaused: boolean;
-    isPlaceholderData: boolean;
     isRefetching: boolean;
     isStale: boolean;
     refetch: (options?: import("@tanstack/react-query").RefetchOptions) => Promise<import("@tanstack/react-query").QueryObserverResult<{
@@ -60,6 +61,13 @@ export declare const useAuthGetUser: (required?: boolean, options?: Omit<UseQuer
         _id: string;
     } | null, AuthUserGetApiError>>;
     fetchStatus: import("@tanstack/react-query").FetchStatus;
+    promise: Promise<{
+        email: string;
+        type: string;
+        name?: string | undefined;
+        profilePicture?: string | undefined;
+        _id: string;
+    } | null>;
 } | {
     isLoading: boolean;
     data: {
@@ -75,6 +83,7 @@ export declare const useAuthGetUser: (required?: boolean, options?: Omit<UseQuer
     isLoadingError: false;
     isRefetchError: false;
     isSuccess: true;
+    isPlaceholderData: false;
     status: "success";
     dataUpdatedAt: number;
     errorUpdatedAt: number;
@@ -86,7 +95,6 @@ export declare const useAuthGetUser: (required?: boolean, options?: Omit<UseQuer
     isFetching: boolean;
     isInitialLoading: boolean;
     isPaused: boolean;
-    isPlaceholderData: boolean;
     isRefetching: boolean;
     isStale: boolean;
     refetch: (options?: import("@tanstack/react-query").RefetchOptions) => Promise<import("@tanstack/react-query").QueryObserverResult<{
@@ -97,6 +105,13 @@ export declare const useAuthGetUser: (required?: boolean, options?: Omit<UseQuer
         _id: string;
     } | null, AuthUserGetApiError>>;
     fetchStatus: import("@tanstack/react-query").FetchStatus;
+    promise: Promise<{
+        email: string;
+        type: string;
+        name?: string | undefined;
+        profilePicture?: string | undefined;
+        _id: string;
+    } | null>;
 } | {
     isLoading: boolean;
     data: undefined;
@@ -106,6 +121,7 @@ export declare const useAuthGetUser: (required?: boolean, options?: Omit<UseQuer
     isLoadingError: true;
     isRefetchError: false;
     isSuccess: false;
+    isPlaceholderData: false;
     status: "error";
     dataUpdatedAt: number;
     errorUpdatedAt: number;
@@ -117,7 +133,6 @@ export declare const useAuthGetUser: (required?: boolean, options?: Omit<UseQuer
     isFetching: boolean;
     isInitialLoading: boolean;
     isPaused: boolean;
-    isPlaceholderData: boolean;
     isRefetching: boolean;
     isStale: boolean;
     refetch: (options?: import("@tanstack/react-query").RefetchOptions) => Promise<import("@tanstack/react-query").QueryObserverResult<{
@@ -128,6 +143,13 @@ export declare const useAuthGetUser: (required?: boolean, options?: Omit<UseQuer
         _id: string;
     } | null, AuthUserGetApiError>>;
     fetchStatus: import("@tanstack/react-query").FetchStatus;
+    promise: Promise<{
+        email: string;
+        type: string;
+        name?: string | undefined;
+        profilePicture?: string | undefined;
+        _id: string;
+    } | null>;
 } | {
     isLoading: boolean;
     data: undefined;
@@ -137,6 +159,7 @@ export declare const useAuthGetUser: (required?: boolean, options?: Omit<UseQuer
     isLoadingError: false;
     isRefetchError: false;
     isSuccess: false;
+    isPlaceholderData: false;
     status: "pending";
     dataUpdatedAt: number;
     errorUpdatedAt: number;
@@ -148,7 +171,6 @@ export declare const useAuthGetUser: (required?: boolean, options?: Omit<UseQuer
     isFetching: boolean;
     isInitialLoading: boolean;
     isPaused: boolean;
-    isPlaceholderData: boolean;
     isRefetching: boolean;
     isStale: boolean;
     refetch: (options?: import("@tanstack/react-query").RefetchOptions) => Promise<import("@tanstack/react-query").QueryObserverResult<{
@@ -159,6 +181,13 @@ export declare const useAuthGetUser: (required?: boolean, options?: Omit<UseQuer
         _id: string;
     } | null, AuthUserGetApiError>>;
     fetchStatus: import("@tanstack/react-query").FetchStatus;
+    promise: Promise<{
+        email: string;
+        type: string;
+        name?: string | undefined;
+        profilePicture?: string | undefined;
+        _id: string;
+    } | null>;
 } | {
     isLoading: boolean;
     data: undefined;
@@ -168,6 +197,7 @@ export declare const useAuthGetUser: (required?: boolean, options?: Omit<UseQuer
     isLoadingError: false;
     isRefetchError: false;
     isSuccess: false;
+    isPlaceholderData: false;
     status: "pending";
     dataUpdatedAt: number;
     errorUpdatedAt: number;
@@ -179,7 +209,6 @@ export declare const useAuthGetUser: (required?: boolean, options?: Omit<UseQuer
     isFetching: boolean;
     isInitialLoading: boolean;
     isPaused: boolean;
-    isPlaceholderData: boolean;
     isRefetching: boolean;
     isStale: boolean;
     refetch: (options?: import("@tanstack/react-query").RefetchOptions) => Promise<import("@tanstack/react-query").QueryObserverResult<{
@@ -190,10 +219,60 @@ export declare const useAuthGetUser: (required?: boolean, options?: Omit<UseQuer
         _id: string;
     } | null, AuthUserGetApiError>>;
     fetchStatus: import("@tanstack/react-query").FetchStatus;
+    promise: Promise<{
+        email: string;
+        type: string;
+        name?: string | undefined;
+        profilePicture?: string | undefined;
+        _id: string;
+    } | null>;
+} | {
+    isLoading: boolean;
+    data: {
+        email: string;
+        type: string;
+        name?: string | undefined;
+        profilePicture?: string | undefined;
+        _id: string;
+    } | null;
+    isError: false;
+    error: null;
+    isPending: false;
+    isLoadingError: false;
+    isRefetchError: false;
+    isSuccess: true;
+    isPlaceholderData: true;
+    status: "success";
+    dataUpdatedAt: number;
+    errorUpdatedAt: number;
+    failureCount: number;
+    failureReason: AuthUserGetApiError | null;
+    errorUpdateCount: number;
+    isFetched: boolean;
+    isFetchedAfterMount: boolean;
+    isFetching: boolean;
+    isInitialLoading: boolean;
+    isPaused: boolean;
+    isRefetching: boolean;
+    isStale: boolean;
+    refetch: (options?: import("@tanstack/react-query").RefetchOptions) => Promise<import("@tanstack/react-query").QueryObserverResult<{
+        email: string;
+        type: string;
+        name?: string | undefined;
+        profilePicture?: string | undefined;
+        _id: string;
+    } | null, AuthUserGetApiError>>;
+    fetchStatus: import("@tanstack/react-query").FetchStatus;
+    promise: Promise<{
+        email: string;
+        type: string;
+        name?: string | undefined;
+        profilePicture?: string | undefined;
+        _id: string;
+    } | null>;
 };
 export declare const useAuthRequiredUserType: (typesToCheck: IUser["type"][], redirectTo?: string) => boolean;
 export declare const useAuthRequiredUser: (redirectTo?: string) => boolean;
 export declare const useAuthUser: () => boolean;
-export declare const prefetch_authGetUser: (queryClient: QueryClient, _args: void, req: NextApiRequest, res: NextApiResponse, args_3: AuthConfig) => Promise<void>;
 export declare const setData_authGetUser: (queryClient: QueryClient, data: AuthUserGetApiResponse | null) => unknown;
 export declare const invalidate_authGetUser: (queryClient: QueryClient) => Promise<void>;

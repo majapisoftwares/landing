@@ -3,9 +3,9 @@ import Button from "@italodeandra/ui/components/Button";
 
 export default function Hero() {
   return (
-    <div className="mx-auto flex max-w-screen-xl flex-col items-center gap-10 pt-40">
+    <div className="mx-auto flex w-full max-w-screen-xl flex-col items-center gap-10 pt-40">
       <div className="flex flex-col items-center gap-4">
-        <div className="bg-gradient-to-br max-w-[767px] from-zinc-100 to-zinc-400 bg-clip-text text-center font-dm text-[90px] font-semibold leading-[98px] tracking-[-5.4px] text-transparent ">
+        <div className="max-w-[767px] bg-gradient-to-br from-zinc-100 to-zinc-400 bg-clip-text text-center font-dm text-[90px] font-semibold leading-[98px] tracking-[-5.4px] text-transparent">
           Transfoming ideas into digital solutions
         </div>
         <div className="max-w-[600px] text-center text-2xl font-normal leading-8 text-zinc-400">

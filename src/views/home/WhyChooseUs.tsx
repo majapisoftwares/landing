@@ -6,13 +6,13 @@ import { Icon } from "@iconify/react";
 
 export default function WhyChooseUs() {
   return (
-    <div className="mx-auto flex max-w-screen-xl flex-col gap-10 pt-40">
+    <div className="mx-auto flex w-full max-w-screen-xl flex-col gap-10">
       <div className="flex items-center gap-4 px-4">
         <div className="flex w-full flex-col gap-10">
           <div className="bg-gradient-to-br from-zinc-100 to-zinc-400 bg-clip-text font-dm text-5xl font-semibold tracking-[-2.88px] text-transparent">
             Why choose us
           </div>
-          <div className="max-w-[506px] self-stretch text-xl font-normal leading-8 tracking-[-1.44px] text-zinc-400">
+          <div className="max-w-[506px] font-dm text-2xl leading-8 tracking-[-1.44px] text-zinc-400">
             We combine innovation, agility, and expertise to deliver custom,
             high-performance solutions. With a global presence in Brazil, the
             US, and Turkey, we ensure cutting-edge technology, dedicated
@@ -34,13 +34,11 @@ export default function WhyChooseUs() {
             <Accordion.Item
               className="mr-16 w-[350px] rounded-lg border border-zinc-800 dark:bg-zinc-900"
               triggerClassName="gap-2 items-center dark:bg-zinc-900 dark:hover:bg-zinc-950/30 font-tight text-2xl px-8 py-5"
-              contentClassName="text-center text-zinc-400 text-lg"
+              contentClassName="text-center text-zinc-400 text-lg font-dm"
               title={
                 <>
                   Agility & Efficiency
-                  <div className="rounded-full bg-white p-2">
-                    <BoltIcon className="h-4 w-4 text-black" />
-                  </div>
+                  <BoltIcon className="h-8 w-8 rounded-full bg-white p-2 text-black" />
                 </>
               }
             >
@@ -51,13 +49,14 @@ export default function WhyChooseUs() {
             <Accordion.Item
               className="w-[350px] rounded-lg border border-zinc-800 dark:bg-zinc-900"
               triggerClassName="gap-2 items-center dark:bg-zinc-900 dark:hover:bg-zinc-950/30 font-tight text-2xl px-8 py-5"
-              contentClassName="text-center text-zinc-400 text-lg"
+              contentClassName="text-center text-zinc-400 text-lg font-dm"
               title={
                 <>
                   Innovative Solutions
-                  <div className="rounded-full bg-white p-2">
-                    <Icon icon="tabler:bulb" className="h-4 w-4 text-black" />
-                  </div>
+                  <Icon
+                    icon="tabler:bulb"
+                    className="h-8 w-8 rounded-full bg-white p-2 text-black"
+                  />
                 </>
               }
             >
@@ -68,13 +67,11 @@ export default function WhyChooseUs() {
             <Accordion.Item
               className="mr-16 w-[350px] rounded-lg border border-zinc-800 dark:bg-zinc-900"
               triggerClassName="gap-2 items-center dark:bg-zinc-900 dark:hover:bg-zinc-950/30 font-tight text-2xl px-8 py-5"
-              contentClassName="text-center text-zinc-400 text-lg"
+              contentClassName="text-center text-zinc-400 text-lg font-dm"
               title={
                 <>
                   Global Expertise
-                  <div className="rounded-full bg-white p-2">
-                    <GlobeAltIcon className="h-4 w-4 text-black" />
-                  </div>
+                  <GlobeAltIcon className="h-8 w-8 rounded-full bg-white p-2 text-black" />
                 </>
               }
             >

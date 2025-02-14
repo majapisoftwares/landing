@@ -8,6 +8,7 @@ const config: Partial<Config> = {
     extend: {
       fontFamily: {
         dm: ["DM Sans Variable", ...defaultTheme.fontFamily.sans],
+        tight: ["Inter Tight Variable", ...defaultTheme.fontFamily.sans],
       },
     },
   },

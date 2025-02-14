@@ -24,6 +24,7 @@ import "@italodeandra/ui/bootstrap/setupFocusManager";
 import { NuqsAdapter } from "nuqs/adapters/next/pages";
 import { Dialogs } from "@italodeandra/ui/components/Dialog";
 import "@fontsource-variable/dm-sans";
+import '@fontsource-variable/inter-tight';
 
 dayjs.extend(relativeTime);
 dayjs.extend(localizedFormat);

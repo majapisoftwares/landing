@@ -6,10 +6,11 @@ declare namespace Accordion {
     var Item: typeof AccordionItem;
 }
 export default Accordion;
-declare function AccordionItem({ children, title, value, triggerClassName, contentClassName, }: {
+declare function AccordionItem({ children, title, value, className, triggerClassName, contentClassName, }: {
     children?: ReactNode;
     title: ReactNode;
     value?: string;
+    className?: string;
     triggerClassName?: string;
     contentClassName?: string;
 }): import("react").JSX.Element;

@@ -18,6 +18,7 @@
     "@fontsource-variable/inter-tight": "^5.1.1",
     "@headlessui/react": "^2.2.0",
     "@heroicons/react": "^2.1.5",
+    "@iconify/react": "^5.0.2",
     "@hookform/resolvers": "^3.9.1",
     "@italodeandra/auth": "file:.yalc/@italodeandra/auth",
     "@italodeandra/next": "file:.yalc/@italodeandra/next",

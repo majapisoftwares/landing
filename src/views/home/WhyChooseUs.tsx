@@ -2,11 +2,12 @@ import { ArrowLongRightIcon } from "@heroicons/react/20/solid";
 import Button from "@italodeandra/ui/components/Button";
 import Accordion from "@italodeandra/ui/components/Accordion";
 import { BoltIcon, GlobeAltIcon } from "@heroicons/react/24/outline";
+import { Icon } from "@iconify/react";
 
 export default function WhyChooseUs() {
   return (
     <div className="mx-auto flex max-w-screen-xl flex-col gap-10 pt-40">
-      <div className="flex gap-4 px-4">
+      <div className="flex items-center gap-4 px-4">
         <div className="flex w-full flex-col gap-10">
           <div className="bg-gradient-to-br from-zinc-100 to-zinc-400 bg-clip-text font-dm text-5xl font-semibold tracking-[-2.88px] text-transparent">
             Why choose us
@@ -55,7 +56,7 @@ export default function WhyChooseUs() {
                 <>
                   Innovative Solutions
                   <div className="rounded-full bg-white p-2">
-                    <BoltIcon className="h-4 w-4 text-black" />
+                    <Icon icon="tabler:bulb" className="h-4 w-4 text-black" />
                   </div>
                 </>
               }

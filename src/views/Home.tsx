@@ -1,6 +1,7 @@
 import Hero from "./home/Hero";
 import WhyChooseUs from "./home/WhyChooseUs";
 import Services from "./home/Services";
+import Projects from "./home/Projects";
 
 export function Home() {
   return (
@@ -9,6 +10,7 @@ export function Home() {
         <Hero />
         <WhyChooseUs />
         <Services />
+        <Projects />
       </div>
     </div>
   );

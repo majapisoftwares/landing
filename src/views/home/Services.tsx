@@ -4,7 +4,7 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 
 export default function Sevices() {
   return (
-    <div className="mx-auto flex w-full max-w-screen-xl flex-col items-center gap-10">
+    <div className="mx-auto flex w-full max-w-screen-xl flex-col items-center gap-10 px-4">
       <div className="flex flex-col items-center gap-4">
         <div className="bg-gradient-to-br from-zinc-100 to-zinc-400 bg-clip-text font-dm text-5xl font-semibold tracking-[-2.88px] text-transparent">
           Our services

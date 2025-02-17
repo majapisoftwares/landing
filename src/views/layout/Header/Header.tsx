@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <div className="flex w-full border-b border-zinc-700 bg-[url('/noise.png')] bg-cover bg-no-repeat">
+    <div className="flex w-full border-b border-zinc-700 bg-zinc-900/80 bg-[url('/noise.png')] bg-cover bg-no-repeat">
       <div className="mx-auto flex w-full max-w-screen-xl justify-between bg-transparent px-4 py-4">
         <Link href="/">
           <Image

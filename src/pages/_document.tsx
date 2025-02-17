@@ -23,7 +23,7 @@ export default function Document() {
         />
         <link rel="manifest" href="/icons/site.webmanifest" />
       </Head>
-      <body className="ui-theme-default bg-[#151315] antialiased">
+      <body className="ui-theme-default bg-zinc-900/80 antialiased">
         <Main />
         <NextScript />
       </body>

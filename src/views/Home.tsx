@@ -2,6 +2,7 @@ import Hero from "./home/Hero";
 import WhyChooseUs from "./home/WhyChooseUs";
 import Services from "./home/Services";
 import Projects from "./home/Projects";
+import Clients from "./home/Clients";
 
 export function Home() {
   return (
@@ -11,6 +12,7 @@ export function Home() {
         <WhyChooseUs />
         <Services />
         <Projects />
+        <Clients />
       </div>
     </div>
   );

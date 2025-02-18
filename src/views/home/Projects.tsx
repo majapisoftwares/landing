@@ -1,5 +1,8 @@
 import Image from "next/image";
 import miyache from "./miyache.png";
+import ticketis from "./ticketis.png";
+import lapwing from "./lapwing.png";
+import { GlobeAltIcon } from "@heroicons/react/24/outline";
 
 export default function Projects() {
   return (
@@ -13,14 +16,75 @@ export default function Projects() {
           innovation to create incredible experiences!
         </div>
       </div>
-      <div className="flex gap-4">
-        <div className="flex flex-col gap-4">
-          <div className="group relative overflow-hidden">
-            <Image src={miyache} alt="Miyache" className="w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-black bg-opacity-0 p-4 transition-all duration-300 ease-in-out group-hover:bg-opacity-85 rounded">
-              <div className="flex flex-col opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                <div>Miyache</div>
-                <div>
+      <div className="flex gap-6">
+        <div className="flex flex-col gap-6">
+          <div className="group relative overflow-hidden rounded-3xl">
+            <Image
+              src={miyache}
+              alt="Miyache"
+              className="h-full w-full object-cover"
+            />
+            <div className="absolute inset-0 bg-black bg-opacity-0 p-10 transition-all duration-300 ease-in-out group-hover:bg-opacity-85">
+              <div className="flex h-full flex-col justify-end gap-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <div className="flex items-center gap-6">
+                  <div className="font-dm text-3xl tracking-[-1.2px] text-white">
+                    Miyache
+                  </div>
+                  <div className="rounded-full border border-zinc-700 bg-zinc-900 p-2">
+                    <GlobeAltIcon className="h-5 w-5 text-white" />
+                  </div>
+                </div>
+                <div className="font-dm text-lg leading-5 tracking-[-0.72px] text-zinc-400">
+                  Miyache, a platform dedicated to limiting anime/discoveries
+                  based on the users own choices, based on the ranking defined
+                  by you, the system recommends new series to you.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="group relative overflow-hidden rounded-3xl">
+            <Image
+              src={ticketis}
+              alt="Miyache"
+              className="h-full w-full object-cover"
+            />
+            <div className="absolute inset-0 bg-black bg-opacity-0 p-10 transition-all duration-300 ease-in-out group-hover:bg-opacity-85">
+              <div className="flex h-full flex-col justify-end gap-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <div className="flex items-center gap-6">
+                  <div className="font-dm text-3xl tracking-[-1.2px] text-white">
+                    Miyache
+                  </div>
+                  <div className="rounded-full border border-zinc-700 bg-zinc-900 p-2">
+                    <GlobeAltIcon className="h-5 w-5 text-white" />
+                  </div>
+                </div>
+                <div className="font-dm text-lg leading-5 tracking-[-0.72px] text-zinc-400">
+                  Miyache, a platform dedicated to limiting anime/discoveries
+                  based on the users own choices, based on the ranking defined
+                  by you, the system recommends new series to you.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="flex">
+          <div className="group relative overflow-hidden rounded-3xl">
+            <Image
+              src={lapwing}
+              alt="Miyache"
+              className="h-full w-full object-cover"
+            />
+            <div className="absolute inset-0 bg-black bg-opacity-0 p-10 transition-all duration-300 ease-in-out group-hover:bg-opacity-85">
+              <div className="flex h-full flex-col justify-end gap-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <div className="flex items-center gap-6">
+                  <div className="font-dm text-3xl tracking-[-1.2px] text-white">
+                    Miyache
+                  </div>
+                  <div className="rounded-full border border-zinc-700 bg-zinc-900 p-2">
+                    <GlobeAltIcon className="h-5 w-5 text-white" />
+                  </div>
+                </div>
+                <div className="font-dm text-lg leading-5 tracking-[-0.72px] text-zinc-400">
                   Miyache, a platform dedicated to limiting anime/discoveries
                   based on the users own choices, based on the ranking defined
                   by you, the system recommends new series to you.

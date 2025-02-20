@@ -8,14 +8,14 @@ import Contact from "./home/Contact";
 export function Home() {
   return (
     <div className="-mt-20 bg-zinc-900/80 bg-[url('/noise.png')] bg-cover bg-top bg-repeat-y pt-20">
-      <div className="flex w-full flex-col gap-40 bg-[url('/bg-fullhd.png')] bg-top bg-repeat-y pt-40">
+      <div className="flex w-full flex-col gap-40 bg-[url('/bg-fullhd.png')] bg-top bg-repeat-y pt-20 md:pt-40">
         <Hero />
         <WhyChooseUs />
         <Services />
         <Projects />
         <Clients />
         <Contact />
-        <div className="h-96 bg-gradient-to-t from-zinc-900 to-zinc-900/0 from-30%" />
+        <div className="h-96 bg-gradient-to-t from-zinc-900 from-30% to-zinc-900/0" />
       </div>
     </div>
   );

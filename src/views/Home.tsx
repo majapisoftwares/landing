@@ -1,14 +1,15 @@
 import Hero from "./home/Hero";
 import WhyChooseUs from "./home/WhyChooseUs";
-import Services from "./home/Services";
 import Projects from "./home/Projects";
 import Clients from "./home/Clients";
 import Contact from "./home/Contact";
+import dynamic from "next/dynamic";
+const Services = dynamic(() => import("./home/Services"), { ssr: false });
 
 export function Home() {
   return (
     <div className="-mt-20 bg-zinc-900/80 bg-[url('/noise.png')] bg-cover bg-top bg-repeat-y pt-20">
-      <div className="flex w-full flex-col gap-20 md:gap-40 bg-[url('/bg-fullhd.png')] bg-top bg-repeat-y pt-20 md:pt-40">
+      <div className="flex w-full flex-col gap-20 bg-[url('/bg-fullhd.png')] bg-top bg-repeat-y pt-20 md:gap-40 md:pt-40">
         <Hero />
         <WhyChooseUs />
         <Services />

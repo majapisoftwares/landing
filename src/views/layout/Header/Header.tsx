@@ -1,6 +1,7 @@
 import Button from "@italodeandra/ui/components/Button";
 import Link from "next/link";
-import Logo from "../../logo";
+import Logo from "../../Logo";
+import { Icon } from "@iconify/react/dist/iconify.js";
 
 export default function Header() {
   return (
@@ -9,7 +10,7 @@ export default function Header() {
         <Link href="/" className="flex items-center">
           <Logo className="max-w-32" />
         </Link>
-        <div className="flex gap-4">
+        <div className="hidden gap-4 md:flex">
           <Button variant="text" className="font-dm text-white">
             About
           </Button>
@@ -21,6 +22,11 @@ export default function Header() {
             className="rounded-[50px] border border-zinc-500 bg-zinc-100 font-dm text-zinc-800"
           >
             Contact Us
+          </Button>
+        </div>
+        <div className="md:hidden">
+          <Button icon variant="text" className="text-white">
+            <Icon icon="mdi:menu" className="h-7 w-7" />
           </Button>
         </div>
       </div>

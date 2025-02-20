@@ -7,18 +7,18 @@ import { Icon } from "@iconify/react";
 export default function WhyChooseUs() {
   return (
     <div className="mx-auto flex w-full max-w-screen-xl flex-col gap-10 px-4">
-      <div className="flex items-center gap-4">
-        <div className="flex w-full flex-col gap-10">
-          <div className="bg-gradient-to-br from-zinc-100 to-zinc-400 bg-clip-text font-dm text-5xl font-semibold tracking-[-2.88px] text-transparent">
+      <div className="flex flex-col items-center gap-8 md:gap-4 md:flex-row">
+        <div className="flex w-full flex-col gap-5 md:gap-10">
+          <div className="bg-gradient-to-br from-zinc-100 to-zinc-400 bg-clip-text font-dm text-3xl font-semibold text-transparent md:text-5xl md:tracking-[-2.88px]">
             Why choose us
           </div>
-          <div className="max-w-[506px] font-dm text-2xl leading-8 tracking-[-1.44px] text-zinc-400">
+          <div className="max-w-[506px] font-dm text-zinc-400 md:text-2xl md:leading-8 md:tracking-[-1.44px]">
             We combine innovation, agility, and expertise to deliver custom,
             high-performance solutions. With a global presence in Brazil, the
             US, and Turkey, we ensure cutting-edge technology, dedicated
             support, and scalable results to help your business thrive.
           </div>
-          <div>
+          <div className="hidden md:flex">
             <Button
               variant="filled"
               size="xl"

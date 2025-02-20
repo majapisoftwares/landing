@@ -8,7 +8,7 @@ export default function Hero() {
         <div className="max-w-[273px] bg-gradient-to-br from-zinc-100 to-zinc-400 bg-clip-text text-center font-dm text-3xl font-semibold leading-10 tracking-[-1.92px] text-transparent md:max-w-[767px] md:text-[90px] md:leading-[98px] md:tracking-[-5.4px]">
           Transfoming ideas into digital solutions
         </div>
-        <div className="max-w-[268px] text-center font-dm text-sm text-zinc-400 md:max-w-[600px] md:text-2xl md:leading-8">
+        <div className="max-w-[268px] text-center font-dm text-zinc-400 md:max-w-[600px] md:text-2xl md:leading-8">
           Innovation, agility and efficiency to take your comp to the next
           level.
         </div>

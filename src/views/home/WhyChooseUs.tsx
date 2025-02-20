@@ -7,7 +7,7 @@ import { Icon } from "@iconify/react";
 export default function WhyChooseUs() {
   return (
     <div className="mx-auto flex w-full max-w-screen-xl flex-col gap-10 px-4">
-      <div className="flex flex-col items-center gap-8 md:gap-4 md:flex-row">
+      <div className="flex flex-col items-center gap-12 md:gap-4 md:flex-row">
         <div className="flex w-full flex-col gap-5 md:gap-10">
           <div className="bg-gradient-to-br from-zinc-100 to-zinc-400 bg-clip-text font-dm text-3xl font-semibold text-transparent md:text-5xl md:tracking-[-2.88px]">
             Why choose us
@@ -29,12 +29,12 @@ export default function WhyChooseUs() {
             </Button>
           </div>
         </div>
-        <div className="flex w-full flex-col items-end gap-4">
+        <div className="flex md:w-full flex-col items-end gap-4">
           <Accordion>
             <Accordion.Item
-              className="mr-16 w-[350px] rounded-lg border border-zinc-800 dark:bg-zinc-900"
-              triggerClassName="gap-2 items-center dark:bg-zinc-900 dark:hover:bg-zinc-950/30 font-tight text-2xl px-8 py-5"
-              contentClassName="text-center text-zinc-400 text-lg font-dm"
+              className="md:mr-16 w-[350px] rounded-lg border border-zinc-800 dark:bg-zinc-900"
+              triggerClassName="gap-2 items-center dark:bg-zinc-900 dark:hover:bg-zinc-950/30 font-tight text-xl md:text-2xl px-8 py-5"
+              contentClassName="text-center text-zinc-400 md:text-lg font-dm"
               title={
                 <>
                   Agility & Efficiency
@@ -48,8 +48,8 @@ export default function WhyChooseUs() {
           <Accordion>
             <Accordion.Item
               className="w-[350px] rounded-lg border border-zinc-800 dark:bg-zinc-900"
-              triggerClassName="gap-2 items-center dark:bg-zinc-900 dark:hover:bg-zinc-950/30 font-tight text-2xl px-8 py-5"
-              contentClassName="text-center text-zinc-400 text-lg font-dm"
+              triggerClassName="gap-2 items-center dark:bg-zinc-900 dark:hover:bg-zinc-950/30 font-tight text-xl md:text-2xl px-8 py-5 flex-row-reverse md:flex-row"
+              contentClassName="text-center text-zinc-400 md:text-lg font-dm"
               title={
                 <>
                   Innovative Solutions
@@ -65,9 +65,9 @@ export default function WhyChooseUs() {
           </Accordion>
           <Accordion>
             <Accordion.Item
-              className="mr-16 w-[350px] rounded-lg border border-zinc-800 dark:bg-zinc-900"
-              triggerClassName="gap-2 items-center dark:bg-zinc-900 dark:hover:bg-zinc-950/30 font-tight text-2xl px-8 py-5"
-              contentClassName="text-center text-zinc-400 text-lg font-dm"
+              className="md:mr-16 w-[350px] rounded-lg border border-zinc-800 dark:bg-zinc-900"
+              triggerClassName="gap-2 items-center dark:bg-zinc-900 dark:hover:bg-zinc-950/30 font-tight text-xl md:text-2xl px-8 py-5"
+              contentClassName="text-center text-zinc-400 md:text-lg font-dm"
               title={
                 <>
                   Global Expertise

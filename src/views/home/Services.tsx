@@ -5,7 +5,7 @@ import Accordion from "@italodeandra/ui/components/Accordion";
 import useMediaQuery from "@italodeandra/ui/hooks/useMediaQuery";
 
 export default function Sevices() {
-  const isMobile = useMediaQuery("(max-width: 640px)");
+  const isMobile = useMediaQuery("(max-width: 768px)");
 
   return (
     <div className="mx-auto flex w-full max-w-screen-xl flex-col items-center gap-10 px-4">

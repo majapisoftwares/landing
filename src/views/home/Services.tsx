@@ -23,8 +23,8 @@ export default function Sevices() {
           <Accordion>
             <Accordion.Item
               className="w-[350px] rounded-lg border border-zinc-800 dark:bg-zinc-900 md:mr-16"
-              triggerClassName="gap-2 items-center flex-row-reverse dark:bg-zinc-900 dark:hover:bg-zinc-950/30 font-tight text-lg md:text-2xl px-8 py-5"
-              contentClassName="text-center text-zinc-400 md:text-lg font-dm"
+              triggerClassName="gap-2 items-center flex-row-reverse dark:bg-zinc-900 dark:hover:bg-zinc-950/30 font-tight text-lg px-8 py-5"
+              contentClassName="text-center text-zinc-400 font-dm"
               title={
                 <div className="flex items-center gap-4">
                   Web & App development
@@ -41,8 +41,8 @@ export default function Sevices() {
           <Accordion>
             <Accordion.Item
               className="w-[350px] rounded-lg border border-zinc-800 dark:bg-zinc-900 md:mr-16"
-              triggerClassName="gap-2 items-center dark:bg-zinc-900 dark:hover:bg-zinc-950/30 font-tight text-lg md:text-2xl px-8 py-5"
-              contentClassName="text-center text-zinc-400 md:text-lg font-dm"
+              triggerClassName="gap-2 items-center dark:bg-zinc-900 dark:hover:bg-zinc-950/30 font-tight text-lg px-8 py-5"
+              contentClassName="text-center text-zinc-400 font-dm"
               title={
                 <div className="flex flex-row-reverse items-center gap-4">
                   UI/UX Design
@@ -58,8 +58,8 @@ export default function Sevices() {
           <Accordion>
             <Accordion.Item
               className="w-[350px] rounded-lg border border-zinc-800 dark:bg-zinc-900 md:mr-16"
-              triggerClassName="gap-2 items-center flex-row-reverse dark:bg-zinc-900 dark:hover:bg-zinc-950/30 font-tight text-lg md:text-2xl px-8 py-5"
-              contentClassName="text-center text-zinc-400 md:text-lg font-dm"
+              triggerClassName="gap-2 items-center flex-row-reverse dark:bg-zinc-900 dark:hover:bg-zinc-950/30 font-tight text-lg px-8 py-5"
+              contentClassName="text-center text-zinc-400 font-dm"
               title={
                 <div className="flex items-center gap-4">
                   Software development

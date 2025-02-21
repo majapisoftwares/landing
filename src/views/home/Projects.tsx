@@ -8,15 +8,15 @@ export default function Projects() {
   return (
     <div className="mx-auto flex w-full max-w-screen-xl flex-col gap-10 px-4">
       <div className="flex flex-col gap-4">
-        <div className="bg-gradient-to-br from-zinc-100 to-zinc-400 bg-clip-text font-dm text-5xl font-semibold tracking-[-2.88px] text-transparent">
+        <div className="bg-gradient-to-br from-zinc-100 to-zinc-400 bg-clip-text font-dm text-3xl font-semibold text-transparent md:text-5xl md:tracking-[-2.88px]">
           Some of our projects
         </div>
-        <div className="max-w-[600px] font-dm text-2xl leading-8 tracking-[-1.44px] text-zinc-500">
+        <div className="max-w-[600px] font-dm text-zinc-500 md:text-2xl md:leading-8 md:tracking-[-1.44px]">
           Some of the solutions we developed, combining design, technology and
           innovation to create incredible experiences!
         </div>
       </div>
-      <div className="flex gap-6">
+      <div className="flex flex-col gap-6 md:flex-row">
         <div className="flex flex-col gap-6">
           <div className="group relative overflow-hidden rounded-3xl">
             <Image
@@ -67,11 +67,11 @@ export default function Projects() {
           </div>
         </div>
         <div className="flex">
-          <div className="group relative overflow-hidden rounded-3xl">
+          <div className="group relative max-h-[213px] overflow-hidden rounded-3xl md:max-h-fit">
             <Image
               src={lapwing}
               alt="Lapwing"
-              className="h-full w-full object-cover"
+              className="h-full w-full object-cover object-center"
             />
             <div className="absolute inset-0 bg-black bg-opacity-0 p-10 transition-all duration-300 ease-in-out group-hover:bg-opacity-85">
               <div className="flex h-full flex-col justify-end gap-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">

@@ -4,14 +4,14 @@ export default function Clients() {
   return (
     <div className="mx-auto flex w-full max-w-screen-xl flex-col items-center gap-10 px-4">
       <div className="flex flex-col items-center gap-4">
-        <div className="bg-gradient-to-br from-zinc-100 to-zinc-400 bg-clip-text font-dm text-5xl font-semibold tracking-[-2.88px] text-transparent">
+        <div className="bg-gradient-to-br from-zinc-100 to-zinc-400 bg-clip-text font-dm text-3xl font-semibold tracking-[-2.88px] text-transparent md:text-5xl">
           Some of our clients
         </div>
-        <div className="max-w-[550px] text-center font-dm text-2xl leading-8 tracking-[-1.44px] text-zinc-500">
+        <div className="max-w-[550px] text-center font-dm leading-8 tracking-[-1.44px] text-zinc-400 md:text-2xl">
           Trusted by businesses across Brazil, the US, and Turkey.
         </div>
       </div>
-      <div className="flex w-full justify-center gap-8">
+      <div className="flex w-full flex-col justify-center gap-8 md:flex-row">
         <div className="flex w-full flex-col items-center justify-center gap-4 rounded-lg border border-zinc-800 bg-zinc-900 px-4 py-10">
           <div className="rounded bg-white p-4">
             <Icon icon="bxs:ambulance" className="h-8 w-8 text-black" />

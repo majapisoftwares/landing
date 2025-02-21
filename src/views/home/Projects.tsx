@@ -67,7 +67,7 @@ export default function Projects() {
           </div>
         </div>
         <div className="flex justify-center">
-          <div className="group relative max-h-[221px] md:max-h-max overflow-hidden w-full rounded-3xl">
+          <div className="group relative max-h-[221px] w-full overflow-hidden rounded-3xl md:max-h-max">
             <Image
               src={lapwing}
               alt="Lapwing"

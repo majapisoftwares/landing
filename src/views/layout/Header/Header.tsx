@@ -12,10 +12,13 @@ export default function Header() {
         </Link>
         <div className="hidden gap-4 md:flex">
           <Button variant="text" className="font-dm text-white">
-            About
+            Home
           </Button>
           <Button variant="text" className="font-dm text-white">
             Solutions
+          </Button>
+          <Button variant="text" className="font-dm text-white">
+            About
           </Button>
           <Button
             variant="filled"

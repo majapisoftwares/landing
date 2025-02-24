@@ -21,7 +21,6 @@ export default function WhyChooseUs() {
           <div className="hidden md:flex">
             <Button
               variant="filled"
-              size="xl"
               className="rounded-[50px] border border-zinc-500 bg-zinc-100 px-8 py-3 font-dm text-zinc-800"
               trailing={<ArrowLongRightIcon className="h-6 w-6" />}
             >
@@ -29,7 +28,7 @@ export default function WhyChooseUs() {
             </Button>
           </div>
         </div>
-        <div className="flex flex-col md:items-end gap-4 items-stretch md:w-full">
+        <div className="flex flex-col items-stretch gap-4 md:w-full md:items-end">
           <Accordion>
             <Accordion.Item
               className="max-w-[350px] rounded-lg border border-zinc-800 dark:bg-zinc-900 md:mr-16 md:w-[350px]"
@@ -65,7 +64,7 @@ export default function WhyChooseUs() {
           </Accordion>
           <Accordion>
             <Accordion.Item
-              className="rounded-lg border border-zinc-800 dark:bg-zinc-900 md:mr-16 md:w-[350px] "
+              className="rounded-lg border border-zinc-800 dark:bg-zinc-900 md:mr-16 md:w-[350px]"
               triggerClassName="gap-2 items-center dark:bg-zinc-900 dark:hover:bg-zinc-950/30 font-tight text-lg md:text-2xl px-8 py-5 flex-row-reverse md:flex-row"
               contentClassName="text-center text-zinc-400 md:text-lg font-dm"
               title={

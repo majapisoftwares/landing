@@ -8,7 +8,7 @@ export default function Header() {
     <div className="flex w-full border-b border-zinc-700 bg-transparent">
       <div className="mx-auto flex w-full max-w-screen-xl justify-between bg-transparent px-4 py-4">
         <Link href="/" className="flex items-center">
-          <Logo className="max-w-32" />
+          <Logo className="w-32" />
         </Link>
         <div className="hidden gap-4 md:flex">
           <Button variant="text" className="font-dm text-white">

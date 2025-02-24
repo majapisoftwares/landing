@@ -6,12 +6,12 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 export default function Footer() {
   return (
     <div className="flex w-full border-t border-zinc-700 bg-zinc-900">
-      <div className="mx-auto flex w-full max-w-screen-xl flex-col items-center justify-between px-4 py-20 md:flex-row">
-        <div className="flex flex-col gap-4">
+      <div className="mx-auto flex w-full max-w-screen-xl flex-col-reverse items-center justify-between gap-8 px-4 py-20 md:flex-row md:gap-4">
+        <div className="flex flex-col items-center gap-4 md:items-start">
           <Link href="/" className="flex items-center">
-            <Logo className="max-w-32" />
+            <Logo className="w-32" />
           </Link>
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col items-center gap-2 md:items-start">
             <div className="text-sm font-normal tracking-[-0.1px]">
               © 2025 Majapi Inc. All rights reserved.
             </div>
@@ -20,7 +20,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="flex gap-2">
+        <div className="hidden gap-2 md:flex">
           <Button variant="text">Small business</Button>
           <Button variant="text">Freelancers</Button>
           <Button variant="text">Costumers</Button>

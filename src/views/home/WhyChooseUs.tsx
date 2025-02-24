@@ -29,10 +29,10 @@ export default function WhyChooseUs() {
             </Button>
           </div>
         </div>
-        <div className="flex flex-col items-end gap-4 md:w-full">
+        <div className="flex flex-col md:items-end gap-4 items-stretch md:w-full">
           <Accordion>
             <Accordion.Item
-              className="w-[350px] rounded-lg border border-zinc-800 dark:bg-zinc-900 md:mr-16"
+              className="max-w-[350px] rounded-lg border border-zinc-800 dark:bg-zinc-900 md:mr-16 md:w-[350px]"
               triggerClassName="gap-2 items-center dark:bg-zinc-900 dark:hover:bg-zinc-950/30 font-tight text-lg md:text-2xl px-8 py-5 flex-row-reverse md:flex-row"
               contentClassName="text-center text-zinc-400 md:text-lg font-dm"
               title={
@@ -47,7 +47,7 @@ export default function WhyChooseUs() {
           </Accordion>
           <Accordion>
             <Accordion.Item
-              className="w-[350px] rounded-lg border border-zinc-800 dark:bg-zinc-900"
+              className="max-w-[350px] rounded-lg border border-zinc-800 dark:bg-zinc-900 md:w-[350px]"
               triggerClassName="gap-2 items-center dark:bg-zinc-900 dark:hover:bg-zinc-950/30 font-tight text-lg md:text-2xl px-8 py-5"
               contentClassName="text-center text-zinc-400 md:text-lg font-dm"
               title={
@@ -65,7 +65,7 @@ export default function WhyChooseUs() {
           </Accordion>
           <Accordion>
             <Accordion.Item
-              className="w-[350px] rounded-lg border border-zinc-800 dark:bg-zinc-900 md:mr-16"
+              className="rounded-lg border border-zinc-800 dark:bg-zinc-900 md:mr-16 md:w-[350px] "
               triggerClassName="gap-2 items-center dark:bg-zinc-900 dark:hover:bg-zinc-950/30 font-tight text-lg md:text-2xl px-8 py-5 flex-row-reverse md:flex-row"
               contentClassName="text-center text-zinc-400 md:text-lg font-dm"
               title={

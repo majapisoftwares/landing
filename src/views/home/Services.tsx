@@ -22,7 +22,7 @@ export default function Sevices() {
         <div className="flex flex-col gap-4">
           <Accordion>
             <Accordion.Item
-              className="w-[350px] rounded-lg border border-zinc-800 dark:bg-zinc-900 md:mr-16"
+              className="rounded-lg border border-zinc-800 dark:bg-zinc-900 md:mr-16"
               triggerClassName="gap-2 items-center flex-row-reverse dark:bg-zinc-900 dark:hover:bg-zinc-950/30 font-tight text-lg px-8 py-5"
               contentClassName="text-center text-zinc-400 font-dm"
               title={
@@ -40,7 +40,7 @@ export default function Sevices() {
           </Accordion>
           <Accordion>
             <Accordion.Item
-              className="w-[350px] rounded-lg border border-zinc-800 dark:bg-zinc-900 md:mr-16"
+              className="rounded-lg border border-zinc-800 dark:bg-zinc-900 md:mr-16"
               triggerClassName="gap-2 items-center dark:bg-zinc-900 dark:hover:bg-zinc-950/30 font-tight text-lg px-8 py-5"
               contentClassName="text-center text-zinc-400 font-dm"
               title={
@@ -57,7 +57,7 @@ export default function Sevices() {
           </Accordion>
           <Accordion>
             <Accordion.Item
-              className="w-[350px] rounded-lg border border-zinc-800 dark:bg-zinc-900 md:mr-16"
+              className="rounded-lg border border-zinc-800 dark:bg-zinc-900 md:mr-16"
               triggerClassName="gap-2 items-center flex-row-reverse dark:bg-zinc-900 dark:hover:bg-zinc-950/30 font-tight text-lg px-8 py-5"
               contentClassName="text-center text-zinc-400 font-dm"
               title={

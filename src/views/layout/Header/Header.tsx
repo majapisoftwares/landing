@@ -7,7 +7,7 @@ import DropdownMenu from "@italodeandra/ui/components/DropdownMenu";
 
 export default function Header() {
   return (
-    <div className="flex w-full border-b border-zinc-700 bg-transparent">
+    <div className="flex w-full border-b border-zinc-700 bg-transparent relative z-20">
       <div className="mx-auto flex w-full max-w-screen-xl justify-between bg-transparent px-4 py-4">
         <Link href="/" className="flex items-center">
           <Logo className="w-32" />

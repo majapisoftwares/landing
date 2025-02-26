@@ -7,7 +7,7 @@ import { WHATSAPP_LINK } from "../../constants";
 
 export default function WhyChooseUs() {
   return (
-    <div className="mx-auto flex w-full max-w-screen-xl flex-col gap-10 px-4">
+    <div className="relative z-10 mx-auto flex w-full max-w-screen-xl flex-col gap-10 px-4">
       <div className="flex flex-col items-center gap-12 md:flex-row md:gap-4">
         <div className="flex w-full flex-col gap-4 md:gap-10">
           <div className="bg-gradient-to-br from-zinc-100 to-zinc-400 bg-clip-text font-dm text-3xl font-semibold text-transparent md:text-5xl md:tracking-[-2.88px]">

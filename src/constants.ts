@@ -11,5 +11,9 @@ export const LANDING_URL = `${PROTOCOL}://${HOST}`;
 export const MULTITENANT_MODE = false;
 export const PRIMARY_COLOR = "#0ea5e9";
 export const APP_NAME = "Majapi";
-export const APP_DESCRIPTION = "Majapi";
-export const APP_KEYWORDS = "majapibr,app,template";
+export const APP_DESCRIPTION = "Transforming ideas into digital solutions";
+export const APP_KEYWORDS = "majapibr,app,software,development,saas,technology";
+export const WHATSAPP_LINK = "https://wa.me/5516981814643";
+export const LINKEDIN_LINK =
+  "https://www.linkedin.com/company/majapi-softwares";
+export const INSTAGRAM_LINK = "https://www.instagram.com/majapisoftwares";

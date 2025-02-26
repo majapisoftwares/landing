@@ -1,4 +1,4 @@
-import { Icon } from "@iconify/react/dist/iconify.js";
+import { Icon } from "@iconify/react";
 
 export default function Clients() {
   return (
@@ -18,7 +18,7 @@ export default function Clients() {
           </div>
           <div className="flex flex-col gap-2 text-center">
             <div className="font-tight text-2xl font-semibold text-white">
-              Pulse
+              Health care
             </div>
             <div className="max-w-[280px] font-tight text-zinc-400">
               We create tools that improve efficiency in transporting and
@@ -32,7 +32,7 @@ export default function Clients() {
           </div>
           <div className="flex flex-col gap-2 text-center">
             <div className="font-tight text-2xl font-semibold text-white">
-              Sailor
+              Consortium
             </div>
             <div className="max-w-[280px] font-tight text-zinc-400">
               Our Warranty Manager optimizes the control and management of
@@ -47,7 +47,7 @@ export default function Clients() {
           </div>
           <div className="flex flex-col gap-2 text-center">
             <div className="font-tight text-2xl font-semibold text-white">
-              Facebot
+              Automation
             </div>
             <div className="max-w-[280px] font-tight text-zinc-400">
               Integration and optimization services for Facebook campaigns,

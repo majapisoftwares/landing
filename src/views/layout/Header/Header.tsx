@@ -1,7 +1,9 @@
 import Button from "@italodeandra/ui/components/Button";
 import Link from "next/link";
 import Logo from "../../Logo";
-import { Icon } from "@iconify/react/dist/iconify.js";
+import { Icon } from "@iconify/react";
+import Routes from "../../../routes";
+import DropdownMenu from "@italodeandra/ui/components/DropdownMenu";
 
 export default function Header() {
   return (
@@ -11,26 +13,57 @@ export default function Header() {
           <Logo className="w-32" />
         </Link>
         <div className="hidden gap-4 md:flex">
-          <Button variant="text" className="font-dm text-white">
+          <Button
+            href={Routes.Home}
+            variant="text"
+            className="font-dm text-white"
+          >
             Home
           </Button>
-          <Button variant="text" className="font-dm text-white">
+          <Button
+            href={Routes.Solutions}
+            variant="text"
+            className="font-dm text-white"
+          >
             Solutions
           </Button>
-          <Button variant="text" className="font-dm text-white">
+          <Button
+            href={Routes.About}
+            variant="text"
+            className="font-dm text-white"
+          >
             About
           </Button>
           <Button
             variant="filled"
+            href={Routes.Contact}
             className="rounded-[50px] border border-zinc-500 bg-zinc-100 font-dm text-zinc-800"
           >
             Contact Us
           </Button>
         </div>
         <div className="md:hidden">
-          <Button icon variant="text" className="text-white">
-            <Icon icon="mdi:menu" className="h-7 w-7" />
-          </Button>
+          <DropdownMenu.Root>
+            <DropdownMenu.Trigger asChild>
+              <Button
+                icon
+                className="border-none focus:!ring-0 focus:!ring-offset-0 dark:hover:border-none"
+              >
+                <Icon icon="mdi:menu" className="h-7 w-7" />
+              </Button>
+            </DropdownMenu.Trigger>
+            <DropdownMenu.Content>
+              <DropdownMenu.Label></DropdownMenu.Label>
+              <DropdownMenu.Item href={Routes.Home}>Home</DropdownMenu.Item>
+              <DropdownMenu.Item href={Routes.Solutions}>
+                Solutions
+              </DropdownMenu.Item>
+              <DropdownMenu.Item href={Routes.About}>About</DropdownMenu.Item>
+              <DropdownMenu.Item href={Routes.Contact}>
+                Contact Us
+              </DropdownMenu.Item>
+            </DropdownMenu.Content>
+          </DropdownMenu.Root>
         </div>
       </div>
     </div>

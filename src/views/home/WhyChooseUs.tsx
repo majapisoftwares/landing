@@ -3,6 +3,7 @@ import Button from "@italodeandra/ui/components/Button";
 import Accordion from "@italodeandra/ui/components/Accordion";
 import { BoltIcon, GlobeAltIcon } from "@heroicons/react/24/outline";
 import { Icon } from "@iconify/react";
+import { WHATSAPP_LINK } from "../../constants";
 
 export default function WhyChooseUs() {
   return (
@@ -21,6 +22,8 @@ export default function WhyChooseUs() {
           <div className="hidden md:flex">
             <Button
               variant="filled"
+              href={WHATSAPP_LINK}
+              target="_blank"
               className="rounded-[50px] border border-zinc-500 bg-zinc-100 px-8 py-3 font-dm text-zinc-800"
               trailing={<ArrowLongRightIcon className="h-6 w-6" />}
             >

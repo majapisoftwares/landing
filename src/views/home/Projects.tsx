@@ -1,7 +1,7 @@
 import Image from "next/image";
-import miyache from "./miyache.png";
-import ticketis from "./ticketis.png";
-import lapwing from "./lapwing.png";
+import miyache from "./miyache.webp";
+import ticketis from "./ticketis.webp";
+import lapwing from "./lapwing.webp";
 import { GlobeAltIcon } from "@heroicons/react/24/outline";
 
 export default function Projects() {

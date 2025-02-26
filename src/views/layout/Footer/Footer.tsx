@@ -1,7 +1,9 @@
-import Link from "next/link";
 import Logo from "../../Logo";
 import Button from "@italodeandra/ui/components/Button";
 import { Icon } from "@iconify/react/dist/iconify.js";
+import Link from "@italodeandra/ui/components/Link";
+import Routes from "../../../routes";
+import { INSTAGRAM_LINK, LINKEDIN_LINK } from "../../../constants";
 
 export default function Footer() {
   return (
@@ -13,26 +15,46 @@ export default function Footer() {
           </Link>
           <div className="flex flex-col items-center gap-2 md:items-start">
             <div className="text-sm font-normal tracking-[-0.1px]">
-              © 2025 Majapi Inc. All rights reserved.
+              © {new Date().getFullYear()} Majapi Inc. All rights reserved.
             </div>
             <div className="text-sm font-normal tracking-[-0.1px]">
-              Terms & Conditions ∙ Privacy Policy
+              <Link
+                className="text-white no-underline hover:underline dark:hover:decoration-white"
+                href={Routes.TermsConditions}
+              >
+                Terms & Conditions
+              </Link>{" "}
+              ∙{" "}
+              <Link
+                className="text-white no-underline hover:underline dark:hover:decoration-white"
+                href={Routes.PrivacyPolicy}
+              >
+                Privacy Policy
+              </Link>
             </div>
           </div>
         </div>
         <div className="hidden gap-2 md:flex">
-          <Button variant="text">Small business</Button>
-          <Button variant="text">Freelancers</Button>
-          <Button variant="text">Costumers</Button>
-          <Button variant="text">Taxes</Button>
+          <Button href={Routes.Home} variant="text">
+            Home
+          </Button>
+          <Button href={Routes.Solutions} variant="text">
+            Solutions
+          </Button>
+          <Button href={Routes.About} variant="text">
+            About
+          </Button>
+          <Button href={Routes.Contact} variant="text">
+            Contact
+          </Button>
         </div>
         <div className="flex flex-col items-center">
           <div className="font-tight text-xl">Follow us on</div>
           <div className="flex">
-            <Button target="_blank" variant="text" icon>
+            <Button href={LINKEDIN_LINK} target="_blank" variant="text" icon>
               <Icon icon="mdi:linkedin" className="h-10 w-10" />
             </Button>
-            <Button target="_blank" variant="text" icon>
+            <Button href={INSTAGRAM_LINK} target="_blank" variant="text" icon>
               <Icon icon="mdi:instagram" className="h-10 w-10" />
             </Button>
           </div>

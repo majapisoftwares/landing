@@ -6,7 +6,7 @@ export default function Flare() {
       viewBox="0 0 1799 1924"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="absolute left-1/2 -translate-x-1/2 -mt-[900px]"
+      className="absolute left-1/2 -translate-x-1/2 -mt-[900px] opacity-50"
     >
       <g opacity="0.25">
         <g filter="url(#filter0_f_741_188)">
@@ -68,9 +68,9 @@ export default function Flare() {
           width="544.129"
           height="988.829"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend
             mode="normal"
             in="SourceGraphic"
@@ -89,9 +89,9 @@ export default function Flare() {
           width="603.169"
           height="945.03"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend
             mode="normal"
             in="SourceGraphic"
@@ -110,9 +110,9 @@ export default function Flare() {
           width="487.552"
           height="1033.44"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend
             mode="normal"
             in="SourceGraphic"
@@ -131,9 +131,9 @@ export default function Flare() {
           width="820.276"
           height="1604.89"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend
             mode="normal"
             in="SourceGraphic"
@@ -152,9 +152,9 @@ export default function Flare() {
           width="1064.28"
           height="1496.74"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend
             mode="normal"
             in="SourceGraphic"

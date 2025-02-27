@@ -1,13 +1,10 @@
-export default function Bg() {
+export default function Bg({ className }: { className?: string }) {
   return (
     <svg
-      width="1440"
-      height="832"
       viewBox="0 0 1440 832"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="absolute left-1/2 -translate-x-1/2"
-
+      className={className}
     >
       <g opacity="0.3">
         <path d="M145 613L1299 613" stroke="url(#paint0_linear_741_224)" />
@@ -22,12 +19,12 @@ export default function Bg() {
         <path
           d="M370 27V820"
           stroke="url(#paint9_linear_741_224)"
-          stroke-opacity="0.8"
+          strokeOpacity="0.8"
         />
         <path
           d="M270 27V820"
           stroke="url(#paint10_linear_741_224)"
-          stroke-opacity="0.5"
+          strokeOpacity="0.5"
         />
         <path d="M670.5 24V817" stroke="url(#paint11_linear_741_224)" />
         <path d="M770 24V817" stroke="url(#paint12_linear_741_224)" />
@@ -36,12 +33,12 @@ export default function Bg() {
         <path
           d="M1068.5 24V817"
           stroke="url(#paint15_linear_741_224)"
-          stroke-opacity="0.8"
+          strokeOpacity="0.8"
         />
         <path
           d="M1170 24V817"
           stroke="url(#paint16_linear_741_224)"
-          stroke-opacity="0.5"
+          strokeOpacity="0.5"
         />
       </g>
       <defs>
@@ -53,9 +50,9 @@ export default function Bg() {
           y2="612.5"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.025" stop-color="white" stop-opacity="0" />
-          <stop offset="0.5" stop-color="white" />
-          <stop offset="1" stop-color="white" stop-opacity="0" />
+          <stop offset="0.025" stopColor="white" stopOpacity="0" />
+          <stop offset="0.5" stopColor="white" />
+          <stop offset="1" stopColor="white" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_741_224"
@@ -65,9 +62,9 @@ export default function Bg() {
           y2="513.5"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.025" stop-color="white" stop-opacity="0" />
-          <stop offset="0.5" stop-color="white" />
-          <stop offset="1" stop-color="white" stop-opacity="0" />
+          <stop offset="0.025" stopColor="white" stopOpacity="0" />
+          <stop offset="0.5" stopColor="white" />
+          <stop offset="1" stopColor="white" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_741_224"
@@ -77,9 +74,9 @@ export default function Bg() {
           y2="414.5"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.025" stop-color="white" stop-opacity="0" />
-          <stop offset="0.5" stop-color="white" />
-          <stop offset="1" stop-color="white" stop-opacity="0" />
+          <stop offset="0.025" stopColor="white" stopOpacity="0" />
+          <stop offset="0.5" stopColor="white" />
+          <stop offset="1" stopColor="white" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint3_linear_741_224"
@@ -89,9 +86,9 @@ export default function Bg() {
           y2="315.5"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.025" stop-color="white" stop-opacity="0" />
-          <stop offset="0.5" stop-color="white" />
-          <stop offset="1" stop-color="white" stop-opacity="0" />
+          <stop offset="0.025" stopColor="white" stopOpacity="0" />
+          <stop offset="0.5" stopColor="white" />
+          <stop offset="1" stopColor="white" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint4_linear_741_224"
@@ -101,9 +98,9 @@ export default function Bg() {
           y2="216.5"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.025" stop-color="white" stop-opacity="0" />
-          <stop offset="0.5" stop-color="white" />
-          <stop offset="1" stop-color="white" stop-opacity="0" />
+          <stop offset="0.025" stopColor="white" stopOpacity="0" />
+          <stop offset="0.5" stopColor="white" />
+          <stop offset="1" stopColor="white" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint5_linear_741_224"
@@ -113,9 +110,9 @@ export default function Bg() {
           y2="117.5"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.025" stop-color="white" stop-opacity="0" />
-          <stop offset="0.5" stop-color="white" />
-          <stop offset="1" stop-color="white" stop-opacity="0" />
+          <stop offset="0.025" stopColor="white" stopOpacity="0" />
+          <stop offset="0.5" stopColor="white" />
+          <stop offset="1" stopColor="white" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint6_linear_741_224"
@@ -125,9 +122,9 @@ export default function Bg() {
           y2="712.5"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.025" stop-color="white" stop-opacity="0" />
-          <stop offset="0.5" stop-color="white" />
-          <stop offset="1" stop-color="white" stop-opacity="0" />
+          <stop offset="0.025" stopColor="white" stopOpacity="0" />
+          <stop offset="0.5" stopColor="white" />
+          <stop offset="1" stopColor="white" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint7_linear_741_224"
@@ -137,9 +134,9 @@ export default function Bg() {
           y2="817"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.025" stop-color="white" stop-opacity="0" />
-          <stop offset="0.5" stop-color="white" />
-          <stop offset="1" stop-color="white" stop-opacity="0" />
+          <stop offset="0.025" stopColor="white" stopOpacity="0" />
+          <stop offset="0.5" stopColor="white" />
+          <stop offset="1" stopColor="white" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint8_linear_741_224"
@@ -149,9 +146,9 @@ export default function Bg() {
           y2="817"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.025" stop-color="white" stop-opacity="0" />
-          <stop offset="0.5" stop-color="white" />
-          <stop offset="1" stop-color="white" stop-opacity="0" />
+          <stop offset="0.025" stopColor="white" stopOpacity="0" />
+          <stop offset="0.5" stopColor="white" />
+          <stop offset="1" stopColor="white" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint9_linear_741_224"
@@ -161,9 +158,9 @@ export default function Bg() {
           y2="820"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.025" stop-color="white" stop-opacity="0" />
-          <stop offset="0.5" stop-color="white" />
-          <stop offset="1" stop-color="white" stop-opacity="0" />
+          <stop offset="0.025" stopColor="white" stopOpacity="0" />
+          <stop offset="0.5" stopColor="white" />
+          <stop offset="1" stopColor="white" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint10_linear_741_224"
@@ -173,9 +170,9 @@ export default function Bg() {
           y2="820"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.025" stop-color="white" stop-opacity="0" />
-          <stop offset="0.5" stop-color="white" />
-          <stop offset="1" stop-color="white" stop-opacity="0" />
+          <stop offset="0.025" stopColor="white" stopOpacity="0" />
+          <stop offset="0.5" stopColor="white" />
+          <stop offset="1" stopColor="white" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint11_linear_741_224"
@@ -185,9 +182,9 @@ export default function Bg() {
           y2="817"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.025" stop-color="white" stop-opacity="0" />
-          <stop offset="0.5" stop-color="white" />
-          <stop offset="1" stop-color="white" stop-opacity="0" />
+          <stop offset="0.025" stopColor="white" stopOpacity="0" />
+          <stop offset="0.5" stopColor="white" />
+          <stop offset="1" stopColor="white" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint12_linear_741_224"
@@ -197,9 +194,9 @@ export default function Bg() {
           y2="817"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.025" stop-color="white" stop-opacity="0" />
-          <stop offset="0.5" stop-color="white" />
-          <stop offset="1" stop-color="white" stop-opacity="0" />
+          <stop offset="0.025" stopColor="white" stopOpacity="0" />
+          <stop offset="0.5" stopColor="white" />
+          <stop offset="1" stopColor="white" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint13_linear_741_224"
@@ -209,9 +206,9 @@ export default function Bg() {
           y2="817"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.025" stop-color="white" stop-opacity="0" />
-          <stop offset="0.5" stop-color="white" />
-          <stop offset="1" stop-color="white" stop-opacity="0" />
+          <stop offset="0.025" stopColor="white" stopOpacity="0" />
+          <stop offset="0.5" stopColor="white" />
+          <stop offset="1" stopColor="white" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint14_linear_741_224"
@@ -221,9 +218,9 @@ export default function Bg() {
           y2="817"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.025" stop-color="white" stop-opacity="0" />
-          <stop offset="0.5" stop-color="white" />
-          <stop offset="1" stop-color="white" stop-opacity="0" />
+          <stop offset="0.025" stopColor="white" stopOpacity="0" />
+          <stop offset="0.5" stopColor="white" />
+          <stop offset="1" stopColor="white" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint15_linear_741_224"
@@ -233,9 +230,9 @@ export default function Bg() {
           y2="817"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.025" stop-color="white" stop-opacity="0" />
-          <stop offset="0.5" stop-color="white" />
-          <stop offset="1" stop-color="white" stop-opacity="0" />
+          <stop offset="0.025" stopColor="white" stopOpacity="0" />
+          <stop offset="0.5" stopColor="white" />
+          <stop offset="1" stopColor="white" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint16_linear_741_224"
@@ -245,9 +242,9 @@ export default function Bg() {
           y2="817"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.025" stop-color="white" stop-opacity="0" />
-          <stop offset="0.5" stop-color="white" />
-          <stop offset="1" stop-color="white" stop-opacity="0" />
+          <stop offset="0.025" stopColor="white" stopOpacity="0" />
+          <stop offset="0.5" stopColor="white" />
+          <stop offset="1" stopColor="white" stopOpacity="0" />
         </linearGradient>
       </defs>
     </svg>

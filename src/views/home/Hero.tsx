@@ -1,13 +1,13 @@
 import { ArrowLongRightIcon } from "@heroicons/react/20/solid";
 import Button from "@italodeandra/ui/components/Button";
 import { WHATSAPP_LINK } from "../../constants";
-import Bg from "../layout/bg";
+import Bg from "../layout/Bg";
 
 export default function Hero() {
   return (
-    <>
-      <Bg />
-      <div className="mx-auto relative flex w-full max-w-screen-xl flex-col items-center gap-10 px-4">
+    <div className="relative">
+      <Bg className="absolute -top-44 left-1/2 h-[832px] w-[1440px] -translate-x-1/2 opacity-20" />
+      <div className="relative mx-auto flex w-full max-w-screen-xl flex-col items-center gap-10 px-4">
         <div className="flex flex-col items-center gap-4">
           <div className="max-w-[350px] bg-gradient-to-br from-zinc-100 to-zinc-400 bg-clip-text text-center font-dm text-4xl font-semibold leading-10 tracking-[-1.92px] text-transparent md:max-w-[767px] md:text-[90px] md:leading-[98px] md:tracking-[-5.4px]">
             Transforming ideas into digital solutions
@@ -27,6 +27,6 @@ export default function Hero() {
           Schedule a meeting
         </Button>
       </div>
-    </>
+    </div>
   );
 }

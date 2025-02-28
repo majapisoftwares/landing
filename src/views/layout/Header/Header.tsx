@@ -37,7 +37,7 @@ export default function Header() {
           <Button
             variant="filled"
             href={Routes.Contact}
-            className="rounded-[50px] border border-zinc-500 bg-zinc-100 font-dm text-zinc-800"
+            className="rounded-[50px] border border-zinc-600 bg-zinc-100 font-dm text-zinc-800"
           >
             Contact Us
           </Button>

@@ -18,7 +18,7 @@ export default function Contact() {
             variant="filled"
             href={Routes.Contact}
             target="_blank"
-            className="rounded-lg border border-zinc-500 bg-zinc-100 px-20 py-3 font-dm text-zinc-800 md:text-lg"
+            className="rounded-lg border border-zinc-600 bg-zinc-100 px-20 py-3 font-dm text-zinc-800 md:text-lg"
           >
             Contact Us
           </Button>

@@ -34,10 +34,10 @@ export default function Sevices() {
       <Bg className="absolute -top-44 left-1/2 h-[832px] w-[1440px] -translate-x-1/2 opacity-20" />
       <div className="relative mx-auto flex w-full max-w-screen-xl flex-col items-center gap-10 px-4">
         <div className="flex flex-col gap-4 md:items-center">
-          <div className="bg-gradient-to-br text-center lg:text-left from-zinc-100 to-zinc-400 bg-clip-text font-dm text-3xl font-semibold text-transparent md:text-5xl md:tracking-[-2.88px]">
+          <div className="bg-gradient-to-br text-center lg:text-left from-zinc-100 to-zinc-400 bg-clip-text font-dm text-3xl font-semibold text-transparent lg:text-5xl lg:tracking-[-2.88px]">
             Our services
           </div>
-          <div className="max-w-[500px] text-center font-dm text-zinc-400 md:text-2xl md:leading-8 md:tracking-[-1.44px]">
+          <div className="max-w-[500px] text-center font-dm text-zinc-400 lg:text-2xl lg:leading-8 lg:tracking-[-1.44px]">
             From design to programming, we offer agile and efficient services to
             meet your needs.
           </div>

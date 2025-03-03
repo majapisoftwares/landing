@@ -12,7 +12,7 @@ export default function Hero() {
           <div className="max-w-[600px] bg-gradient-to-br py-2 from-zinc-100 to-zinc-400 bg-clip-text text-center font-dm text-5xl font-semibold tracking-[-1.92px] text-transparent lg:max-w-[767px] lg:text-[90px] lg:leading-[98px] lg:tracking-[-5.4px]">
             Transforming ideas into digital solutions
           </div>
-          <div className="max-w-[268px] text-center font-dm text-zinc-400 md:max-w-[600px] lg:text-2xl lg:leading-8">
+          <div className="max-w-[268px] text-center font-dm text-zinc-400 lg:max-w-[600px] lg:text-2xl lg:leading-8">
             Innovation, agility and efficiency to take your comp to the next
             level.
           </div>

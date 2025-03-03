@@ -27,31 +27,31 @@ const services = [
 ];
 
 export default function Sevices() {
-  const isMobile = useMediaQuery("(max-width: 768px)");
+  const isMobile = useMediaQuery("(max-width: 1024px)");
 
   return (
     <div className="relative">
       <Bg className="absolute -top-44 left-1/2 h-[832px] w-[1440px] -translate-x-1/2 opacity-20" />
       <div className="relative mx-auto flex w-full max-w-screen-xl flex-col items-center gap-10 px-4">
         <div className="flex flex-col gap-4 md:items-center">
-          <div className="bg-gradient-to-br from-zinc-100 to-zinc-400 bg-clip-text font-dm text-3xl font-semibold text-transparent md:text-5xl md:tracking-[-2.88px]">
+          <div className="bg-gradient-to-br text-center lg:text-left from-zinc-100 to-zinc-400 bg-clip-text font-dm text-3xl font-semibold text-transparent md:text-5xl md:tracking-[-2.88px]">
             Our services
           </div>
-          <div className="max-w-[500px] font-dm text-zinc-400 md:text-center md:text-2xl md:leading-8 md:tracking-[-1.44px]">
+          <div className="max-w-[500px] text-center font-dm text-zinc-400 md:text-2xl md:leading-8 md:tracking-[-1.44px]">
             From design to programming, we offer agile and efficient services to
             meet your needs.
           </div>
         </div>
         {isMobile ? (
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col w-full gap-4">
             {services.map((service) => (
               <Accordion key={service.title}>
                 <Accordion.Item
-                  className="rounded-lg border border-zinc-800 dark:bg-zinc-900 md:mr-16"
-                  triggerClassName="gap-2 items-center flex-row-reverse dark:bg-zinc-900 dark:hover:bg-zinc-950/30 font-tight text-lg px-8 py-5"
+                  className="rounded-lg border border-zinc-800 dark:bg-zinc-900"
+                  triggerClassName="gap-2 justify-center items-center md:flex-row dark:bg-zinc-900 dark:hover:bg-zinc-950/30 font-tight text-lg lg:text-2xl px-8 py-5"
                   contentClassName="text-center text-zinc-400 font-dm"
                   title={
-                    <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-3">
                       {service.title}
                       <div className="rounded-full bg-white p-2">
                         {cloneElement(service.icon, {

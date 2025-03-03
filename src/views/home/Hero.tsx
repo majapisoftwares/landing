@@ -9,10 +9,10 @@ export default function Hero() {
       <Bg className="absolute -top-44 left-1/2 h-[832px] w-[1440px] -translate-x-1/2 opacity-20" />
       <div className="relative mx-auto flex w-full max-w-screen-xl flex-col items-center gap-10 px-4">
         <div className="flex flex-col items-center gap-4">
-          <div className="max-w-[350px] bg-gradient-to-br from-zinc-100 to-zinc-400 bg-clip-text text-center font-dm text-4xl font-semibold leading-10 tracking-[-1.92px] text-transparent md:max-w-[767px] md:text-[90px] md:leading-[98px] md:tracking-[-5.4px]">
+          <div className="max-w-[600px] bg-gradient-to-br py-2 from-zinc-100 to-zinc-400 bg-clip-text text-center font-dm text-5xl font-semibold tracking-[-1.92px] text-transparent lg:max-w-[767px] lg:text-[90px] lg:leading-[98px] lg:tracking-[-5.4px]">
             Transforming ideas into digital solutions
           </div>
-          <div className="max-w-[268px] text-center font-dm text-zinc-400 md:max-w-[600px] md:text-2xl md:leading-8">
+          <div className="max-w-[268px] text-center font-dm text-zinc-400 md:max-w-[600px] lg:text-2xl lg:leading-8">
             Innovation, agility and efficiency to take your comp to the next
             level.
           </div>

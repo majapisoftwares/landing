@@ -44,7 +44,8 @@ export default function WhyChooseUs() {
                 </div>
               }
             >
-              Cutting-edge technology tailored to your business needs.
+              Optimized solutions that accelerate processes and enhance
+              productivity for your business.
             </Accordion.Item>
           </Accordion>
           <Accordion>
@@ -77,7 +78,8 @@ export default function WhyChooseUs() {
                 </div>
               }
             >
-              Cutting-edge technology tailored to your business needs.
+              Leveraging worldwide knowledge to deliver innovative and scalable
+              solutions for your needs.
             </Accordion.Item>
           </Accordion>
         </div>

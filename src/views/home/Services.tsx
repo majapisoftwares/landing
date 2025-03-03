@@ -10,19 +10,19 @@ const services = [
   {
     title: "Web & App development",
     description:
-      "We develop digital assets,such as website, microsite and mobile apps",
+      "We develop digital assets,such as website, microsite and mobile apps.",
     icon: <ComputerDesktopIcon />,
   },
   {
     title: "UI/UX Design",
-    description: "Product that have a good appearance can attract new users",
+    description: "Product that have a good appearance can attract new users.",
     icon: <SparklesIcon />,
   },
   {
-    title: "Software development",
+    title: "Blockchain & AI",
     description:
-      "We develop digital assets,such as website, microsite and mobile apps",
-    icon: <Icon icon="nrk:category-active" />,
+      "Harnessing the power of Blockchain and AI to create secure, intelligent, and automated digital solutions.",
+    icon: <Icon icon="icon-park-outline:blockchain" />,
   },
 ];
 

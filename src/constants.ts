@@ -17,3 +17,6 @@ export const WHATSAPP_LINK = "https://wa.me/5516981814643";
 export const LINKEDIN_LINK =
   "https://www.linkedin.com/company/majapi-softwares";
 export const INSTAGRAM_LINK = "https://www.instagram.com/majapisoftwares";
+export const MIYACHE_LINK = "https://miyache.com";
+export const TICKETIS_LINK = "https://ticketis.com.br";
+export const LAPWING_LINK = "https://lapwing.com.br";

@@ -5,7 +5,7 @@ export default function Clients() {
   return (
     <div className="relative">
       <Bg className="absolute left-1/2 h-[832px] w-[1440px] -translate-x-1/2 opacity-20" />
-      <div className="mx-auto relative flex w-full max-w-screen-xl flex-col items-center gap-10 px-4">
+      <div className="relative mx-auto flex w-full max-w-screen-xl flex-col items-center gap-10 px-4">
         <div className="flex flex-col items-center gap-4">
           <div className="bg-gradient-to-br from-zinc-100 to-zinc-400 bg-clip-text font-dm text-3xl font-semibold tracking-[-2.88px] text-transparent md:text-5xl">
             Some of our clients
@@ -25,7 +25,7 @@ export default function Clients() {
               </div>
               <div className="max-w-[280px] font-tight text-zinc-400">
                 We create tools that improve efficiency in transporting and
-                removing patients, ensuring speed and precision in medical care
+                removing patients, ensuring speed and precision in medical care.
               </div>
             </div>
           </div>

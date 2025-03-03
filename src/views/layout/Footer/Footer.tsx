@@ -35,9 +35,6 @@ export default function Footer() {
           </div>
         </div>
         <div className="hidden gap-2 md:flex">
-          <Button href={Routes.Home} variant="text">
-            Home
-          </Button>
           <Button href={Routes.Solutions} variant="text">
             Solutions
           </Button>

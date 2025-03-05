@@ -4,7 +4,7 @@ import Bg from "../layout/Bg";
 export default function Clients() {
   return (
     <div className="relative">
-      <Bg className="absolute left-1/2 h-[832px] w-[1440px] -translate-x-1/2 opacity-20" />
+      <Bg />
       <div className="relative mx-auto flex w-full max-w-screen-xl flex-col items-center gap-10 px-4">
         <div className="flex flex-col items-center gap-4">
           <div className="bg-gradient-to-br from-zinc-100 to-zinc-400 bg-clip-text font-dm text-3xl font-semibold tracking-[-2.88px] text-transparent md:text-5xl">

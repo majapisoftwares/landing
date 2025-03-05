@@ -10,7 +10,7 @@ import { LAPWING_LINK, MIYACHE_LINK, TICKETIS_LINK } from "../../constants";
 export default function Projects() {
   return (
     <div className="relative">
-      <Bg className="absolute left-1/2 h-[832px] w-[1440px] -translate-x-1/2 opacity-20" />
+      <Bg />
       <div className="relative mx-auto flex w-full max-w-screen-xl flex-col gap-10 px-4">
         <div className="flex flex-col items-center gap-4 lg:items-start">
           <div className="bg-gradient-to-br from-zinc-100 to-zinc-400 bg-clip-text text-center font-dm text-3xl font-semibold text-transparent md:text-5xl md:tracking-[-2.88px] lg:text-left">

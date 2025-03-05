@@ -1,10 +1,15 @@
+import clsx from "@italodeandra/ui/utils/clsx";
+
 export default function Bg({ className }: { className?: string }) {
   return (
     <svg
       viewBox="0 0 1440 832"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={className}
+      className={clsx(
+        "absolute h-[832px] w-[1440px] -translate-x-1/2 opacity-20 left-1/2",
+        className,
+      )}
     >
       <g opacity="0.3">
         <path d="M145 613L1299 613" stroke="url(#paint0_linear_741_224)" />

@@ -31,7 +31,7 @@ export default function Sevices() {
 
   return (
     <div className="relative">
-      <Bg className="absolute -top-44 left-1/2 h-[832px] w-[1440px] -translate-x-1/2 opacity-20" />
+      <Bg className="-top-44" />
       <div className="relative mx-auto flex w-full max-w-screen-xl flex-col items-center gap-10 px-4">
         <div className="flex flex-col gap-4 md:items-center">
           <div className="bg-gradient-to-br from-zinc-100 to-zinc-400 bg-clip-text text-center font-dm text-3xl font-semibold text-transparent md:text-5xl lg:text-left lg:tracking-[-2.88px]">

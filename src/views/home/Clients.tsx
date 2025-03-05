@@ -10,7 +10,7 @@ export default function Clients() {
           <div className="bg-gradient-to-br from-zinc-100 to-zinc-400 bg-clip-text font-dm text-3xl font-semibold tracking-[-2.88px] text-transparent md:text-5xl">
             Some of our clients
           </div>
-          <div className="max-w-[550px] text-center font-dm leading-8 tracking-[-1.44px] text-zinc-400 md:text-2xl">
+          <div className="max-w-[550px] text-center font-dm text-lg leading-8 tracking-[-1.44px] text-zinc-400 md:text-2xl">
             Trusted by businesses across Brazil, the US, and Turkey.
           </div>
         </div>

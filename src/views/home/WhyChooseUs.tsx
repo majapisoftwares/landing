@@ -9,11 +9,11 @@ export default function WhyChooseUs() {
   return (
     <div className="relative z-10 mx-auto flex w-full max-w-screen-xl flex-col gap-10 px-4">
       <div className="flex flex-col items-center gap-12 lg:flex-row lg:gap-4">
-        <div className="flex w-full flex-col items-center justify-center gap-4 md:gap-10 lg:items-start">
-          <div className="bg-gradient-to-br from-zinc-100 to-zinc-400 bg-clip-text text-center font-dm text-3xl font-semibold text-transparent lg:text-5xl md:tracking-[-2.88px] lg:text-left">
+        <div className="flex w-full flex-col items-center justify-center gap-4 lg:items-start lg:gap-10">
+          <div className="bg-gradient-to-br from-zinc-100 to-zinc-400 bg-clip-text text-center font-dm text-3xl font-semibold text-transparent md:text-5xl md:tracking-[-2.88px] lg:text-left">
             Why choose us
           </div>
-          <div className="max-w-[506px] text-center font-dm text-zinc-400 lg:text-2xl lg:leading-8 lg:tracking-[-1.44px] lg:text-left">
+          <div className="max-w-[506px] text-center font-dm text-lg text-zinc-400 md:text-2xl lg:text-left lg:leading-8 lg:tracking-[-1.44px]">
             We combine innovation, agility, and expertise to deliver custom,
             high-performance solutions. With a global presence in Brazil, the
             US, and Turkey, we ensure cutting-edge technology, dedicated
@@ -31,7 +31,7 @@ export default function WhyChooseUs() {
             </Button>
           </div>
         </div>
-        <div className="flex flex-col gap-4 w-full lg:items-end">
+        <div className="flex w-full flex-col gap-4 lg:items-end">
           <Accordion>
             <Accordion.Item
               className="rounded-lg border border-zinc-800 dark:bg-zinc-900 lg:mr-16"

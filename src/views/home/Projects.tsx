@@ -12,11 +12,11 @@ export default function Projects() {
     <div className="relative">
       <Bg className="absolute left-1/2 h-[832px] w-[1440px] -translate-x-1/2 opacity-20" />
       <div className="relative mx-auto flex w-full max-w-screen-xl flex-col gap-10 px-4">
-        <div className="flex flex-col gap-4">
-          <div className="bg-gradient-to-br from-zinc-100 to-zinc-400 bg-clip-text font-dm text-3xl font-semibold text-transparent lg:text-5xl lg:tracking-[-2.88px]">
+        <div className="flex flex-col items-center gap-4 lg:items-start">
+          <div className="bg-gradient-to-br from-zinc-100 to-zinc-400 bg-clip-text text-center font-dm text-3xl font-semibold text-transparent md:text-5xl md:tracking-[-2.88px] lg:text-left">
             Some of our projects
           </div>
-          <div className="max-w-[600px] font-dm text-zinc-500 lg:text-2xl md:leading-8 lg:tracking-[-1.44px]">
+          <div className="max-w-[600px] text-center font-dm text-lg text-zinc-400 md:text-2xl md:leading-8 md:tracking-[-1.44px] lg:text-left">
             Some of the solutions we developed, combining design, technology and
             innovation to create incredible experiences.
           </div>

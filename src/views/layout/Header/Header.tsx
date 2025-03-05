@@ -8,7 +8,7 @@ import DropdownMenu from "@italodeandra/ui/components/DropdownMenu";
 export default function Header() {
   return (
     <div className="fixed z-20 flex w-full border-b border-zinc-700 backdrop-blur-lg">
-      <div className="mx-auto flex w-full max-w-screen-xl justify-between px-4 py-4">
+      <div className="mx-auto flex w-full max-w-screen-xl justify-between p-4">
         <Link href="/" className="flex items-center">
           <Logo className="w-32" />
         </Link>
@@ -46,7 +46,6 @@ export default function Header() {
               </Button>
             </DropdownMenu.Trigger>
             <DropdownMenu.Content>
-              <DropdownMenu.Label></DropdownMenu.Label>
               <DropdownMenu.Item href={Routes.Home}>Home</DropdownMenu.Item>
               <DropdownMenu.Item href={Routes.Solutions}>
                 Solutions

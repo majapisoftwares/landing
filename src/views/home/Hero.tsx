@@ -21,7 +21,7 @@ export default function Hero() {
           variant="filled"
           target="_blank"
           href={WHATSAPP_LINK}
-          className="rounded-[50px] border border-zinc-600 bg-zinc-100 px-8 py-3 font-tight text-zinc-800"
+          className="rounded-[50px] border border-zinc-600 bg-zinc-100 px-8 py-3 font-dm text-base text-zinc-800"
           trailing={<ArrowLongRightIcon className="h-6 w-6" />}
         >
           Schedule a meeting

@@ -24,18 +24,18 @@ export default function WhyChooseUs() {
               variant="filled"
               href={WHATSAPP_LINK}
               target="_blank"
-              className="rounded-[50px] border border-zinc-500 bg-zinc-100 px-8 py-3 font-dm text-zinc-800"
+              className="rounded-[50px] border border-zinc-500 bg-zinc-100 px-8 py-3 font-dm text-base text-zinc-800"
               trailing={<ArrowLongRightIcon className="h-6 w-6" />}
             >
               Schedule a meeting
             </Button>
           </div>
         </div>
-        <div className="flex w-full flex-col gap-4 lg:items-end">
+        <div className="flex w-full flex-col gap-4">
           <Accordion>
             <Accordion.Item
-              className="rounded-lg border border-zinc-800 dark:bg-zinc-900 lg:mr-16"
-              triggerClassName="gap-2 justify-center items-center md:flex-row dark:bg-zinc-900 dark:hover:bg-zinc-950/30 font-tight text-lg lg:text-2xl px-8 py-5"
+              className="rounded-lg border border-zinc-800 dark:bg-zinc-900 lg:mr-36"
+              triggerClassName="gap-2 justify-center items-center dark:bg-zinc-900 dark:hover:bg-zinc-950/30 font-tight text-lg lg:text-2xl px-8 py-5"
               contentClassName="text-center text-zinc-400 md:text-lg font-dm"
               title={
                 <div className="flex gap-3">
@@ -50,8 +50,8 @@ export default function WhyChooseUs() {
           </Accordion>
           <Accordion>
             <Accordion.Item
-              className="rounded-lg border border-zinc-800 dark:bg-zinc-900"
-              triggerClassName="gap-2 justify-center items-center md:flex-row dark:bg-zinc-900 dark:hover:bg-zinc-950/30 font-tight text-lg lg:text-2xl px-8 py-5"
+              className="rounded-lg border border-zinc-800 dark:bg-zinc-900 lg:ml-36"
+              triggerClassName="gap-2 justify-center items-center dark:bg-zinc-900 dark:hover:bg-zinc-950/30 font-tight text-lg lg:text-2xl px-8 py-5"
               contentClassName="text-center text-zinc-400 md:text-lg font-dm"
               title={
                 <div className="flex gap-3">
@@ -68,8 +68,8 @@ export default function WhyChooseUs() {
           </Accordion>
           <Accordion>
             <Accordion.Item
-              className="rounded-lg border border-zinc-800 dark:bg-zinc-900 lg:mr-16"
-              triggerClassName="gap-2 justify-center items-center md:flex-row dark:bg-zinc-900 dark:hover:bg-zinc-950/30 font-tight text-lg lg:text-2xl px-8 py-5"
+              className="rounded-lg border border-zinc-800 dark:bg-zinc-900 lg:mr-36"
+              triggerClassName="gap-2 justify-center items-center dark:bg-zinc-900 dark:hover:bg-zinc-950/30 font-tight text-lg lg:text-2xl px-8 py-5"
               contentClassName="text-center text-zinc-400 md:text-lg font-dm"
               title={
                 <div className="flex gap-3">

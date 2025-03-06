@@ -8,7 +8,7 @@ import { WHATSAPP_LINK } from "../../constants";
 export default function WhyChooseUs() {
   return (
     <div className="relative z-10 mx-auto flex w-full max-w-screen-xl flex-col gap-10 px-4">
-      <div className="flex flex-col items-center gap-12 lg:flex-row lg:gap-4">
+      <div className="flex flex-col gap-12 lg:flex-row lg:gap-4">
         <div className="flex w-full flex-col items-center justify-center gap-4 lg:items-start lg:gap-10">
           <div className="bg-gradient-to-br from-zinc-100 to-zinc-400 bg-clip-text text-center font-dm text-3xl font-semibold text-transparent md:text-5xl md:tracking-[-2.88px] lg:text-left">
             Why choose us
@@ -31,7 +31,7 @@ export default function WhyChooseUs() {
             </Button>
           </div>
         </div>
-        <div className="flex w-full flex-col gap-4">
+        <div className="flex w-full flex-col lg:pt-12 gap-4">
           <Accordion>
             <Accordion.Item
               className="rounded-lg border border-zinc-800 dark:bg-zinc-900 lg:mx-auto lg:w-[380px]"

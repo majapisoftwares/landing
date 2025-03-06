@@ -3,9 +3,8 @@ import WhyChooseUs from "./home/WhyChooseUs";
 import Projects from "./home/Projects";
 import Clients from "./home/Clients";
 import Contact from "./home/Contact";
-import dynamic from "next/dynamic";
+import Services from "./home/Services";
 import Flare from "./layout/Flare";
-const Services = dynamic(() => import("./home/Services"), { ssr: false });
 
 export function Home() {
   return (

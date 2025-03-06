@@ -2,7 +2,6 @@ import { ComputerDesktopIcon } from "@heroicons/react/20/solid";
 import { SparklesIcon } from "@heroicons/react/24/outline";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import Accordion from "@italodeandra/ui/components/Accordion";
-import useMediaQuery from "@italodeandra/ui/hooks/useMediaQuery";
 import { cloneElement } from "react";
 import Bg from "../layout/Bg";
 
@@ -27,8 +26,6 @@ const services = [
 ];
 
 export default function Sevices() {
-  const isMobile = useMediaQuery("(max-width: 1024px)");
-
   return (
     <div className="relative">
       <Bg className="-top-44" />
@@ -42,54 +39,51 @@ export default function Sevices() {
             meet your needs.
           </div>
         </div>
-        {isMobile ? (
-          <div className="flex w-full flex-col gap-4">
-            {services.map((service) => (
-              <Accordion key={service.title}>
-                <Accordion.Item
-                  className="rounded-lg border border-zinc-800 dark:bg-zinc-900"
-                  triggerClassName="gap-2 justify-center items-center md:flex-row dark:bg-zinc-900 dark:hover:bg-zinc-950/30 font-tight text-lg lg:text-2xl px-8 py-5"
-                  contentClassName="text-center text-zinc-400 font-dm"
-                  title={
-                    <div className="flex items-center gap-3">
-                      {service.title}
-                      <div className="rounded-full bg-white p-2">
-                        {cloneElement(service.icon, {
-                          className: "h-5 w-5 text-black",
-                        })}
-                      </div>
-                    </div>
-                  }
-                >
-                  {service.description}
-                </Accordion.Item>
-              </Accordion>
-            ))}
-          </div>
-        ) : (
-          <div className="flex w-full justify-center gap-8">
-            {services.map((service) => (
-              <div
-                key={service.title}
-                className="flex h-60 max-w-[340px] flex-col items-center justify-center gap-4 rounded-lg border border-zinc-800 bg-zinc-900 px-4"
-              >
-                <div className="rounded-full bg-white p-4">
-                  {cloneElement(service.icon, {
-                    className: "h-8 w-8 text-black",
-                  })}
-                </div>
-                <div className="flex flex-col gap-2 text-center">
-                  <div className="font-tight text-2xl font-semibold text-white">
+        <div className="flex w-full flex-col gap-4 lg:hidden">
+          {services.map((service) => (
+            <Accordion key={service.title}>
+              <Accordion.Item
+                className="rounded-lg border border-zinc-800 dark:bg-zinc-900"
+                triggerClassName="gap-2 justify-center items-center md:flex-row dark:bg-zinc-900 dark:hover:bg-zinc-950/30 font-tight text-lg lg:text-2xl px-8 py-5"
+                contentClassName="text-center text-zinc-400 font-dm"
+                title={
+                  <div className="flex items-center gap-3">
                     {service.title}
+                    <div className="rounded-full bg-white p-2">
+                      {cloneElement(service.icon, {
+                        className: "h-5 w-5 text-black",
+                      })}
+                    </div>
                   </div>
-                  <div className="font-tight text-zinc-400">
-                    {service.description}
-                  </div>
+                }
+              >
+                {service.description}
+              </Accordion.Item>
+            </Accordion>
+          ))}
+        </div>
+        <div className="hidden w-full justify-center gap-8 lg:flex">
+          {services.map((service) => (
+            <div
+              key={service.title}
+              className="flex h-60 max-w-[340px] flex-col items-center justify-center gap-4 rounded-lg border border-zinc-800 bg-zinc-900 px-4"
+            >
+              <div className="rounded-full bg-white p-4">
+                {cloneElement(service.icon, {
+                  className: "h-8 w-8 text-black",
+                })}
+              </div>
+              <div className="flex flex-col gap-2 text-center">
+                <div className="font-tight text-2xl font-semibold text-white">
+                  {service.title}
+                </div>
+                <div className="font-tight text-zinc-400">
+                  {service.description}
                 </div>
               </div>
-            ))}
-          </div>
-        )}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

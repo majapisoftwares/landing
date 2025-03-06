@@ -34,7 +34,7 @@ export default function WhyChooseUs() {
         <div className="flex w-full flex-col gap-4">
           <Accordion>
             <Accordion.Item
-              className="rounded-lg border border-zinc-800 dark:bg-zinc-900 lg:mr-36"
+              className="rounded-lg border border-zinc-800 dark:bg-zinc-900 lg:mx-auto lg:w-[380px]"
               triggerClassName="gap-2 justify-center items-center dark:bg-zinc-900 dark:hover:bg-zinc-950/30 font-tight text-lg lg:text-2xl px-8 py-5"
               contentClassName="text-center text-zinc-400 md:text-lg font-dm"
               title={
@@ -50,7 +50,7 @@ export default function WhyChooseUs() {
           </Accordion>
           <Accordion>
             <Accordion.Item
-              className="rounded-lg border border-zinc-800 dark:bg-zinc-900 lg:ml-36"
+              className="rounded-lg border border-zinc-800 dark:bg-zinc-900 lg:ml-auto lg:w-[380px]"
               triggerClassName="gap-2 justify-center items-center dark:bg-zinc-900 dark:hover:bg-zinc-950/30 font-tight text-lg lg:text-2xl px-8 py-5"
               contentClassName="text-center text-zinc-400 md:text-lg font-dm"
               title={
@@ -68,7 +68,7 @@ export default function WhyChooseUs() {
           </Accordion>
           <Accordion>
             <Accordion.Item
-              className="rounded-lg border border-zinc-800 dark:bg-zinc-900 lg:mr-36"
+              className="rounded-lg border border-zinc-800 dark:bg-zinc-900 lg:mx-auto lg:w-[380px]"
               triggerClassName="gap-2 justify-center items-center dark:bg-zinc-900 dark:hover:bg-zinc-950/30 font-tight text-lg lg:text-2xl px-8 py-5"
               contentClassName="text-center text-zinc-400 md:text-lg font-dm"
               title={

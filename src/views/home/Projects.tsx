@@ -22,7 +22,7 @@ export default function Projects() {
           </div>
         </div>
         <div className="flex flex-col gap-6 md:flex-row">
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col w-full gap-6">
             <div className="group relative overflow-hidden rounded-3xl">
               <Image
                 src={miyache}
@@ -71,7 +71,7 @@ export default function Projects() {
               </div>
             </div>
           </div>
-          <div className="flex justify-center">
+          <div className="flex w-full justify-center">
             <div className="group relative max-h-[221px] w-full overflow-hidden rounded-3xl md:max-h-max">
               <Image
                 src={lapwing}

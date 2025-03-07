@@ -21,8 +21,8 @@ export default function NavigationDrawer() {
       </Button>
 
       <motion.div
-        initial={{ x: "0%" }}
-        animate={{ x: isOpen ? "100%" : "0" }}
+        initial={{ x: "100%" }}
+        animate={{ x: isOpen ? "0%" : "100%" }}
         transition={{ type: "tween", duration: 0.3 }}
         className="fixed left-0 top-0 z-50 h-screen w-screen bg-zinc-900 p-4 shadow-lg"
       >

@@ -10,7 +10,7 @@ export default function Clients() {
           <div className="bg-gradient-to-br from-zinc-100 to-zinc-400 bg-clip-text font-dm text-3xl font-semibold tracking-[-2.88px] text-transparent md:text-5xl">
             Some of our clients
           </div>
-          <div className="max-w-[550px] text-center font-dm text-lg leading-8 tracking-[-1.44px] text-zinc-400 md:text-2xl">
+          <div className="max-w-[550px] text-center font-dm text-lg leading-8 text-zinc-400 md:text-xl">
             Trusted by businesses across Brazil, the US, and Turkey.
           </div>
         </div>
@@ -23,7 +23,7 @@ export default function Clients() {
               <div className="font-tight text-2xl font-semibold text-white">
                 Health care
               </div>
-              <div className="max-w-[280px] font-dm text-zinc-400">
+              <div className="max-w-[280px] font-dm text-lg text-zinc-400">
                 We create tools that improve efficiency in transporting and
                 removing patients, ensuring speed and precision in medical care.
               </div>
@@ -40,7 +40,7 @@ export default function Clients() {
               <div className="font-tight text-2xl font-semibold text-white">
                 Consortium
               </div>
-              <div className="max-w-[280px] font-dm text-zinc-400">
+              <div className="max-w-[280px] font-dm text-lg text-zinc-400">
                 Our Warranty Manager optimizes the control and management of
                 warranties, ensuring compliance, deadlines and efficiency in the
                 administration of contracts and processes.
@@ -58,7 +58,7 @@ export default function Clients() {
               <div className="font-tight text-2xl font-semibold text-white">
                 Automation
               </div>
-              <div className="max-w-[280px] font-dm text-zinc-400">
+              <div className="max-w-[280px] font-dm text-lg text-zinc-400">
                 Integration and optimization services for Facebook campaigns,
                 allowing your brand to reach the right audience effective way.
               </div>

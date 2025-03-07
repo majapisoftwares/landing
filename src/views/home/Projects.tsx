@@ -16,7 +16,7 @@ export default function Projects() {
           <div className="bg-gradient-to-br from-zinc-100 to-zinc-400 bg-clip-text text-center font-dm text-3xl font-semibold text-transparent md:text-5xl md:tracking-[-2.88px] lg:text-left">
             Some of our projects
           </div>
-          <div className="max-w-[670px] text-center font-dm text-lg text-zinc-400 md:text-2xl md:leading-8 lg:text-left">
+          <div className="max-w-[670px] text-center font-dm text-lg text-zinc-400 md:text-xl md:leading-8 lg:text-left">
             Some of the solutions we developed, combining design, technology and
             innovation to create incredible experiences.
           </div>

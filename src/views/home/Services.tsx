@@ -34,7 +34,7 @@ export default function Sevices() {
           <div className="bg-gradient-to-br from-zinc-100 to-zinc-400 bg-clip-text text-center font-dm text-3xl font-semibold text-transparent md:text-5xl lg:text-left lg:tracking-[-2.88px]">
             Our services
           </div>
-          <div className="max-w-[500px] text-center font-dm text-lg text-zinc-400 md:text-2xl lg:leading-8">
+          <div className="max-w-[500px] text-center font-dm text-lg text-zinc-400 md:text-xl lg:leading-8">
             From design to programming, we offer agile and efficient services to
             meet your needs.
           </div>
@@ -77,7 +77,7 @@ export default function Sevices() {
                 <div className="font-tight text-2xl font-semibold text-white">
                   {service.title}
                 </div>
-                <div className="font-dm text-zinc-400">
+                <div className="font-dm text-lg text-zinc-400">
                   {service.description}
                 </div>
               </div>

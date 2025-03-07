@@ -13,7 +13,7 @@ export default function WhyChooseUs() {
           <div className="bg-gradient-to-br from-zinc-100 to-zinc-400 bg-clip-text text-center font-dm text-3xl font-semibold text-transparent md:text-5xl md:tracking-[-2.88px] lg:text-left">
             Why choose us
           </div>
-          <div className="max-w-[506px] text-center font-dm text-lg text-zinc-400 md:text-2xl lg:text-left lg:leading-8">
+          <div className="max-w-[506px] text-center font-dm text-xl text-zinc-400  lg:text-left ">
             We combine innovation, agility, and expertise to deliver custom,
             high-performance solutions. With a global presence in Brazil, the
             US, and Turkey, we ensure cutting-edge technology, dedicated

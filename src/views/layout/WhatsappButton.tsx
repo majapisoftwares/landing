@@ -7,8 +7,8 @@ export default function WhatsappButton() {
     <motion.div
       className="fixed bottom-4 right-4 z-50"
       animate={{
-        scale: [1, 1.2, 1], // Aumenta e diminui de tamanho
-        opacity: [0.6, 1], // Pulsa a opacidade
+        scale: [1, 1.2, 1],
+        opacity: [0.6, 1], 
       }}
       transition={{
         duration: 1.5,

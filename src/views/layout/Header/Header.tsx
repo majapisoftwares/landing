@@ -1,13 +1,12 @@
 import Button from "@italodeandra/ui/components/Button";
 import Link from "next/link";
 import Logo from "../../Logo";
-import { Icon } from "@iconify/react";
 import Routes from "../../../routes";
-import DropdownMenu from "@italodeandra/ui/components/DropdownMenu";
+import NavigationDrawer from "./NavigationDrawer";
 
 export default function Header() {
   return (
-    <div className="fixed z-20 flex w-full border-b border-zinc-700 backdrop-blur-lg">
+    <div className="fixed z-50 flex w-full border-b border-zinc-700 backdrop-blur-lg">
       <div className="mx-auto flex w-full max-w-screen-xl justify-between p-4">
         <Link href="/" className="flex items-center">
           <Logo className="w-32" />
@@ -36,26 +35,7 @@ export default function Header() {
           </Button>
         </div>
         <div className="md:hidden">
-          <DropdownMenu.Root>
-            <DropdownMenu.Trigger asChild>
-              <Button
-                icon
-                className="border-none focus:!ring-0 focus:!ring-offset-0 dark:hover:border-none"
-              >
-                <Icon icon="mdi:menu" className="h-7 w-7" />
-              </Button>
-            </DropdownMenu.Trigger>
-            <DropdownMenu.Content>
-              <DropdownMenu.Item href={Routes.Home}>Home</DropdownMenu.Item>
-              <DropdownMenu.Item href={Routes.Solutions}>
-                Solutions
-              </DropdownMenu.Item>
-              <DropdownMenu.Item href={Routes.About}>About</DropdownMenu.Item>
-              <DropdownMenu.Item href={Routes.Contact}>
-                Contact Us
-              </DropdownMenu.Item>
-            </DropdownMenu.Content>
-          </DropdownMenu.Root>
+          <NavigationDrawer />
         </div>
       </div>
     </div>

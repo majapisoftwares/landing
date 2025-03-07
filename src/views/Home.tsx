@@ -10,7 +10,7 @@ export function Home() {
   return (
     <div className="relative overflow-x-hidden bg-zinc-900/80 pt-20">
       <Flare />
-      <div className="relative z-10 flex w-full flex-col gap-20 pt-20 lg:gap-40">
+      <div className="relative flex w-full flex-col gap-20 pt-20 lg:gap-40">
         <Hero />
         <WhyChooseUs />
         <Services />

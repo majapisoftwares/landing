@@ -23,7 +23,7 @@ export default function Clients() {
               <div className="font-tight text-2xl font-semibold text-white">
                 Health care
               </div>
-              <div className="max-w-[280px] font-tight text-zinc-400">
+              <div className="max-w-[280px] font-dm text-zinc-400">
                 We create tools that improve efficiency in transporting and
                 removing patients, ensuring speed and precision in medical care.
               </div>
@@ -40,7 +40,7 @@ export default function Clients() {
               <div className="font-tight text-2xl font-semibold text-white">
                 Consortium
               </div>
-              <div className="max-w-[280px] font-tight text-zinc-400">
+              <div className="max-w-[280px] font-dm text-zinc-400">
                 Our Warranty Manager optimizes the control and management of
                 warranties, ensuring compliance, deadlines and efficiency in the
                 administration of contracts and processes.
@@ -58,7 +58,7 @@ export default function Clients() {
               <div className="font-tight text-2xl font-semibold text-white">
                 Automation
               </div>
-              <div className="max-w-[280px] font-tight text-zinc-400">
+              <div className="max-w-[280px] font-dm text-zinc-400">
                 Integration and optimization services for Facebook campaigns,
                 allowing your brand to reach the right audience effective way.
               </div>

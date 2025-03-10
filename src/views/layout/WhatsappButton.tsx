@@ -4,21 +4,61 @@ import { motion } from "framer-motion";
 
 export default function WhatsappButton() {
   return (
-    <motion.div
-      className="fixed bottom-4 right-4 z-50"
-      animate={{
-        scale: [1, 1.2, 1],
-        opacity: [0.6, 1], 
-      }}
-      transition={{
-        duration: 1.5,
-        repeat: Infinity,
-        repeatType: "reverse",
-      }}
-    >
-      <Button size="xl" variant="text" icon className="rounded-full">
-        <Icon icon="logos:whatsapp-icon" className="h-10 w-10" />
-      </Button>
-    </motion.div>
+    <div className="fixed bottom-4 right-4 z-50">
+      <div className="relative flex h-20 w-20 items-center justify-center">
+        <motion.div
+          animate={{
+            scale: [0.3, 1.4],
+            opacity: [0, 0.4, 0],
+            filter: ["blur(0px)", "blur(4px)"],
+          }}
+          transition={{
+            duration: 2.5,
+            repeat: Infinity,
+            repeatType: "loop",
+            ease: "linear",
+          }}
+          className="absolute inset-0 rounded-full bg-zinc-700/80 backdrop-blur-lg"
+        />
+        <motion.div
+          animate={{
+            scale: [0.3, 1.4],
+            opacity: [0, 0.4, 0],
+            filter: ["blur(0px)", "blur(4px)"],
+          }}
+          transition={{
+            duration: 2.5,
+            repeat: Infinity,
+            repeatType: "loop",
+            ease: "linear",
+            delay: 0.5,
+          }}
+          className="absolute inset-0 rounded-full bg-zinc-700/80 backdrop-blur-lg"
+        />
+                <motion.div
+          animate={{
+            scale: [0.3, 1.4],
+            opacity: [0, 0.4, 0],
+            filter: ["blur(0px)", "blur(4px)"],
+          }}
+          transition={{
+            duration: 2.5,
+            repeat: Infinity,
+            repeatType: "loop",
+            ease: "linear",
+            delay: 1,
+          }}
+          className="absolute inset-0 rounded-full bg-zinc-700/80 backdrop-blur-lg"
+        />
+        <Button
+          size="xl"
+          variant="text"
+          icon
+          className="z-50 rounded-full dark:hover:bg-transparent dark:active:border-transparent"
+        >
+          <Icon icon="logos:whatsapp-icon" className="h-10 w-10" />
+        </Button>
+      </div>
+    </div>
   );
 }

@@ -5,6 +5,7 @@ import Accordion from "@italodeandra/ui/components/Accordion";
 import useMediaQuery from "@italodeandra/ui/hooks/useMediaQuery";
 import { cloneElement } from "react";
 import Bg from "../layout/Bg";
+import { motion, useTime, useTransform } from "framer-motion";
 
 const services = [
   {
@@ -28,6 +29,13 @@ const services = [
 
 export default function Sevices() {
   const isMobile = useMediaQuery("(max-width: 1024px)");
+  const time = useTime();
+  const rotate = useTransform(time, [0, 1300], [0, 360], {
+    clamp: false,
+  });
+  const rotatingBg = useTransform(rotate, (r) => {
+    return `conic-gradient(from ${r}deg, #27272a, #18181b 20%)`;
+  });
 
   return (
     <div className="relative">
@@ -69,23 +77,28 @@ export default function Sevices() {
         ) : (
           <div className="flex w-full justify-center gap-8">
             {services.map((service) => (
-              <div
-                key={service.title}
-                className="flex h-60 max-w-[340px] flex-col items-center justify-center gap-4 rounded-lg border border-zinc-800 bg-zinc-900 px-4"
-              >
-                <div className="rounded-full bg-white p-4">
-                  {cloneElement(service.icon, {
-                    className: "h-8 w-8 text-black",
-                  })}
-                </div>
-                <div className="flex flex-col gap-2 text-center">
-                  <div className="font-tight text-2xl font-semibold text-white">
-                    {service.title}
+              <div className="relative" key={service.title}>
+                <div className="relative z-10 flex h-60 max-w-[340px] flex-col items-center justify-center gap-4 rounded-lg bg-zinc-900 px-4">
+                  <div className="rounded-full bg-white p-4">
+                    {cloneElement(service.icon, {
+                      className: "h-8 w-8 text-black",
+                    })}
                   </div>
-                  <div className="font-tight text-zinc-400">
-                    {service.description}
+                  <div className="flex flex-col gap-2 text-center">
+                    <div className="font-tight text-2xl font-semibold text-white">
+                      {service.title}
+                    </div>
+                    <div className="font-tight text-zinc-400">
+                      {service.description}
+                    </div>
                   </div>
                 </div>
+                <motion.div
+                  style={{
+                    background: rotatingBg,
+                  }}
+                  className="absolute -inset-[2px] rounded-lg"
+                />
               </div>
             ))}
           </div>

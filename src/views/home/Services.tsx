@@ -34,7 +34,7 @@ export default function Sevices() {
     clamp: false,
   });
   const rotatingBg = useTransform(rotate, (r) => {
-    return `conic-gradient(from ${r}deg, #27272a, #18181b 20%)`;
+    return `conic-gradient(from ${r}deg, #18181b 90%, #27272a 10% )`;
   });
 
   return (

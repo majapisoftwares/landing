@@ -12,8 +12,8 @@ export default function Hero() {
           <div className="bg-gradient-to-br from-zinc-100 to-zinc-400 bg-clip-text py-2 text-center font-dm text-5xl font-semibold tracking-[-1.92px] text-transparent md:max-w-[670px] md:text-7xl lg:max-w-[767px] lg:text-[90px] lg:leading-[98px] lg:tracking-[-5.4px]">
             Transforming ideas into digital solutions
           </div>
-          <div className="max-w-[400px] text-center font-dm text-lg text-zinc-400 md:max-w-[600px] md:text-2xl md:leading-8">
-            Innovation, agility and efficiency to take your comp to the next
+          <div className="max-w-[400px] text-center font-dm text-lg text-zinc-400 md:max-w-[510px] md:text-xl md:leading-8">
+            Innovation, agility and efficiency to take your company to the next
             level.
           </div>
         </div>

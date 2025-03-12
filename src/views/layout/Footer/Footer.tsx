@@ -15,7 +15,7 @@ export default function Footer() {
           </Link>
           <div className="flex flex-col items-center gap-2 md:items-start">
             <div className="text-sm font-normal tracking-[-0.1px]">
-              © {new Date().getFullYear()} Majapi Inc. All rights reserved.
+              © {new Date().getFullYear()} Majapi Softwares. All rights reserved.
             </div>
             <div className="text-sm font-normal tracking-[-0.1px]">
               <Link

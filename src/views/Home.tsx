@@ -19,13 +19,11 @@ export function Home() {
           <WhyChooseUs />
         </Reveal>
         <Services />
-        <Reveal delay={0.25}>
+        <Reveal delay={0.75}>
           <Projects />
         </Reveal>
-        <Reveal delay={0.25}>
-          <Clients />
-        </Reveal>
-        <Reveal delay={0.25}>
+        <Clients />
+        <Reveal delay={0.75}>
           <Contact />
         </Reveal>
         <div className="h-96 bg-gradient-to-t from-zinc-900 from-30% to-zinc-900/0" />

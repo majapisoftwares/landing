@@ -4,7 +4,7 @@ import { motion, useTime, useTransform } from "framer-motion";
 
 export default function Contact() {
   const time = useTime();
-  const rotate = useTransform(time, [0, 1500], [0, 360], {
+  const rotate = useTransform(time, [0, 2500], [0, 360], {
     clamp: false,
   });
   const rotatingBg = useTransform(rotate, (r) => {

@@ -4,9 +4,11 @@ import { motion, useAnimation, useInView } from "framer-motion";
 export default function Reveal({
   children,
   delay,
+  className,
 }: {
   children: ReactNode;
   delay?: number;
+  className?: string;
 }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
@@ -19,6 +21,7 @@ export default function Reveal({
   }, [isInView, mainControls]);
   return (
     <motion.div
+      className={className}
       ref={ref}
       variants={{
         hidden: { opacity: 0, y: 75 },

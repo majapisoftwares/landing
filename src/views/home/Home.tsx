@@ -1,11 +1,11 @@
-import Hero from "./home/Hero";
-import WhyChooseUs from "./home/WhyChooseUs";
-import Projects from "./home/Projects";
-import Clients from "./home/Clients";
-import Contact from "./home/Contact";
-import Services from "./home/Services";
-import Flare from "./layout/Flare";
-import Reveal from "./home/Reveal";
+import Hero from "./Hero";
+import WhyChooseUs from "./WhyChooseUs";
+import Projects from "./Projects";
+import Clients from "./Clients";
+import Contact from "./Contact";
+import Services from "./Services";
+import Flare from "../layout/Flare";
+import Reveal from "./Reveal";
 
 export function Home() {
   return (

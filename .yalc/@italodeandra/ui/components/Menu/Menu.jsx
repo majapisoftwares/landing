@@ -1,4 +1,4 @@
-import { cloneElement, forwardRef, Fragment, } from "react";
+import { cloneElement, Fragment, } from "react";
 import { Menu as HuiMenu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import clsx from "../../utils/clsx";
@@ -20,14 +20,14 @@ const Item = function MenuItem({ className, icon, children, ...props }) {
         </UnstyledButton>)}
     </HuiMenu.Item>);
 };
-const Label = forwardRef(function MenuLabel(props, ref) {
-    return (<Text ref={ref} {...props} variant="label" className={clsx("w-full text-left", "block px-4 py-2 text-sm", props.className)}/>);
-});
-const Menu = forwardRef(function Menu({ className, iconClassName, position = "right", children, label, button, buttonProps, unmount, menuItemsClassName, ...props }, ref) {
+const Label = function MenuLabel(props) {
+    return (<Text {...props} variant="label" className={clsx("w-full text-left", "block px-4 py-2 text-sm", props.className)}/>);
+};
+const Menu = function Menu({ className, iconClassName, position = "right", children, label, button, buttonProps, unmount, menuItemsClassName, ...props }) {
     useMount(() => {
         console.warn("<Menu> was deprecated and should be replaced with <DropdownMenu>");
     });
-    return (<HuiMenu as="div" className={clsx("relative inline-block text-left", className)} ref={ref} {...props}>
+    return (<HuiMenu as="div" className={clsx("relative inline-block text-left", className)} {...props}>
       <div>
         {button ? (<HuiMenu.Button as={Fragment}>{button}</HuiMenu.Button>) : (<HuiMenu.Button 
         /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
@@ -50,5 +50,5 @@ const Menu = forwardRef(function Menu({ className, iconClassName, position = "ri
         </HuiMenu.Items>
       </Transition>
     </HuiMenu>);
-});
+};
 export default Object.assign(Menu, { Label, Item });

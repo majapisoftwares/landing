@@ -1,15 +1,13 @@
-import Header from "./Header/Header";
 import { ReactNode } from "react";
-import NavigationDrawer from "./Header/NavigationDrawer";
+import Header from "./Header/Header";
+import Footer from "./Footer/Footer";
 
 export default function getLayout(children: ReactNode) {
   return (
     <>
       <Header />
-      <NavigationDrawer>
-        <div className="h-16" />
-        {children}
-      </NavigationDrawer>
+      {children}
+      <Footer />
     </>
   );
 }

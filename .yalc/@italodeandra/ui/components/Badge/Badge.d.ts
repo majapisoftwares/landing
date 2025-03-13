@@ -29,7 +29,7 @@ declare const sizeMap: {
         lg: string;
     };
 };
-declare const _default: import("react").ForwardRefExoticComponent<{
+declare function Badge({ color, size, className, children, onActionClick, href, shallow, onClick, ...props }: {
     color?: keyof typeof colorMap;
     size?: keyof (typeof sizeMap)["badge"];
     className?: string;
@@ -38,5 +38,5 @@ declare const _default: import("react").ForwardRefExoticComponent<{
     href?: string;
     shallow?: boolean;
     onClick?: () => void;
-} & import("react").RefAttributes<HTMLSpanElement>>;
-export default _default;
+}): import("react").JSX.Element;
+export default Badge;

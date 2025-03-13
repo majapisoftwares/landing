@@ -1,4 +1,4 @@
-import { ComponentPropsWithRef, ForwardedRef } from "react";
+import { ComponentPropsWithRef, ReactNode } from "react";
 import { InputProps } from "../Input";
 import { FileSelectProps } from "../FileSelect";
 export type FileFile = {
@@ -18,7 +18,7 @@ export type FileUrl = {
     size: number;
 };
 export type FileInputFile = FileFile | FileUrl;
-declare function FileInput({ error, className, helpText, onChange, name, limit, label, id, required, onMouseOver, onMouseOut, readOnly, value, emptyText, downloadText, openText, preview, asyncUpload, onRejectFiles, loading, maxConcurrentUploads, ...props }: Pick<InputProps<false>, "error" | "className" | "helpText" | "name" | "label" | "id" | "required" | "onMouseOver" | "onMouseOut"> & Omit<FileSelectProps, "onAcceptFiles" | "onRejectFiles"> & {
+declare function FileInput({ error, className, helpText, onChange, name, limit, label, id, required, onMouseOver, onMouseOut, readOnly, value, emptyText, downloadText, openText, fileDisplay, asyncUpload, onRejectFiles, loading, maxConcurrentUploads, fileAdditionalInfo, ref, ...props }: Pick<InputProps<false>, "error" | "className" | "helpText" | "name" | "label" | "id" | "required" | "onMouseOver" | "onMouseOut"> & Omit<FileSelectProps, "onAcceptFiles" | "onRejectFiles"> & {
     readOnly?: boolean;
     value?: FileInputFile[];
     onChange?: (event: {
@@ -29,7 +29,7 @@ declare function FileInput({ error, className, helpText, onChange, name, limit, 
     emptyText?: string;
     downloadText?: string;
     openText?: string;
-    preview?: boolean;
+    fileDisplay?: "info" | "preview" | "both";
     asyncUpload?: (file: FileFile & {
         _id: string;
     }) => Promise<FileUrl & {
@@ -38,27 +38,7 @@ declare function FileInput({ error, className, helpText, onChange, name, limit, 
     onRejectFiles?: (files: File[], reason: "type" | "size" | "limit" | "upload-error") => void;
     loading?: boolean;
     maxConcurrentUploads?: number;
-}, ref: ForwardedRef<HTMLInputElement>): import("react").JSX.Element;
+    fileAdditionalInfo?: (file: FileInputFile, index: number) => ReactNode;
+}): import("react").JSX.Element;
 export type FileInputProps = ComponentPropsWithRef<typeof FileInput>;
-declare const _default: import("react").ForwardRefExoticComponent<Pick<InputProps<false>, "label" | "name" | "required" | "error" | "className" | "id" | "onMouseOut" | "onMouseOver" | "helpText"> & Omit<FileSelectProps, "onAcceptFiles" | "onRejectFiles"> & {
-    readOnly?: boolean;
-    value?: FileInputFile[];
-    onChange?: (event: {
-        target: {
-            value: FileInputFile[];
-        };
-    }) => void;
-    emptyText?: string;
-    downloadText?: string;
-    openText?: string;
-    preview?: boolean;
-    asyncUpload?: (file: FileFile & {
-        _id: string;
-    }) => Promise<FileUrl & {
-        _id: string;
-    }>;
-    onRejectFiles?: (files: File[], reason: "type" | "size" | "limit" | "upload-error") => void;
-    loading?: boolean;
-    maxConcurrentUploads?: number;
-} & import("react").RefAttributes<HTMLInputElement>>;
-export default _default;
+export default FileInput;

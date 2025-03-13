@@ -6,8 +6,6 @@ import useTranslation from "@italodeandra/ui/hooks/useTranslation";
 import { NextSeo } from "next-seo";
 import { useForm } from "react-hook-form";
 import emailRegExp from "@italodeandra/ui/utils/emailRegExp";
-import { useQueryClient } from "@tanstack/react-query";
-import { invalidate_authGetUser } from "../api/getUser";
 import { useRouter } from "next/router";
 import { useAuthSignUp } from "../api/signUp";
 import Stack from "@italodeandra/ui/components/Stack";
@@ -15,12 +13,10 @@ import { useAuthContext } from "../AuthContext";
 export default function SignUpView({ backgroundImage }) {
     const { Routes, intl } = useAuthContext();
     const t = useTranslation(intl);
-    const queryClient = useQueryClient();
     const router = useRouter();
     const { register, handleSubmit, formState: { errors }, setError, } = useForm();
     const { mutate: signUp, isPending: isCreatingAccount } = useAuthSignUp({
         async onSuccess() {
-            await invalidate_authGetUser(queryClient);
             await router.replace(Routes.Home);
         },
         async onError(error) {

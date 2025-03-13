@@ -7,6 +7,10 @@ import { pick } from "lodash-es";
 import { mutationFnWrapper, } from "@italodeandra/next/api/apiHandlerWrapper";
 import { setCookie } from "cookies-next";
 import { getReqTenant } from "../collections/tenant/Tenant.service";
+import { setData_authGetUser } from "./getUser";
+import getQueryClient from "@italodeandra/next/api/getQueryClient";
+import { setData_authGetFullUser } from "./getFullUser";
+import authState from "../auth.state";
 export default async function signInHandler(args, req, res, { connectDb, multitenantMode }) {
     if (!args.email || !args.password) {
         throw badRequest;
@@ -25,6 +29,7 @@ export default async function signInHandler(args, req, res, { connectDb, multite
             password: 1,
             passwordSalt: 1,
             disabled: 1,
+            customData: 1,
         },
     });
     if (!user) {
@@ -45,11 +50,22 @@ export default async function signInHandler(args, req, res, { connectDb, multite
         maxAge: ms("30d"),
         path: "/",
     });
-    return pick(user, ["_id", "email", "type"]);
+    return {
+        user: pick(user, ["_id", "email", "type", "customData"]),
+        token,
+    };
 }
 const mutationKey = "/api/auth/signIn";
 export const useAuthSignIn = (options) => useMutation({
     mutationKey: [mutationKey],
     mutationFn: mutationFnWrapper(mutationKey),
     ...options,
+    onSuccess: (...args) => {
+        const [data] = args;
+        const queryClient = getQueryClient();
+        setData_authGetUser(queryClient, data.user);
+        setData_authGetFullUser(queryClient, data.user);
+        authState.token = data.token;
+        return options?.onSuccess?.(...args);
+    },
 });

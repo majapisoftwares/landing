@@ -17,7 +17,7 @@ export default async function authPanelUserImpersonateHandler(args, req, res, { 
     }
     setCookie("auth", {
         token: generateToken(isomorphicObjectId(args._id)),
-        previousToken: getAuthCookieToken(req, res),
+        previousToken: await getAuthCookieToken(req, res),
     }, {
         req,
         res,

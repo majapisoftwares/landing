@@ -1,10 +1,10 @@
-import { forwardRef, useEffect, useId, useRef, } from "react";
+import { useEffect, useId, useRef, } from "react";
 import { defaultTextStyles } from "../Text";
 import clsx from "../../utils/clsx";
 import { mergeRefs } from "react-merge-refs";
 const defaultLabelClassName = defaultTextStyles.variant.label;
 const defaultDescriptionClassName = defaultTextStyles.variant.secondary;
-function Checkbox({ id, label, description, className, labelClassName, descriptionClassName, inputClassName, labelOuterClassName, type = "checkbox", error, helpText, indeterminate, ...props }, ref) {
+function Checkbox({ id, label, description, className, labelClassName, descriptionClassName, inputClassName, labelOuterClassName, type = "checkbox", error, helpText, indeterminate, ref, ...props }) {
     const innerRef = useRef(null);
     const defaultInputId = useId();
     const descriptionId = useId();
@@ -42,4 +42,4 @@ function Checkbox({ id, label, description, className, labelClassName, descripti
         </div>)}
     </div>);
 }
-export default forwardRef(Checkbox);
+export default Checkbox;

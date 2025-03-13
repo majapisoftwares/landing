@@ -35,12 +35,17 @@ const nextConfig = {
             },
         ],
     },
-    transpilePackages: ["@italodeandra/auth", "@italodeandra/ui"],
+    transpilePackages: [
+        "@italodeandra/auth",
+        "@italodeandra/ui",
+        "@majapi/tasks",
+    ],
     experimental: {
         optimizePackageImports: [
             "@italodeandra/next",
             "@italodeandra/ui",
             "@italodeandra/auth",
+            "@majapi/tasks",
         ],
     },
 };

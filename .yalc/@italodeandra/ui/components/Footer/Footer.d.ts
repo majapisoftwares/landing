@@ -7,7 +7,10 @@ export type FooterProps = {
     social?: {
         name: string;
         href: string;
-        icon: ReactElement;
+        icon: ReactElement<{
+            className: string;
+            "aria-hidden": string;
+        }>;
     }[];
     companyName: ReactNode;
     allRightsReserved?: string;

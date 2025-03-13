@@ -2,7 +2,7 @@ import { cloneElement } from "react";
 const CURRENT_YEAR = new Date().getFullYear();
 export default function Footer({ main, social, companyName, allRightsReserved = "All rights reserved", children, }) {
     return (<>
-      <div className="flex min-h-screen flex-col flex-col">{children}</div>
+      <div className="flex min-h-screen flex-col">{children}</div>
       <footer className="border-t border-slate-900/5 bg-white dark:border-slate-50/5 dark:bg-zinc-900">
         <div className="mx-auto max-w-7xl overflow-hidden px-4 py-12 sm:px-6 lg:px-8">
           {main && (<nav className="-mx-5 -my-2 mb-8 flex flex-wrap justify-center" aria-label="Footer">

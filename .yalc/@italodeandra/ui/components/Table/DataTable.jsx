@@ -18,7 +18,8 @@ export default function DataTable({ title, subtitle, headerContent, data, idAcce
         if (onChangePage) {
             onChangePage(page);
         }
-    }, [onChangePage, page]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [page]);
     const handleRowClick = useCallback((item) => (onRowClick ? () => onRowClick(item) : undefined), [onRowClick]);
     const getColumnSort = useCallback((id) => sort.find((column) => id === column[0]), [sort]);
     const handleColumnClick = useCallback((id) => () => {

@@ -1,7 +1,6 @@
 import * as RTooltip from "@radix-ui/react-tooltip";
-import { forwardRef } from "react";
 import clsx from "../../utils/clsx";
-function Tooltip({ children, content, side, delayDuration, }, ref) {
+function Tooltip({ children, content, side, delayDuration, className, arrowClassName, ref, }) {
     if (!content) {
         return <>{children}</>;
     }
@@ -11,12 +10,12 @@ function Tooltip({ children, content, side, delayDuration, }, ref) {
           {children}
         </RTooltip.Trigger>
         <RTooltip.Portal>
-          <RTooltip.Content className={clsx("z-20 rounded bg-zinc-950 px-2 py-1 text-center text-sm text-zinc-50 shadow", "dark:bg-zinc-50 dark:text-zinc-950", "will-change-[transform,opacity] data-[state=closed]:animate-fadeOut data-[state=delayed-open]:data-[side=bottom]:animate-elasticSlideUpAndFade data-[state=delayed-open]:data-[side=left]:animate-elasticSlideRightAndFade data-[state=delayed-open]:data-[side=right]:animate-elasticSlideLeftAndFade data-[state=delayed-open]:data-[side=top]:animate-elasticSlideDownAndFade")} sideOffset={5} side={side}>
+          <RTooltip.Content className={clsx("z-20 rounded bg-zinc-950 px-2 py-1 text-center text-sm text-zinc-50 shadow", "dark:bg-zinc-50 dark:text-zinc-950", "will-change-[transform,opacity] data-[state=closed]:animate-fadeOut data-[state=delayed-open]:data-[side=bottom]:animate-elasticSlideUpAndFade data-[state=delayed-open]:data-[side=left]:animate-elasticSlideRightAndFade data-[state=delayed-open]:data-[side=right]:animate-elasticSlideLeftAndFade data-[state=delayed-open]:data-[side=top]:animate-elasticSlideDownAndFade", className)} sideOffset={5} side={side}>
             {content}
-            <RTooltip.Arrow className="fill-zinc-950 dark:fill-zinc-50"/>
+            <RTooltip.Arrow className={clsx("fill-zinc-950 dark:fill-zinc-50", arrowClassName)}/>
           </RTooltip.Content>
         </RTooltip.Portal>
       </RTooltip.Root>
     </RTooltip.Provider>);
 }
-export default forwardRef(Tooltip);
+export default Tooltip;

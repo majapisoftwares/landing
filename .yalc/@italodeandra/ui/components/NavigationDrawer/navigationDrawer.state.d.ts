@@ -5,7 +5,5 @@ declare const navigationDrawerState: {
     setOpen(open: boolean): void;
     toggle(): void;
 };
-export declare const hydrateNavigationDrawerState: (cookies?: {
-    state?: string;
-} | undefined) => void;
+export declare const hydrateNavigationDrawerState: (cookies?: object) => void;
 export default navigationDrawerState;

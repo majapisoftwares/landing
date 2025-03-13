@@ -1,5 +1,9 @@
 import getTenant from "./Tenant";
 export function getSubdomain(urlOrReq) {
+    const forceSubdomain = process.env.FORCE_SUBDOMAIN;
+    if (forceSubdomain) {
+        return forceSubdomain;
+    }
     const url = typeof urlOrReq === "string" ? urlOrReq : urlOrReq?.headers.host;
     // noinspection HttpUrlsUsage
     url?.replaceAll("http://", "").replaceAll("https://", "");

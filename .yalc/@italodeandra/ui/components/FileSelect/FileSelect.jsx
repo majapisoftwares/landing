@@ -1,4 +1,4 @@
-import { cloneElement, forwardRef, useCallback, useEffect, useId, useState, } from "react";
+import { cloneElement, useCallback, useEffect, useId, useState, } from "react";
 import clsx from "../../utils/clsx";
 import { DndProvider, useDrop } from "react-dnd";
 import { HTML5Backend, NativeTypes } from "react-dnd-html5-backend";
@@ -32,7 +32,7 @@ function checkAllowedFileTypesFn(file, allowedFileTypes) {
         allowedFileTypes.includes(file.type) ||
         allowedFileTypes.some((t) => file.name.endsWith(t)));
 }
-function FileSelect({ maxFileSize, allowedFileTypes, id, limit, onAcceptFiles, className, uploadAFileText = "Upload a file", orDragAndDropText = "or drag and drop", upToText = "up to", anyFileText = "Any file", dropFilesHereText = "Drop files here", uploadingText = "Uploading...", icon = defaultIcon, uploading, disabled, additionalBottomInfo, onRejectFiles, error, }, ref) {
+function FileSelect({ maxFileSize, allowedFileTypes, id, limit, onAcceptFiles, className, uploadAFileText = "Upload a file", orDragAndDropText = "or drag and drop", upToText = "up to", anyFileText = "Any file", dropFilesHereText = "Drop files here", uploadingText = "Uploading...", icon = defaultIcon, uploading, disabled, additionalBottomInfo, onRejectFiles, error, ref, }) {
     const innerId = useId();
     id = id || innerId;
     maxFileSize =
@@ -76,9 +76,9 @@ function FileSelect({ maxFileSize, allowedFileTypes, id, limit, onAcceptFiles, c
             canDrop: monitor.canDrop(),
         }),
     }));
-    return (<div 
-    // @ts-expect-error trust me
-    ref={drop} className={clsx("flex justify-center rounded-md border-2 border-dashed px-6 pb-6 pt-5", className, {
+    return (<div ref={(ref) => {
+            drop(ref);
+        }} className={clsx("flex justify-center rounded-md border-2 border-dashed px-6 pb-6 pt-5", className, {
             "border-primary-300 dark:border-primary-700": isOver,
             "border-zinc-300 hover:border-zinc-400 dark:border-zinc-700 dark:hover:border-zinc-600": !disabled && !error,
             "cursor-not-allowed border-zinc-200 dark:border-zinc-800": disabled,
@@ -118,7 +118,7 @@ function FileSelect({ maxFileSize, allowedFileTypes, id, limit, onAcceptFiles, c
         </div>)}
     </div>);
 }
-export default forwardRef(FileSelect);
+export default FileSelect;
 const useOnPasteFiles = (enabled, onAcceptFiles, allowedFileTypes) => {
     useEffect(() => {
         if (enabled) {

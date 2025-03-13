@@ -7,5 +7,9 @@ export default function getIp(req) {
     if (!ip && req.socket.remoteAddress) {
         ip = req.socket.remoteAddress;
     }
+    if (!ip) {
+        // noinspection JSDeprecatedSymbols
+        ip = req.connection.remoteAddress;
+    }
     return ip;
 }

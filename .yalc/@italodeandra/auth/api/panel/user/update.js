@@ -19,7 +19,7 @@ export default async function authPanelUserUpdateHandler(args, req, res, { conne
     const tenantId = multitenantMode ? (await getReqTenant(req))?._id : undefined;
     const _id = isomorphicObjectId(args._id);
     const existingNewEmail = await User.countDocuments({
-        tenantId,
+        ...(multitenantMode ? { tenantId } : {}),
         _id: { $ne: _id },
         email: args.email,
     });
@@ -29,7 +29,7 @@ export default async function authPanelUserUpdateHandler(args, req, res, { conne
     const $set = omit(args, ["_id"]);
     const $unset = removeEmptyProperties($set);
     await User.updateOne({
-        tenantId,
+        ...(multitenantMode ? { tenantId } : {}),
         _id,
     }, {
         $set,

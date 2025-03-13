@@ -10,5 +10,5 @@ export declare const defaultTrailingClassName = "pointer-events-none absolute in
 export declare const defaultLeadingClassName = "pointer-events-none absolute inset-y-0 left-0 flex items-center pl-2.5 text-zinc-500 text-sm";
 export declare const defaultLeadingInputClassName = "pl-10";
 export declare const defaultTrailingInputClassName = "pr-10";
-declare const _default: import("react").ForwardRefExoticComponent<Omit<InputProps<boolean | undefined>, "ref"> & import("react").RefAttributes<HTMLInputElement | HTMLSelectElement>>;
-export default _default;
+declare function Input<Select extends boolean | undefined>({ error, trailing, labelClassName, inputClassName, helpTextClassName, trailingClassName, leadingClassName, leadingInputClassName, trailingInputClassName, required, label, loading, readOnly, children, disabled, helpText, ref, ...props }: InputProps<Select>): import("react").JSX.Element;
+export default Input;

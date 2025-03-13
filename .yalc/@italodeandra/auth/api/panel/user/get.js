@@ -17,7 +17,7 @@ export default async function panelUserGetHandler(args, req, res, { connectDb, m
     }
     const tenantId = multitenantMode ? (await getReqTenant(req))?._id : undefined;
     const user = await User.findOne({
-        tenantId,
+        ...(multitenantMode ? { tenantId } : {}),
         _id: isomorphicObjectId(args._id),
     }, {
         projection: {

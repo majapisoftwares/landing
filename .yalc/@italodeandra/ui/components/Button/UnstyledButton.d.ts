@@ -6,11 +6,5 @@ export type UnstyledButtonProps<T extends HTMLElement = HTMLButtonElement> = {
     download?: string;
     as?: string;
 } & Omit<HTMLProps<T>, "ref" | "href">;
-declare const _default: import("react").ForwardRefExoticComponent<{
-    href?: string | null;
-    target?: string;
-    rel?: string;
-    download?: string;
-    as?: string;
-} & Omit<HTMLProps<HTMLElement>, "href" | "ref"> & import("react").RefAttributes<HTMLElement>>;
-export default _default;
+declare const UnstyledButton: <T extends HTMLElement = HTMLButtonElement>({ href, as, ...props }: UnstyledButtonProps<T>) => import("react").JSX.Element;
+export default UnstyledButton;

@@ -1,4 +1,4 @@
-import { forwardRef, useEffect, useId, useRef, useState, } from "react";
+import { useEffect, useId, useRef, useState, } from "react";
 import { isEqual } from "lodash-es";
 import { useDeepCompareEffect } from "react-use";
 import { XMarkIcon } from "@heroicons/react/20/solid";
@@ -6,7 +6,7 @@ import InputWrapper from "../Input2/InputWrapper";
 function defaultFormat(item) {
     return item;
 }
-function MultiText({ value, onChangeValue, onChange, onBlur, name, id, className, helpText, label, validate, invalidHelpText, error, format = defaultFormat, readOnly, loading, type, required, }, ref) {
+function MultiText({ value, onChangeValue, onChange, onBlur, name, id, className, helpText, label, validate, invalidHelpText, error, format = defaultFormat, readOnly, loading, type, required, ref, }) {
     const innerId = useId();
     id = id || innerId;
     const inputRef = useRef(null);
@@ -103,4 +103,4 @@ function MultiText({ value, onChangeValue, onChange, onBlur, name, id, className
       </div>
     </InputWrapper>);
 }
-export default forwardRef(MultiText);
+export default MultiText;

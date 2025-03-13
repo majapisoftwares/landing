@@ -1,6 +1,6 @@
 import { InputProps } from "../Input";
-declare const _default: import("react").ForwardRefExoticComponent<Omit<Omit<InputProps<false>, "value"> & {
+declare function DateInput({ readOnly, value, onValueChange, ref, ...props }: Omit<InputProps<false>, "value"> & {
     value?: string;
     onValueChange?: (value?: string) => void;
-}, "ref"> & import("react").RefAttributes<HTMLInputElement>>;
-export default _default;
+}): import("react").JSX.Element;
+export default DateInput;

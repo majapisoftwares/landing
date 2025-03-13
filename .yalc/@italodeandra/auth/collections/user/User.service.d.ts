@@ -3,7 +3,7 @@ import { IUser, IUserType } from "./User";
 import { NextApiRequest, NextApiResponse } from "next";
 import { NextApiRequestCookies } from "next/dist/server/api-utils";
 import { ServerResponse } from "http";
-import type { OptionsType } from "cookies-next/src/types";
+import { OptionsType } from "cookies-next";
 export declare function hashPassword(plainPassword: string, salt: string): string;
 export declare function generateSalt(): string;
 export declare function checkUserPassword(user: Pick<IUser, "password" | "passwordSalt">, plainPassword: string): boolean;
@@ -21,6 +21,7 @@ export declare function createUser(doc: Pick<IUser, "email" | "password" | "name
     passwordSalt: string;
     createdAt: Date;
     updatedAt: Date;
+    username?: string | undefined;
     emailVerified?: Date | undefined;
     name?: string | undefined;
     phoneNumber?: string | undefined;
@@ -33,7 +34,7 @@ export type Request = {
     cookies: NextApiRequestCookies;
 };
 export type Response = NextApiResponse | ServerResponse;
-export declare function getAuthCookieToken(req: OptionsType["req"], res: OptionsType["res"]): any;
+export declare function getAuthCookieToken(req: OptionsType["req"], res: OptionsType["res"]): Promise<string | null>;
 export declare function getUserFromCookies(req: OptionsType["req"], res: OptionsType["res"], multitenantMode?: boolean): Promise<import("mongodb").WithId<Pick<{
     _id: ObjectId;
     email: string;
@@ -42,6 +43,7 @@ export declare function getUserFromCookies(req: OptionsType["req"], res: Options
     passwordSalt: string;
     createdAt: Date;
     updatedAt: Date;
+    username?: string | undefined;
     emailVerified?: Date | undefined;
     name?: string | undefined;
     phoneNumber?: string | undefined;
@@ -50,7 +52,7 @@ export declare function getUserFromCookies(req: OptionsType["req"], res: Options
     disabled?: boolean | undefined;
     customData?: Pick<{}, never> | undefined;
 }, "_id" | "email" | "type" | "name" | "profilePicture">> | null>;
-export declare function getFullUserFromCookies(req: NextApiRequest, res: NextApiResponse, multitenantMode?: boolean): Promise<null | Pick<IUser, "_id" | "email" | "type" | "name" | "phoneNumber" | "customData" | "profilePicture">>;
+export declare function getFullUserFromCookies(req: NextApiRequest, res: NextApiResponse, multitenantMode?: boolean): Promise<null | Pick<IUser, "_id" | "email" | "type" | "name" | "phoneNumber" | "customData" | "profilePicture" | "username">>;
 export declare function setUserPassword(userId: IUser["_id"], plainPassword: string): Promise<void>;
 export declare const userTypeTranslations: Record<keyof IUserType, string>;
 export declare function translateUserType(userType: string): string;

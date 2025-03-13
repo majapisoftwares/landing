@@ -1,9 +1,11 @@
-import { ForwardedRef, ReactNode } from "react";
-declare function Tooltip({ children, content, side, delayDuration, }: {
+import { ReactNode, Ref } from "react";
+declare function Tooltip({ children, content, side, delayDuration, className, arrowClassName, ref, }: {
     children?: ReactNode;
     content?: ReactNode;
     side?: "top" | "bottom" | "left" | "right";
     delayDuration?: number;
-}, ref: ForwardedRef<HTMLButtonElement>): import("react").JSX.Element;
-declare const _default: typeof Tooltip;
-export default _default;
+    className?: string;
+    arrowClassName?: string;
+    ref?: Ref<HTMLButtonElement>;
+}): import("react").JSX.Element;
+export default Tooltip;

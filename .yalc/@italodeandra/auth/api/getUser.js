@@ -79,11 +79,6 @@ export const useAuthUser = () => {
     }, [Routes.Home, router, user]);
     return !!user;
 };
-// noinspection JSUnusedGlobalSymbols
-export const prefetch_authGetUser = (queryClient, ...args) => queryClient.prefetchQuery({
-    queryKey: [queryKey],
-    queryFn: () => getUserHandler(...args),
-});
 export const setData_authGetUser = (queryClient, data) => {
     if (data === null) {
         setData_authGetFullUser(queryClient, null);

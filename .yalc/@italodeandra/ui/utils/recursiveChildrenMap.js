@@ -4,9 +4,10 @@ export default function recursiveChildrenMap(children, fn) {
         if (!isValidElement(child)) {
             return child;
         }
-        if (child.props.children) {
+        const childProps = child.props;
+        if (childProps?.children) {
             child = cloneElement(child, {
-                children: recursiveChildrenMap(child.props.children, fn),
+                children: recursiveChildrenMap(childProps.children, fn),
                 // eslint-disable-next-line @typescript-eslint/no-explicit-any
             });
         }

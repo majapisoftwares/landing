@@ -40,14 +40,15 @@ export default function Resizable({ children, minWidth, maxWidth, width, onResiz
             window.removeEventListener("mouseup", onMouseUp);
         };
     }, [isResizingRef, maxWidth, minWidth, onResize]);
-    return cloneElement(children, {
-        className: clsx("relative", children.props.className),
+    const child = children;
+    return cloneElement(child, {
+        className: clsx("relative", child.props.className),
         style: { width: internalWidth },
         children: (<>
-        <div className={clsx("absolute left-0 top-0 bottom-0 z-10 w-1 cursor-e-resize select-none transition-colors hover:bg-zinc-700", {
+        <div className={clsx("absolute bottom-0 left-0 top-0 z-10 w-1 cursor-e-resize select-none transition-colors hover:bg-zinc-700", {
                 "bg-zinc-700": isResizing,
             })} onMouseDown={onMouseDown}/>
-        {children.props.children}
+        {child.props.children}
       </>),
     });
 }

@@ -10,6 +10,13 @@ export const PROTOCOL = IS_NODE_PROD ? "https" : "http";
 export const LANDING_URL = `${PROTOCOL}://${HOST}`;
 export const MULTITENANT_MODE = false;
 export const PRIMARY_COLOR = "#0ea5e9";
-export const APP_NAME = "App Template";
-export const APP_DESCRIPTION = "Majapi's app template";
-export const APP_KEYWORDS = "majapibr,app,template";
+export const APP_NAME = "Majapi";
+export const APP_DESCRIPTION = "Transforming ideas into digital solutions";
+export const APP_KEYWORDS = "majapibr,app,software,development,saas,technology";
+export const WHATSAPP_LINK = "https://wa.me/5516981814643";
+export const LINKEDIN_LINK =
+  "https://www.linkedin.com/company/majapi-softwares";
+export const INSTAGRAM_LINK = "https://www.instagram.com/majapisoftwares";
+export const MIYACHE_LINK = "https://miyache.com";
+export const TICKETIS_LINK = "https://ticketis.com.br";
+export const LAPWING_LINK = "https://lapwing.com.br";

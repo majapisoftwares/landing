@@ -17,7 +17,8 @@ export default function TableFooterWithPagination({ itemsPerPage, totalItems, cu
         if (onChangePage) {
             onChangePage(page);
         }
-    }, [onChangePage, page]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [page]);
     const handlePageClick = useCallback((page) => () => setPage(page), []);
     let start = (page - 1) * itemsPerPage + 1;
     let end = page * itemsPerPage;

@@ -6,6 +6,7 @@ import clsx from "../../utils/clsx";
 import { isEqual, take } from "lodash-es";
 import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/20/solid";
 import Badge from "../Badge";
+import { useDeepCompareEffect } from "react-use";
 const defaultMenuItemsClassName = "z-10 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none dark:bg-zinc-800";
 function getValue(id, item) {
     return typeof item === "string"
@@ -15,7 +16,7 @@ function getValue(id, item) {
 function MultiSelectInput({ className, selectedItems, doRender, removeItem, valueProperty, readOnly, ...props }) {
     const ref = useRef(null);
     return (<div className={clsx("flex flex-wrap border focus-within:border-primary-500 focus-within:ring-1 focus-within:ring-primary-500 dark:focus-within:border-primary-500", className)} onClick={() => ref.current?.focus()}>
-      {!!selectedItems.length && (<div className="flex flex-wrap items-center gap-1 p-1.5">
+      {!!selectedItems.length && (<div className="flex flex-wrap items-center gap-1 p-1.5 pb-0">
           {selectedItems.map((item) => (<Badge key={getValue(valueProperty, item)} onActionClick={!readOnly ? removeItem(item) : undefined}>
               {doRender(item)}
             </Badge>))}
@@ -42,7 +43,7 @@ displayValue = (item) => item?.[renderProperty] || "", value, labelClassName, cr
             onChangeQuery(query);
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [onChangeQuery, query]);
+    }, [query]);
     const filteredItems = useMemo(() => query === ""
         ? items
         : items.filter(filterFunction ||
@@ -61,16 +62,16 @@ displayValue = (item) => item?.[renderProperty] || "", value, labelClassName, cr
         : typeof item === "string"
             ? item
             : item[renderProperty], [renderFunction, renderProperty]);
-    useEffect(() => {
+    useDeepCompareEffect(() => {
         onChange?.(selectedItems);
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [selectedItems]);
-    useEffect(() => {
+    }, [selectedItems || {}]);
+    useDeepCompareEffect(() => {
         if (!isEqual(selectedItems, value)) {
             setSelectedItems(value || []);
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [value]);
+    }, [value || {}]);
     const removeItem = useCallback((item) => () => setSelectedItems((selectedItems) => [
         ...selectedItems.filter((i) => getValue(valueProperty, i) !== getValue(valueProperty, item)),
     ]), [valueProperty]);
@@ -79,30 +80,33 @@ displayValue = (item) => item?.[renderProperty] || "", value, labelClassName, cr
         {label} <span className="text-red-500">*</span>
       </>);
     }
+    const renderedItems = itemsRenderLimit
+        ? take(filteredItems, itemsRenderLimit)
+        : filteredItems;
     return (<div className={clsx("relative", className)}>
       <Combobox 
     /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
     onChange={setSelectedItems} value={selectedItems} multiple>
-        {({ open }) => (<>
+        {({ open }) => (<div>
             <ComponentInput 
         /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
-        {...props} as={MultiSelectInput} placeholder={!readOnly ? placeholder : undefined} value={query} onChange={(event) => setQuery(event.target.value)} trailing={trailing} trailingClassName={clsx(defaultTrailingClassName, trailingClassName)} inputClassName={clsx(defaultInputClassName, "bg-white dark:bg-zinc-800", inputElementClassName, {
+        {...props} as={MultiSelectInput} placeholder={!readOnly ? placeholder : undefined} value={query} onChange={(event) => setQuery(event.target.value)} trailing={trailing} trailingClassName={clsx(defaultTrailingClassName, trailingClassName)} inputClassName={clsx(defaultInputClassName, "bg-white dark:bg-zinc-800 pl-0", inputElementClassName, {
                 "border-dashed": readOnly,
             })} innerClassName={inputInnerClassName} trailingInputClassName={clsx(defaultTrailingInputClassName, trailingInputClassName)} leadingInputClassName={clsx(defaultLeadingInputClassName, leadingInputClassName)} displayValue={displayValue} labelClassName={clsx(defaultLabelClassName, labelClassName)} selectedItems={selectedItems} doRender={doRender} removeItem={removeItem} required={required && !selectedItems.length} label={label} readOnly={readOnly} valueProperty={valueProperty}/>
 
             {!readOnly &&
                 ((creatable && query) || filteredItems.length > 0) && (<Combobox.Options static={isStatic} className={clsx(defaultMenuItemsClassName, "absolute z-10 mt-1 max-h-72 w-full scroll-py-2 overflow-y-auto py-2 text-sm text-zinc-800 dark:text-zinc-200")}>
-                  {creatable && !!query && (<Combobox.Option value={query} className={({ active }) => clsx("cursor-default select-none px-4 py-2", {
+                  {!renderedItems.some((item) => getValue(valueProperty, item) === query) &&
+                    creatable &&
+                    !!query && (<Combobox.Option value={query} className={({ active }) => clsx("cursor-default select-none px-4 py-2", {
                         "bg-primary-600 text-white": active,
                     })}>
-                      {({ selected }) => (<div className="flex">
-                          {selected && <CheckIcon className="mr-2 w-5"/>}
-                          {selected ? query : getCreateLabel(query)}
-                        </div>)}
-                    </Combobox.Option>)}
-                  {(itemsRenderLimit
-                    ? take(filteredItems, itemsRenderLimit)
-                    : filteredItems).map((item) => (<Combobox.Option key={getValue(valueProperty, item)} value={item} className={({ active }) => clsx("cursor-default select-none px-4 py-2", {
+                        {({ selected }) => (<div className="flex">
+                            {selected && <CheckIcon className="mr-2 w-5"/>}
+                            {selected ? query : getCreateLabel(query)}
+                          </div>)}
+                      </Combobox.Option>)}
+                  {renderedItems.map((item) => (<Combobox.Option key={getValue(valueProperty, item)} value={item} className={({ active }) => clsx("cursor-default select-none px-4 py-2", {
                         "bg-primary-600 text-white": active,
                     })}>
                       {({ selected }) => (<div className="flex">
@@ -120,7 +124,7 @@ displayValue = (item) => item?.[renderProperty] || "", value, labelClassName, cr
                 filteredItems.length === 0 && (<p className={clsx(defaultMenuItemsClassName, "absolute mt-1 w-full p-4 text-sm text-zinc-500 dark:text-zinc-400")}>
                   {emptyText}
                 </p>)}
-          </>)}
+          </div>)}
       </Combobox>
     </div>);
 }

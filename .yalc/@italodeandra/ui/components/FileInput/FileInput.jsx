@@ -1,5 +1,5 @@
 import clsx from "../../utils/clsx";
-import { forwardRef, useCallback, useEffect, useRef, useState, } from "react";
+import { useCallback, useEffect, useRef, useState, } from "react";
 import { useDeepCompareEffect, useUpdateEffect } from "react-use";
 import { defaultHelpTextClassName, defaultLabelClassName, } from "../Input";
 import FileSelect from "../FileSelect";
@@ -8,7 +8,7 @@ import { isEqual } from "lodash-es";
 import Text from "../Text";
 import { PreviewFile } from "./PreviewFile";
 import concurrentForOf from "@italodeandra/next/utils/concurrentForOf";
-function FileInput({ error, className, helpText, onChange, name, limit, label, id, required, onMouseOver, onMouseOut, readOnly, value, emptyText = "No files", downloadText = "Download", openText = "Open", preview, asyncUpload, onRejectFiles, loading, maxConcurrentUploads = 1, ...props }, ref) {
+function FileInput({ error, className, helpText, onChange, name, limit, label, id, required, onMouseOver, onMouseOut, readOnly, value, emptyText = "No files", downloadText = "Download", openText = "Open", fileDisplay, asyncUpload, onRejectFiles, loading, maxConcurrentUploads = 1, fileAdditionalInfo, ref, ...props }) {
     const [uploading, setUploading] = useState(false);
     const [innerValue, setInnerValue] = useState(value || []);
     useDeepCompareEffect(() => {
@@ -93,14 +93,10 @@ function FileInput({ error, className, helpText, onChange, name, limit, label, i
                 target: {
                     name,
                     value: innerValue.map((file) => ({
-                        _id: file._id,
+                        ...file,
                         url: file.file
                             ? URL.createObjectURL(file.file)
                             : file.url,
-                        description: file.description,
-                        name: file.name,
-                        type: file.type,
-                        size: file.size,
                     })),
                 },
                 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -125,7 +121,7 @@ function FileInput({ error, className, helpText, onChange, name, limit, label, i
             "md:grid-cols-2": !!innerValue.length,
             "min-h-[140px]": !!innerValue.length || !readOnly,
         })}>
-        {innerValue.map((file, i) => (<PreviewFile key={i} file={file} readOnly={readOnly} handleDeleteClick={handleDeleteClick(file)} downloadText={downloadText} preview={preview} openText={openText}/>))}
+        {innerValue.map((file, index) => (<PreviewFile key={index} file={file} readOnly={readOnly} handleDeleteClick={handleDeleteClick(file)} downloadText={downloadText} display={fileDisplay} openText={openText} additionalInfo={fileAdditionalInfo} index={index}/>))}
         {readOnly && !innerValue.length && (<Text variant="secondary">{emptyText}</Text>)}
         {!readOnly && (!limit || innerValue.length < limit) && (<FileSelect {...props} id={id} onAcceptFiles={handleAcceptFiles} limit={limit ? limit - innerValue.length : undefined} uploading={uploading} onRejectFiles={onRejectFiles} error={error}/>)}
       </div>
@@ -134,4 +130,4 @@ function FileInput({ error, className, helpText, onChange, name, limit, label, i
         </div>)}
     </div>);
 }
-export default forwardRef(FileInput);
+export default FileInput;

@@ -11,6 +11,7 @@ const userSchema = onlyServer(() => schema({
         required: true,
         maxLength: 255,
     }),
+    username: types.string(),
     emailVerified: types.date(),
     type: types.string({ required: true }),
     password: types.string({

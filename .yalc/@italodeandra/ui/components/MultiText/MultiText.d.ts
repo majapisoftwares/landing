@@ -1,4 +1,4 @@
-import { ChangeEventHandler, FocusEventHandler } from "react";
+import { ChangeEventHandler, FocusEventHandler, Ref } from "react";
 export interface MultiTextProps {
     value?: string[];
     onChangeValue?: (value: string[]) => void;
@@ -17,6 +17,7 @@ export interface MultiTextProps {
     loading?: boolean;
     type?: string;
     required?: boolean;
+    ref?: Ref<HTMLInputElement>;
 }
-declare const _default: import("react").ForwardRefExoticComponent<MultiTextProps & import("react").RefAttributes<HTMLDivElement>>;
-export default _default;
+declare function MultiText({ value, onChangeValue, onChange, onBlur, name, id, className, helpText, label, validate, invalidHelpText, error, format, readOnly, loading, type, required, ref, }: MultiTextProps): import("react").JSX.Element;
+export default MultiText;

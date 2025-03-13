@@ -16,11 +16,13 @@ export type MenuProps = {
     ref?: Ref<HTMLDivElement>;
 };
 export type MenuItemProps<T extends HTMLElement = HTMLButtonElement> = UnstyledButtonProps<T> & {
-    icon?: ReactElement;
+    icon?: ReactElement<{
+        className?: string;
+    }>;
 };
 export type MenuLabelProps = TextProps;
-declare const _default: import("react").ForwardRefExoticComponent<Omit<MenuProps, "ref"> & import("react").RefAttributes<HTMLDivElement>> & {
-    Label: import("react").ForwardRefExoticComponent<Omit<TextProps, "ref"> & import("react").RefAttributes<HTMLDivElement>>;
+declare const _default: (({ className, iconClassName, position, children, label, button, buttonProps, unmount, menuItemsClassName, ...props }: MenuProps) => import("react").JSX.Element) & {
+    Label: (props: MenuLabelProps) => import("react").JSX.Element;
     Item: <T extends HTMLElement = HTMLButtonElement>({ className, icon, children, ...props }: MenuItemProps<T>) => import("react").JSX.Element;
 };
 export default _default;

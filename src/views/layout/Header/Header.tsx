@@ -1,37 +1,43 @@
-import UiHeader from "@italodeandra/ui/components/Header";
 import Button from "@italodeandra/ui/components/Button";
-import { Bars3BottomLeftIcon } from "@heroicons/react/20/solid";
-import Image from "next/image";
-import UserMenu from "./UserMenu";
-import navigationDrawerState from "@italodeandra/ui/components/NavigationDrawer/navigationDrawer.state";
-import NextLink from "next/link";
-import ModeToggle from "@italodeandra/ui/components/ModeToggle";
+import Link from "next/link";
+import Logo from "../../Logo";
 import Routes from "../../../routes";
+import NavigationDrawer from "./NavigationDrawer";
 
-export default function Header({ title }: { title?: string }) {
+export default function Header() {
   return (
-    <UiHeader className="gap-2">
-      <Button
-        icon
-        variant="text"
-        className="-my-2 -ml-2"
-        onClick={navigationDrawerState.toggle}
-      >
-        <Bars3BottomLeftIcon />
-      </Button>
-      <NextLink href={Routes.Home} className="ml-3">
-        <Image
-          src="/icons/favicon.svg"
-          width={34}
-          height={34}
-          alt="Logo"
-          quality={100}
-        />
-      </NextLink>
-      {title && <span className="ml-2 text-xl font-medium">{title}</span>}
-      <div className="flex-grow" />
-      <ModeToggle />
-      <UserMenu />
-    </UiHeader>
+    <div className="fixed z-50 flex w-full border-b border-zinc-700 backdrop-blur-lg">
+      <div className="mx-auto flex w-full max-w-screen-xl justify-between p-4">
+        <Link href="/" className="flex items-center">
+          <Logo className="w-32" />
+        </Link>
+        <div className="hidden gap-4 md:flex">
+          <Button
+            href={Routes.Solutions}
+            variant="text"
+            className="font-dm text-white"
+          >
+            Solutions
+          </Button>
+          <Button
+            href={Routes.About}
+            variant="text"
+            className="font-dm text-white"
+          >
+            About
+          </Button>
+          <Button
+            variant="filled"
+            href={Routes.Contact}
+            className="rounded-[50px] border border-zinc-600 bg-zinc-100 font-dm text-zinc-800"
+          >
+            Contact Us
+          </Button>
+        </div>
+        <div className="md:hidden">
+          <NavigationDrawer />
+        </div>
+      </div>
+    </div>
   );
 }

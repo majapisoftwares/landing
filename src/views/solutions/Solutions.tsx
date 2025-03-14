@@ -68,7 +68,7 @@ export default function Solutions() {
       <Flare />
       <div className="relative flex w-full flex-col gap-20 pt-20 lg:gap-40">
         <div className="relative mx-auto flex w-full max-w-screen-xl flex-col gap-10 px-4">
-          <div className="flex flex-col gap-4">
+          <div className="z-10 flex flex-col gap-4">
             <div className="bg-gradient-to-br from-zinc-100 to-zinc-400 bg-clip-text font-dm text-3xl font-semibold tracking-[-2.88px] text-transparent md:text-5xl">
               Our Solutions
             </div>

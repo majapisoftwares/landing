@@ -29,7 +29,7 @@ export default function Content({
       </div>
       <div
         className={clsx(
-          "flex w-full gap-4",
+          "flex w-full gap-4 z-10",
           left ? "flex-row" : "flex-row-reverse",
         )}
       >

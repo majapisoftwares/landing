@@ -29,8 +29,8 @@ export default function Content({
       </div>
       <div
         className={clsx(
-          "flex w-full gap-4 z-10",
-          left ? "flex-row" : "flex-row-reverse",
+          "z-10 flex w-full flex-col gap-4",
+          left ? "md:flex-row" : "md:flex-row-reverse",
         )}
       >
         <div className="rounded-lg bg-zinc-300 px-8 pt-8">
@@ -43,22 +43,27 @@ export default function Content({
         <div
           className={clsx(
             "flex flex-col justify-center gap-10",
-            left ? "ml-auto" : "mr-auto",
+            left ? "md:ml-auto" : "md:mr-auto",
           )}
         >
-          <div className="flex flex-col gap-4">
+          <div
+            className={clsx(
+              "flex flex-col items-center gap-4",
+              left ? "md:items-end" : "md:items-start",
+            )}
+          >
             <div
               className={clsx(
-                "bg-gradient-to-br from-zinc-100 to-zinc-400 bg-clip-text text-right font-dm text-3xl font-semibold tracking-[-2.88px] text-transparent md:text-5xl",
-                left ? "text-right" : "text-left",
+                "bg-gradient-to-br from-zinc-100 to-zinc-400 bg-clip-text text-center font-dm text-3xl font-semibold text-transparent md:text-5xl md:tracking-[-2.88px]",
+                left ? "md:text-right" : "md:text-left",
               )}
             >
               {title}
             </div>
             <div
               className={clsx(
-                "max-w-[500px] font-dm text-lg leading-8 text-zinc-400 md:text-xl",
-                left ? "text-right" : "text-left",
+                "max-w-[500px] text-center font-dm text-lg leading-8 text-zinc-400 md:text-xl",
+                left ? "md:text-right" : "md:text-left",
               )}
             >
               {description}
@@ -67,32 +72,32 @@ export default function Content({
           <div className="flex flex-col gap-4">
             <div
               className={clsx(
-                "bg-gradient-to-br from-zinc-100 to-zinc-400 bg-clip-text font-dm text-2xl font-semibold tracking-[-2.88px] text-transparent md:text-4xl",
-                left ? "text-right" : "text-left",
+                "bg-gradient-to-br from-zinc-100 to-zinc-400 bg-clip-text text-center font-dm text-2xl font-semibold text-transparent md:text-4xl md:tracking-[-2.88px]",
+                left ? "md:text-right" : "md:text-left",
               )}
             >
               What We Do
             </div>
             <div
               className={clsx(
-                "font-dm text-lg leading-8 text-zinc-400 md:text-xl",
-                left ? "text-right" : "text-left",
+                "text-center font-dm text-lg leading-8 text-zinc-400 md:text-xl",
+                left ? "md:text-right" : "md:text-left",
               )}
             >
               {front}
             </div>
             <div
               className={clsx(
-                "font-dm text-lg leading-8 text-zinc-400 md:text-xl",
-                left ? "text-right" : "text-left",
+                "text-center font-dm text-lg leading-8 text-zinc-400 md:text-xl",
+                left ? "md:text-right" : "md:text-left",
               )}
             >
               {back}
             </div>
             <div
               className={clsx(
-                "font-dm text-lg leading-8 text-zinc-400 md:text-xl",
-                left ? "text-right" : "text-left",
+                "text-center font-dm text-lg leading-8 text-zinc-400 md:text-xl",
+                left ? "md:text-right" : "md:text-left",
               )}
             >
               QA Testing
@@ -100,8 +105,8 @@ export default function Content({
           </div>
           <div
             className={clsx(
-              "flex gap-10",
-              left ? "justify-end" : "justify-start",
+              "flex justify-center gap-10",
+              left ? "md:justify-end" : "md:justify-start",
             )}
           >
             {icons}

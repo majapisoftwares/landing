@@ -122,17 +122,17 @@ export default function Solutions() {
             />
           ))}
         </div>
-        <div className="z-10 mx-auto flex w-full max-w-screen-xl flex-col items-center justify-center gap-4 px-4 pb-20">
+        <div className="mx-auto flex w-full max-w-screen-xl flex-col items-center justify-center gap-4 px-4 pb-20">
           <div className="relative">
             <Bg className="-top-36" />
           </div>
-          <div className="mx-auto max-w-[450px] text-center font-dm text-3xl font-semibold tracking-[-0.432px] text-white sm:text-3xl md:max-w-[500px] md:text-4xl">
+          <div className="z-10 mx-auto max-w-[450px] text-center font-dm text-3xl font-semibold tracking-[-0.432px] text-white sm:text-3xl md:max-w-[500px] md:text-4xl">
             Innovation starts with action. Get in touch now!
           </div>
           <Button
             variant="filled"
             href={Routes.Contact}
-            className="max-w rounded-lg border border-zinc-600 bg-zinc-100 px-[78px] py-3 font-dm text-zinc-800 md:text-xl"
+            className="max-w z-10 rounded-lg border border-zinc-600 bg-zinc-100 px-[78px] py-3 font-dm text-zinc-800 md:text-xl"
           >
             Contact Us
           </Button>

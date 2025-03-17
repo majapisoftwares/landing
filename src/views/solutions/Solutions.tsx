@@ -5,11 +5,13 @@ import Content from "./Content";
 import Bg from "../layout/Bg";
 import Button from "@italodeandra/ui/components/Button";
 import Routes from "../../routes";
+import Reveal from "../home/Reveal";
 
 const solutions = [
   {
+    delay: 0.5,
     left: true,
-    positionBg: "-top-44",
+    positionBg: "-top-96",
     title: "Development",
     description:
       "We design and develop high-performance, scalable, and secure solutions tailored to your business needs. From web and mobile applications to advanced software systems.",
@@ -36,8 +38,9 @@ const solutions = [
     back: "Back-end(Node.js)",
   },
   {
+    delay: 0.5,
     left: false,
-    positionBg: "-top-20",
+    positionBg: "-top-80",
     title: "Development",
     description:
       "We design and develop high-performance, scalable, and secure solutions tailored to your business needs. From web and mobile applications to advanced software systems.",
@@ -64,8 +67,9 @@ const solutions = [
     back: "Back-end(Node.js)",
   },
   {
+    delay: 0.5,
     left: true,
-    positionBg: "-top-20",
+    positionBg: "-top-72",
     title: "Development",
     description:
       "We design and develop high-performance, scalable, and secure solutions tailored to your business needs. From web and mobile applications to advanced software systems.",
@@ -99,19 +103,22 @@ export default function Solutions() {
       <Flare />
       <div className="relative flex w-full flex-col gap-20 pt-20 lg:gap-40">
         <div className="relative mx-auto flex w-full max-w-screen-xl flex-col gap-10 px-4">
-          <div className="z-10 flex flex-col gap-4">
-            <div className="bg-gradient-to-br from-zinc-100 to-zinc-400 bg-clip-text text-center font-dm text-3xl font-semibold tracking-[-2.88px] text-transparent md:text-left md:text-5xl">
-              Our Solutions
+          <Reveal delay={0.25}>
+            <div className="z-10 flex flex-col gap-4">
+              <div className="bg-gradient-to-br from-zinc-100 to-zinc-400 bg-clip-text text-center font-dm text-3xl font-semibold tracking-[-2.88px] text-transparent md:text-left md:text-5xl">
+                Our Solutions
+              </div>
+              <div className="max-w-[500px] self-center text-center font-dm text-lg leading-8 text-zinc-400 md:self-start md:text-left md:text-xl">
+                From design to programming, we offer agile and efficient
+                services to meet your needs.
+              </div>
             </div>
-            <div className="max-w-[500px] self-center text-center font-dm text-lg leading-8 text-zinc-400 md:self-start md:text-left md:text-xl">
-              From design to programming, we offer agile and efficient services
-              to meet your needs.
-            </div>
-          </div>
+          </Reveal>
           {solutions.map((solutions) => (
             <Content
-              left={solutions.left}
+              delay={solutions.delay}
               key={solutions.title}
+              left={solutions.left}
               positionBg={solutions.positionBg}
               image={swan}
               title={solutions.title}
@@ -122,21 +129,23 @@ export default function Solutions() {
             />
           ))}
         </div>
-        <div className="mx-auto flex w-full max-w-screen-xl flex-col items-center justify-center gap-4 px-4 pb-20">
-          <div className="relative">
-            <Bg className="-top-36" />
+        <Reveal delay={0.5}>
+          <div className="mx-auto flex w-full max-w-screen-xl flex-col items-center justify-center gap-4 px-4 pb-20">
+            <div className="relative">
+              <Bg className="-top-96" />
+            </div>
+            <div className="z-10 mx-auto max-w-[450px] text-center font-dm text-3xl font-semibold tracking-[-0.432px] text-white sm:text-3xl md:max-w-[500px] md:text-4xl">
+              Innovation starts with action. Get in touch now!
+            </div>
+            <Button
+              variant="filled"
+              href={Routes.Contact}
+              className="max-w z-10 rounded-lg border border-zinc-600 bg-zinc-100 px-[78px] py-3 font-dm text-zinc-800 md:text-xl"
+            >
+              Contact Us
+            </Button>
           </div>
-          <div className="z-10 mx-auto max-w-[450px] text-center font-dm text-3xl font-semibold tracking-[-0.432px] text-white sm:text-3xl md:max-w-[500px] md:text-4xl">
-            Innovation starts with action. Get in touch now!
-          </div>
-          <Button
-            variant="filled"
-            href={Routes.Contact}
-            className="max-w z-10 rounded-lg border border-zinc-600 bg-zinc-100 px-[78px] py-3 font-dm text-zinc-800 md:text-xl"
-          >
-            Contact Us
-          </Button>
-        </div>
+        </Reveal>
       </div>
     </div>
   );

@@ -22,33 +22,40 @@ export default function Contact() {
             </div>
           </Reveal>
           <div className="flex w-full flex-col justify-center gap-4 md:flex-row">
-            <Button
-              size="xl"
-              className="rounded-xl dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-50 dark:hover:bg-zinc-950/50"
-              leading={
-                <Icon icon="mdi:whatsapp" className="h-8 w-8 text-green-400" />
-              }
-              variant="filled"
-              target="_blank"
-              href="https://api.whatsapp.com/send/?phone=5516981814643&text&type=phone_number&app_absent=0"
-            >
-              +55 (16) 98181-4643
-            </Button>
-            <Button
-              size="xl"
-              className="rounded-xl dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-50 dark:hover:bg-zinc-950/50"
-              leading={
-                <Icon
-                  icon="streamline:mail-send-envelope-solid"
-                  className="h-8 w-8 text-green-400"
-                />
-              }
-              variant="filled"
-              target="_blank"
-              href="mailto:cairo@majapi.com"
-            >
-              cairo@majapi.com
-            </Button>
+            <Reveal delay={0.5}>
+              <Button
+                size="xl"
+                className="w-full rounded-xl dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-50 dark:hover:bg-zinc-950/50"
+                leading={
+                  <Icon
+                    icon="mdi:whatsapp"
+                    className="h-8 w-8 text-green-400"
+                  />
+                }
+                variant="filled"
+                target="_blank"
+                href="https://api.whatsapp.com/send/?phone=5516981814643&text&type=phone_number&app_absent=0"
+              >
+                +55 (16) 98181-4643
+              </Button>
+            </Reveal>
+            <Reveal delay={0.75}>
+              <Button
+                size="xl"
+                className="w-full rounded-xl dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-50 dark:hover:bg-zinc-950/50"
+                leading={
+                  <Icon
+                    icon="streamline:mail-send-envelope-solid"
+                    className="h-8 w-8 text-green-400"
+                  />
+                }
+                variant="filled"
+                target="_blank"
+                href="mailto:cairo@majapi.com"
+              >
+                cairo@majapi.com
+              </Button>
+            </Reveal>
           </div>
         </div>
       </div>

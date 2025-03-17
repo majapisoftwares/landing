@@ -101,7 +101,7 @@ export default function Solutions() {
   return (
     <div className="relative overflow-x-hidden overflow-y-hidden bg-zinc-900/80 pt-20">
       <Flare />
-      <div className="relative flex w-full flex-col gap-20 pt-20 lg:gap-40">
+      <div className="relative flex w-full flex-col gap-20 pt-20">
         <div className="relative mx-auto flex w-full max-w-screen-xl flex-col gap-10 px-4">
           <Reveal delay={0.25}>
             <div className="z-10 flex flex-col gap-4">
@@ -132,7 +132,7 @@ export default function Solutions() {
         <Reveal delay={0.5}>
           <div className="mx-auto flex w-full max-w-screen-xl flex-col items-center justify-center gap-4 px-4 pb-20">
             <div className="relative">
-              <Bg className="-top-96" />
+              <Bg className="-top-72" />
             </div>
             <div className="z-10 mx-auto max-w-[450px] text-center font-dm text-3xl font-semibold tracking-[-0.432px] text-white sm:text-3xl md:max-w-[500px] md:text-4xl">
               Innovation starts with action. Get in touch now!

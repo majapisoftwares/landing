@@ -5,6 +5,7 @@ import Flare from "../layout/Flare";
 import office from "./office.webp";
 import work from "./work.webp";
 import workagain from "./workagain.webp";
+import Ma from "../Ma";
 
 export default function About() {
   return (
@@ -26,10 +27,23 @@ export default function About() {
               </div>
             </div>
           </Reveal>
-          <div className="flex gap-4">
-            <Image src={office} alt="office" />
-            <Image src={work} alt="office" />
-            <Image src={workagain} alt="office" />
+          <div className="relative flex gap-4 p-6">
+            <div className="absolute left-0 top-0 flex h-24 w-24 items-center justify-center rounded-xl bg-black">
+              <Ma className="h-10 w-10" />
+            </div>
+            <div>
+              <Image className="w-full" src={office} alt="office" />
+            </div>
+            <div>
+              <Image className="w-full" src={work} alt="office" />
+            </div>
+            <div>
+              <Image className="w-full" src={workagain} alt="office" />
+            </div>
+
+            <div className="absolute bottom-0 right-0 flex h-24 w-24 items-center justify-center rounded-xl bg-zinc-50">
+              <Ma className="h-10 w-10 text-black" />
+            </div>
           </div>
         </div>
       </div>

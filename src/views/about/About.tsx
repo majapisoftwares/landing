@@ -14,7 +14,7 @@ export default function About() {
   return (
     <div className="relative overflow-x-hidden overflow-y-hidden bg-zinc-900/80 pt-20">
       <Flare />
-      <Bg />
+      <Bg className="-top-12" />
       <div className="relative flex w-full flex-col gap-20 pt-20">
         <div className="relative mx-auto flex w-full max-w-screen-xl flex-col gap-10 px-4">
           <Reveal delay={0.25}>
@@ -48,6 +48,9 @@ export default function About() {
             </div>
           </div>
           <div className="mb-20 flex w-full flex-col gap-16">
+            <div className="relative">
+              <Bg className="-top-44" />
+            </div>
             <div className="flex flex-col gap-4">
               <div className="bg-gradient-to-br from-zinc-100 to-zinc-400 bg-clip-text text-center font-dm text-3xl font-semibold tracking-[-2.88px] text-transparent md:text-5xl">
                 The Experts Behind the Innovation
@@ -57,67 +60,71 @@ export default function About() {
                 creativity, and delivering exceptional solutions.
               </div>
             </div>
-            <div className="flex justify-center gap-20">
-              <div className="flex flex-col items-center justify-center gap-4 rounded-xl border border-zinc-800 bg-zinc-900 px-8 py-4">
-                <div className="">
+            <div className="z-10 grid grid-cols-2 gap-4 lg:grid-cols-4">
+              <div className="flex flex-col items-center justify-center gap-4 rounded-xl border border-zinc-800 bg-zinc-900 px-4 py-4">
+                <div className="flex">
                   <Image
-                    className="max-w-44 rounded-full"
+                    className="w-full max-w-36 rounded-full"
                     src={italo}
                     alt="patrao"
                   />
                 </div>
                 <div className="flex flex-col items-center justify-center gap-1">
-                  <div className="font-dm text-xl text-zinc-50">
+                  <div className="text-center font-dm text-xl text-zinc-50">
                     Ítalo Andrade
                   </div>
-                  <div className="font-dm text-lg text-zinc-50">
+                  <div className="text-center font-dm text-lg text-zinc-50">
                     Founder & CEO
                   </div>
                 </div>
               </div>
-              <div className="flex flex-col items-center justify-center gap-4 rounded-xl border border-zinc-800 bg-zinc-900 px-8 py-4">
-                <div className="">
+              <div className="flex flex-col items-center justify-center gap-4 rounded-xl border border-zinc-800 bg-zinc-900 px-4 py-4">
+                <div className="flex">
                   <Image
-                    className="max-w-44 rounded-full"
+                    className="w-full max-w-36 rounded-full"
                     src={cairo}
                     alt="irmaodopatrao"
                   />
                 </div>
                 <div className="flex flex-col items-center justify-center gap-1">
-                  <div className="font-dm text-xl text-zinc-50">
+                  <div className="text-center font-dm text-xl text-zinc-50">
                     Cairo Andrade
                   </div>
-                  <div className="font-dm text-lg text-zinc-50">
+                  <div className="text-center font-dm text-lg text-zinc-50">
                     Product Manager
                   </div>
                 </div>
               </div>
-              <div className="flex flex-col items-center justify-center gap-4 rounded-xl border border-zinc-800 bg-zinc-900 px-8 py-4">
-                <div className="">
+              <div className="flex flex-col items-center justify-center gap-4 rounded-xl border border-zinc-800 bg-zinc-900 px-4 py-4">
+                <div className="flex">
                   <Image
-                    className="max-w-44 rounded-full"
+                    className="w-full max-w-36 rounded-full"
                     src={caio}
                     alt="patrao"
                   />
                 </div>
                 <div className="flex flex-col items-center justify-center gap-1">
-                  <div className="font-dm text-xl text-zinc-50">Caio Lemos</div>
-                  <div className="font-dm text-lg text-zinc-50">
+                  <div className="text-center font-dm text-xl text-zinc-50">
+                    Caio Lemos
+                  </div>
+                  <div className="text-center font-dm text-lg text-zinc-50">
                     Full Stack Júnior
                   </div>
                 </div>
               </div>
-              <div className="flex flex-col items-center justify-center gap-4 rounded-xl border border-zinc-800 bg-zinc-900 px-8 py-4">
-                <div className="">
+              <div className="flex flex-col items-center justify-center gap-4 rounded-xl border border-zinc-800 bg-zinc-900 px-4 py-4">
+                <div className="flex">
                   <Image
-                    className="max-w-44 rounded-full"
+                    className="w-full max-w-36 rounded-full"
                     src={italo}
                     alt="patrao"
                   />
                 </div>
                 <div className="flex flex-col items-center justify-center gap-1">
-                  <div className="font-dm text-xl text-zinc-50">Vini Jr</div>
-                  <div className="font-dm text-lg text-zinc-50">
+                  <div className="text-center font-dm text-xl text-zinc-50">
+                    Vini Jr
+                  </div>
+                  <div className="text-center font-dm text-lg text-zinc-50">
                     Product Designer
                   </div>
                 </div>

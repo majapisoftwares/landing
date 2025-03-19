@@ -60,7 +60,7 @@ export default function About() {
                 creativity, and delivering exceptional solutions.
               </div>
             </div>
-            <div className="z-10 grid grid-cols-2 gap-4 lg:grid-cols-4">
+            <div className="z-10 grid grid-cols-2 gap-4 lg:grid-cols-4 lg:gap-24">
               <div className="flex flex-col items-center justify-center gap-4 rounded-xl border border-zinc-800 bg-zinc-900 px-4 py-4">
                 <div className="flex">
                   <Image

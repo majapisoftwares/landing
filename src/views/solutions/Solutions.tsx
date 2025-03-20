@@ -36,66 +36,46 @@ const solutions = [
         key="react"
       />,
     ],
-    front: "Front-end (React / Next / Tailwind)",
-    back: "Back-end(Node.js)",
+    subtextOne: "Front-end (React / Next / Tailwind)",
+    subtextTwo: "Back-end(Node.js)",
+    subtextThree: "QA Testing",
   },
   {
     delay: 0.5,
     left: false,
     positionBg: "-top-80",
-    title: "Development",
+    title: "UI/UX Design",
     description:
-      "We design and develop high-performance, scalable, and secure solutions tailored to your business needs. From web and mobile applications to advanced software systems.",
+      "We craft intuitive interfaces and engaging experiences to maximize usability and user satisfaction. Strategic design for effective results.",
     img: uiuxdesign,
     icons: [
-      <Icon
-        icon="mdi:tailwind"
-        className="h-8 w-8 text-zinc-400"
-        key="tailwind"
-      />,
-      <Icon icon="mdi:react" className="h-8 w-8 text-zinc-400" key="react" />,
-      <Icon
-        icon="nonicons:javascript-16"
-        className="h-8 w-8 text-zinc-400"
-        key="react"
-      />,
-      <Icon
-        icon="devicon-plain:nextjs"
-        className="h-8 w-8 text-zinc-400"
-        key="react"
-      />,
+      <Icon icon="gg:figma" className="h-8 w-8 text-zinc-400" key="figma" />,
+      <Icon icon="mage:photoshop" className="h-8 w-8 text-zinc-400" key="ps" />,
     ],
-    front: "Front-end (React / Next / Tailwind)",
-    back: "Back-end(Node.js)",
+    subtextOne: "Website design",
+    subtextTwo: "Mobile App Design",
+    subtextThree: "Dashboard Design",
   },
   {
     delay: 0.5,
     left: true,
     positionBg: "-top-72",
-    title: "Development",
+    title: "Branding & Logo",
     description:
-      "We design and develop high-performance, scalable, and secure solutions tailored to your business needs. From web and mobile applications to advanced software systems.",
+      "We create strong, memorable brands with unique visual identities. From logos to complete branding strategies, we ensure consistency and impact across all touchpoints.",
     img: billbords,
     icons: [
+      <Icon icon="gg:figma" className="h-8 w-8 text-zinc-400" key="figma" />,
+      <Icon icon="mage:photoshop" className="h-8 w-8 text-zinc-400" key="ps" />,
       <Icon
-        icon="mdi:tailwind"
-        className="h-8 w-8 text-zinc-400"
-        key="tailwind"
-      />,
-      <Icon icon="mdi:react" className="h-8 w-8 text-zinc-400" key="react" />,
-      <Icon
-        icon="nonicons:javascript-16"
-        className="h-8 w-8 text-zinc-400"
-        key="react"
-      />,
-      <Icon
-        icon="devicon-plain:nextjs"
-        className="h-8 w-8 text-zinc-400"
-        key="react"
+        icon="devicon-plain:illustrator"
+        className="h-7 w-7 text-zinc-400"
+        key="illustrator"
       />,
     ],
-    front: "Front-end (React / Next / Tailwind)",
-    back: "Back-end(Node.js)",
+    subtextOne: "Brand Identity",
+    subtextTwo: "Logo Design",
+    subtextThree: "Publication Design",
   },
 ];
 
@@ -125,8 +105,9 @@ export default function Solutions() {
               image={solutions.img}
               title={solutions.title}
               description={solutions.description}
-              front={solutions.front}
-              back={solutions.back}
+              subtextOne={solutions.subtextOne}
+              subtextTwo={solutions.subtextTwo}
+              subtextThree={solutions.subtextThree}
               icons={solutions.icons}
             />
           ))}

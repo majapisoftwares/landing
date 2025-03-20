@@ -9,8 +9,9 @@ export default function Content({
   image,
   title,
   description,
-  front,
-  back,
+  subtextOne,
+  subtextTwo,
+  subtextThree,
   icons,
   left,
   delay,
@@ -21,8 +22,10 @@ export default function Content({
   image: StaticImageData;
   title: string;
   description: string;
-  front: string;
-  back: string;
+  subtextOne: string;
+  subtextTwo: string;
+  subtextThree: string;
+
   icons: ReactElement[];
 }) {
   return (
@@ -88,7 +91,7 @@ export default function Content({
                 left ? "md:text-right" : "md:text-left",
               )}
             >
-              {front}
+              {subtextOne}
             </div>
             <div
               className={clsx(
@@ -96,7 +99,7 @@ export default function Content({
                 left ? "md:text-right" : "md:text-left",
               )}
             >
-              {back}
+              {subtextTwo}
             </div>
             <div
               className={clsx(
@@ -104,7 +107,7 @@ export default function Content({
                 left ? "md:text-right" : "md:text-left",
               )}
             >
-              QA Testing
+              {subtextThree}
             </div>
           </div>
           <div

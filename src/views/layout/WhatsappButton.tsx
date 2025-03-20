@@ -5,7 +5,7 @@ import { WHATSAPP_LINK } from "../../constants";
 
 export default function WhatsappButton() {
   return (
-    <div className="fixed bottom-4 right-4 z-50">
+    <div className="fixed bottom-4 right-4 z-40">
       <div className="relative flex h-20 w-20 items-center justify-center">
         <motion.div
           animate={{

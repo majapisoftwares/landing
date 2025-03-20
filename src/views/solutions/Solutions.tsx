@@ -1,11 +1,13 @@
 import { Icon } from "@iconify/react/dist/iconify.js";
 import Flare from "../layout/Flare";
-import swan from "./swan.webp";
 import Content from "./Content";
 import Bg from "../layout/Bg";
 import Button from "@italodeandra/ui/components/Button";
 import Routes from "../../routes";
 import Reveal from "../home/Reveal";
+import development from "./development.webp";
+import uiuxdesign from "./uiuxdesign.webp";
+import billbords from "./billboards.webp";
 
 const solutions = [
   {
@@ -15,85 +17,85 @@ const solutions = [
     title: "Development",
     description:
       "We design and develop high-performance, scalable, and secure solutions tailored to your business needs. From web and mobile applications to advanced software systems.",
-    image: swan,
+    img: development,
     icons: [
       <Icon
         icon="mdi:tailwind"
-        className="h-8 w-8 text-zinc-400"
+        className="h-8 w-8 text-zinc-400 hover:text-sky-500"
         key="tailwind"
       />,
-      <Icon icon="mdi:react" className="h-8 w-8 text-zinc-400" key="react" />,
+      <Icon
+        icon="mdi:react"
+        className="h-8 w-8 text-zinc-400 hover:text-sky-500"
+        key="react"
+      />,
       <Icon
         icon="nonicons:javascript-16"
-        className="h-8 w-8 text-zinc-400"
-        key="react"
+        className="h-8 w-8 text-zinc-400 hover:text-yellow-500"
+        key="javscript"
       />,
       <Icon
         icon="devicon-plain:nextjs"
-        className="h-8 w-8 text-zinc-400"
-        key="react"
+        className="h-8 w-8 text-zinc-400 hover:text-zinc-50"
+        key="nextjs"
       />,
     ],
-    front: "Front-end (React / Next / Tailwind)",
-    back: "Back-end(Node.js)",
+    subtextOne: "Front-end (React / Next / Tailwind)",
+    subtextTwo: "Back-end(Node.js)",
+    subtextThree: "QA Testing",
   },
   {
     delay: 0.5,
     left: false,
     positionBg: "-top-80",
-    title: "Development",
+    title: "UI/UX Design",
     description:
-      "We design and develop high-performance, scalable, and secure solutions tailored to your business needs. From web and mobile applications to advanced software systems.",
-    image: swan,
+      "We craft intuitive interfaces and engaging experiences to maximize usability and user satisfaction. Strategic design for effective results.",
+    img: uiuxdesign,
     icons: [
       <Icon
-        icon="mdi:tailwind"
-        className="h-8 w-8 text-zinc-400"
-        key="tailwind"
-      />,
-      <Icon icon="mdi:react" className="h-8 w-8 text-zinc-400" key="react" />,
-      <Icon
-        icon="nonicons:javascript-16"
-        className="h-8 w-8 text-zinc-400"
-        key="react"
+        icon="gg:figma"
+        className="h-8 w-8 text-zinc-400 hover:text-orange-500"
+        key="figma"
       />,
       <Icon
-        icon="devicon-plain:nextjs"
-        className="h-8 w-8 text-zinc-400"
-        key="react"
+        icon="mage:photoshop"
+        className="h-8 w-8 text-zinc-400 hover:text-sky-500"
+        key="ps"
       />,
     ],
-    front: "Front-end (React / Next / Tailwind)",
-    back: "Back-end(Node.js)",
+    subtextOne: "Website design",
+    subtextTwo: "Mobile App Design",
+    subtextThree: "Dashboard Design",
   },
   {
     delay: 0.5,
     left: true,
     positionBg: "-top-72",
-    title: "Development",
+    title: "Branding & Logo",
     description:
-      "We design and develop high-performance, scalable, and secure solutions tailored to your business needs. From web and mobile applications to advanced software systems.",
-    image: swan,
+      "We create strong, memorable brands with unique visual identities. From logos to complete branding strategies, we ensure consistency and impact across all touchpoints.",
+    img: billbords,
     icons: [
       <Icon
-        icon="mdi:tailwind"
-        className="h-8 w-8 text-zinc-400"
-        key="tailwind"
-      />,
-      <Icon icon="mdi:react" className="h-8 w-8 text-zinc-400" key="react" />,
-      <Icon
-        icon="nonicons:javascript-16"
-        className="h-8 w-8 text-zinc-400"
-        key="react"
+        icon="gg:figma"
+        className="h-8 w-8 text-zinc-400 hover:text-orange-500"
+        key="figma"
       />,
       <Icon
-        icon="devicon-plain:nextjs"
-        className="h-8 w-8 text-zinc-400"
-        key="react"
+        icon="mage:photoshop"
+        className="h-8 w-8 text-zinc-400 hover:text-sky-500"
+        key="ps"
+      />,
+      <Icon
+        icon="devicon-plain:illustrator"
+        className="h-7 w-7 text-zinc-400 hover:text-red-900"
+        key="illustrator"
       />,
     ],
-    front: "Front-end (React / Next / Tailwind)",
-    back: "Back-end(Node.js)",
+    subtextOne: "Brand Identity",
+    subtextTwo: "Logo Design",
+    subtextThree: "Publication Design",
   },
 ];
 
@@ -120,32 +122,36 @@ export default function Solutions() {
               key={solutions.title}
               left={solutions.left}
               positionBg={solutions.positionBg}
-              image={swan}
+              image={solutions.img}
               title={solutions.title}
               description={solutions.description}
-              front={solutions.front}
-              back={solutions.back}
+              subtextOne={solutions.subtextOne}
+              subtextTwo={solutions.subtextTwo}
+              subtextThree={solutions.subtextThree}
               icons={solutions.icons}
             />
           ))}
         </div>
-        <Reveal delay={0.5}>
-          <div className="mx-auto flex w-full max-w-screen-xl flex-col items-center justify-center gap-4 px-4 pb-20">
-            <div className="relative">
-              <Bg className="-top-72" />
-            </div>
-            <div className="z-10 mx-auto max-w-[450px] text-center font-dm text-3xl font-semibold tracking-[-0.432px] text-white sm:text-3xl md:max-w-[500px] md:text-4xl">
-              Innovation starts with action. Get in touch now!
-            </div>
+        <div className="mx-auto flex w-full max-w-screen-xl flex-col items-center justify-center gap-6 px-4 pb-20">
+          <div className="relative">
+            <Bg className="-top-72" />
+          </div>
+          <Reveal
+            delay={0.5}
+            className="z-10 mx-auto max-w-[450px] text-center font-dm text-3xl font-semibold tracking-[-0.432px] text-white sm:text-3xl md:max-w-[500px] md:text-4xl"
+          >
+            Innovation starts with action. Get in touch now!
+          </Reveal>
+          <Reveal className="z-10" delay={0.5}>
             <Button
               variant="filled"
               href={Routes.Contact}
-              className="max-w z-10 rounded-lg border border-zinc-600 bg-zinc-100 px-[78px] py-3 font-dm text-zinc-800 md:text-xl"
+              className="max-w rounded-lg border border-zinc-600 bg-zinc-100 px-[78px] py-3 font-dm text-zinc-800 md:text-xl"
             >
               Contact Us
             </Button>
-          </div>
-        </Reveal>
+          </Reveal>
+        </div>
       </div>
     </div>
   );

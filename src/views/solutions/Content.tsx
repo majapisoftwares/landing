@@ -112,7 +112,7 @@ export default function Content({
           </div>
           <div
             className={clsx(
-              "flex justify-center gap-10",
+              "flex items-center justify-center gap-10",
               left ? "md:justify-end" : "md:justify-start",
             )}
           >

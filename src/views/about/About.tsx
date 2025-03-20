@@ -92,7 +92,7 @@ export default function About() {
                 creativity, and delivering exceptional solutions.
               </div>
             </Reveal>
-            <div className="z-10 grid grid-cols-2 gap-4 lg:grid-cols-4 lg:gap-24">
+            <div className="z-10 grid grid-cols-1 gap-4 lg:grid-cols-4 lg:gap-24">
               {staff.map((member) => (
                 <Reveal
                   delay={member.delay}

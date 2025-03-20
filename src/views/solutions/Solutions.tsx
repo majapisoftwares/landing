@@ -141,11 +141,11 @@ export default function Solutions() {
           >
             Innovation starts with action. Get in touch now!
           </Reveal>
-          <Reveal delay={0.5}>
+          <Reveal className="z-10" delay={0.5}>
             <Button
               variant="filled"
               href={Routes.Contact}
-              className="max-w z-10 rounded-lg border border-zinc-600 bg-zinc-100 px-[78px] py-3 font-dm text-zinc-800 md:text-xl"
+              className="max-w rounded-lg border border-zinc-600 bg-zinc-100 px-[78px] py-3 font-dm text-zinc-800 md:text-xl"
             >
               Contact Us
             </Button>

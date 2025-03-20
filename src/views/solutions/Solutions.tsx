@@ -1,11 +1,13 @@
 import { Icon } from "@iconify/react/dist/iconify.js";
 import Flare from "../layout/Flare";
-import swan from "./swan.webp";
 import Content from "./Content";
 import Bg from "../layout/Bg";
 import Button from "@italodeandra/ui/components/Button";
 import Routes from "../../routes";
 import Reveal from "../home/Reveal";
+import development from "./development.webp";
+import uiuxdesign from "./uiuxdesign.webp";
+import billbords from "./billboards.webp";
 
 const solutions = [
   {
@@ -15,7 +17,7 @@ const solutions = [
     title: "Development",
     description:
       "We design and develop high-performance, scalable, and secure solutions tailored to your business needs. From web and mobile applications to advanced software systems.",
-    image: swan,
+    img: development,
     icons: [
       <Icon
         icon="mdi:tailwind"
@@ -44,7 +46,7 @@ const solutions = [
     title: "Development",
     description:
       "We design and develop high-performance, scalable, and secure solutions tailored to your business needs. From web and mobile applications to advanced software systems.",
-    image: swan,
+    img: uiuxdesign,
     icons: [
       <Icon
         icon="mdi:tailwind"
@@ -73,7 +75,7 @@ const solutions = [
     title: "Development",
     description:
       "We design and develop high-performance, scalable, and secure solutions tailored to your business needs. From web and mobile applications to advanced software systems.",
-    image: swan,
+    img: billbords,
     icons: [
       <Icon
         icon="mdi:tailwind"
@@ -120,7 +122,7 @@ export default function Solutions() {
               key={solutions.title}
               left={solutions.left}
               positionBg={solutions.positionBg}
-              image={swan}
+              image={solutions.img}
               title={solutions.title}
               description={solutions.description}
               front={solutions.front}

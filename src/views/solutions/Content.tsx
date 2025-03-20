@@ -37,11 +37,11 @@ export default function Content({
             left ? "md:flex-row" : "md:flex-row-reverse",
           )}
         >
-          <div className="rounded-lg bg-zinc-300 px-8 pt-8">
+          <div className="relative z-10">
             <Image
               src={image}
               alt={title}
-              className="h-full w-full object-cover"
+              className="h-full w-full rounded-xl object-cover"
             />
           </div>
           <div

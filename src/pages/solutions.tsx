@@ -1,8 +1,8 @@
-import { Home } from "../views/home/Home";
+import Solutions from "../views/solutions/Solutions";
 import getLayout from "../views/layout/layout";
 
 export default function Page() {
-  return <Home />;
+  return <Solutions />;
 }
 
 Page.getLayout = getLayout;

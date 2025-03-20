@@ -11,7 +11,7 @@ export default function NavigationDrawer() {
   const toggleDrawer = () => setIsOpen(!isOpen);
 
   return (
-    <div className="relative">
+    <div className="relative z-50">
       <Button
         icon
         onClick={toggleDrawer}
@@ -39,6 +39,7 @@ export default function NavigationDrawer() {
           <Button
             variant="text"
             href={Routes.Home}
+            onClick={() => setIsOpen(false)}
             className="border-0 font-dm text-[28px] text-zinc-50"
           >
             Home
@@ -46,6 +47,7 @@ export default function NavigationDrawer() {
           <Button
             variant="text"
             href={Routes.Solutions}
+            onClick={() => setIsOpen(false)}
             className="border-0 font-dm text-[28px] text-zinc-50"
           >
             Solutions
@@ -53,6 +55,7 @@ export default function NavigationDrawer() {
           <Button
             variant="text"
             href={Routes.About}
+            onClick={() => setIsOpen(false)}
             className="border-0 font-dm text-[28px] text-zinc-50"
           >
             About
@@ -60,6 +63,7 @@ export default function NavigationDrawer() {
           <Button
             variant="text"
             href={Routes.Contact}
+            onClick={() => setIsOpen(false)}
             className="border-0 font-dm text-[28px] text-zinc-50"
           >
             Contact Us

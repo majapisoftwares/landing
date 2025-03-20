@@ -76,7 +76,7 @@ export default function App({ Component, pageProps }: AppProps) {
               {getLayout(<Component {...pageProps} />)}
             </AuthProvider>
           </NuqsAdapter>
-          <ReactQueryDevtools buttonPosition="bottom-right" />
+          <ReactQueryDevtools buttonPosition="bottom-left" />
         </HydrationBoundary>
       </QueryClientProvider>
     </>

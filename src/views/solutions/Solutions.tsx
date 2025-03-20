@@ -131,14 +131,17 @@ export default function Solutions() {
             />
           ))}
         </div>
-        <Reveal delay={0.5}>
-          <div className="mx-auto flex w-full max-w-screen-xl flex-col items-center justify-center gap-4 px-4 pb-20">
-            <div className="relative">
-              <Bg className="-top-72" />
-            </div>
-            <div className="z-10 mx-auto max-w-[450px] text-center font-dm text-3xl font-semibold tracking-[-0.432px] text-white sm:text-3xl md:max-w-[500px] md:text-4xl">
-              Innovation starts with action. Get in touch now!
-            </div>
+        <div className="mx-auto flex w-full max-w-screen-xl flex-col items-center justify-center gap-6 px-4 pb-20">
+          <div className="relative">
+            <Bg className="-top-72" />
+          </div>
+          <Reveal
+            delay={0.5}
+            className="z-10 mx-auto max-w-[450px] text-center font-dm text-3xl font-semibold tracking-[-0.432px] text-white sm:text-3xl md:max-w-[500px] md:text-4xl"
+          >
+            Innovation starts with action. Get in touch now!
+          </Reveal>
+          <Reveal delay={0.5}>
             <Button
               variant="filled"
               href={Routes.Contact}
@@ -146,8 +149,8 @@ export default function Solutions() {
             >
               Contact Us
             </Button>
-          </div>
-        </Reveal>
+          </Reveal>
+        </div>
       </div>
     </div>
   );

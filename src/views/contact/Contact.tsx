@@ -3,6 +3,7 @@ import Reveal from "../home/Reveal";
 import Bg from "../layout/Bg";
 import Flare from "../layout/Flare";
 import { Icon } from "@iconify/react/dist/iconify.js";
+import {EnvelopeIcon} from "@heroicons/react/24/outline";
 
 export default function Contact() {
   return (
@@ -44,8 +45,7 @@ export default function Contact() {
                 size="xl"
                 className="w-full rounded-xl dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-50 dark:hover:bg-zinc-950/50"
                 leading={
-                  <Icon
-                    icon="streamline:mail-send-envelope-solid"
+                  <EnvelopeIcon
                     className="h-8 w-8 text-green-400"
                   />
                 }

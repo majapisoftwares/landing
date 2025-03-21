@@ -4,7 +4,7 @@ import Content from "./Content";
 import Bg from "../layout/Bg";
 import Button from "@italodeandra/ui/components/Button";
 import Routes from "../../routes";
-import Reveal from "../home/Reveal";
+import RevealMotion from "../../components/RevealMotion";
 import development from "./development.webp";
 import uiuxdesign from "./uiuxdesign.webp";
 import billbords from "./billboards.webp";
@@ -105,7 +105,7 @@ export default function Solutions() {
       <Flare />
       <div className="relative flex w-full flex-col gap-20 pt-20">
         <div className="relative mx-auto flex w-full max-w-screen-xl flex-col gap-10 px-4">
-          <Reveal delay={0.25}>
+          <RevealMotion delay={0.25}>
             <div className="z-10 flex flex-col gap-4">
               <div className="bg-gradient-to-br from-zinc-100 to-zinc-400 bg-clip-text text-center font-dm text-3xl font-semibold tracking-[-2.88px] text-transparent md:text-left md:text-5xl">
                 Our Solutions
@@ -115,7 +115,7 @@ export default function Solutions() {
                 services to meet your needs.
               </div>
             </div>
-          </Reveal>
+          </RevealMotion>
           {solutions.map((solutions) => (
             <Content
               delay={solutions.delay}
@@ -136,13 +136,13 @@ export default function Solutions() {
           <div className="relative">
             <Bg className="-top-72" />
           </div>
-          <Reveal
+          <RevealMotion
             delay={0.5}
             className="z-10 mx-auto max-w-[450px] text-center font-dm text-3xl font-semibold tracking-[-0.432px] text-white sm:text-3xl md:max-w-[500px] md:text-4xl"
           >
             Innovation starts with action. Get in touch now!
-          </Reveal>
-          <Reveal className="z-10" delay={0.5}>
+          </RevealMotion>
+          <RevealMotion className="z-10" delay={0.5}>
             <Button
               variant="filled"
               href={Routes.Contact}
@@ -150,7 +150,7 @@ export default function Solutions() {
             >
               Contact Us
             </Button>
-          </Reveal>
+          </RevealMotion>
         </div>
       </div>
     </div>

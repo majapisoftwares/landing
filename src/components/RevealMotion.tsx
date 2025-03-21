@@ -1,10 +1,10 @@
 import { ReactNode, useEffect, useRef, useState } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
-import useBreakpoint from "../../hooks/useBreakpoint";
+import useIsMobile from "../hooks/useIsMobile";
 
 type DelayType = number | { mobile?: number; desktop?: number };
 
-export default function Reveal({
+export default function RevealMotion({
   children,
   delay = 0,
   className,
@@ -16,7 +16,7 @@ export default function Reveal({
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const mainControls = useAnimation();
-  const isMobile = useBreakpoint();
+  const isMobile = useIsMobile();
 
   const [mounted, setMounted] = useState(false);
 

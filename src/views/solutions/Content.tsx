@@ -2,7 +2,7 @@ import Image, { StaticImageData } from "next/image";
 import Bg from "../layout/Bg";
 import { ReactElement } from "react";
 import clsx from "@italodeandra/ui/utils/clsx";
-import Reveal from "../home/Reveal";
+import RevealMotion from "../../components/RevealMotion";
 
 export default function Content({
   positionBg,
@@ -33,7 +33,7 @@ export default function Content({
       <div className="relative">
         <Bg className={positionBg} />
       </div>
-      <Reveal
+      <RevealMotion
         delay={delay}
         className={clsx(
           "z-10 flex w-full flex-col gap-4",
@@ -119,7 +119,7 @@ export default function Content({
             {icons}
           </div>
         </div>
-      </Reveal>
+      </RevealMotion>
     </>
   );
 }

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Reveal from "../home/Reveal";
+import RevealMotion from "../../components/RevealMotion";
 import Bg from "../layout/Bg";
 import Flare from "../layout/Flare";
 import office from "./office.webp";
@@ -10,6 +10,7 @@ import italo from "./italo.webp";
 import cairo from "./cairo.webp";
 import caio from "./caio.webp";
 import vinicius from "./vinicius.webp";
+import { RevealTailwind } from "../../components/RevealTailwind";
 
 const staff = [
   {
@@ -49,7 +50,7 @@ export default function About() {
       <Bg className="-top-12" />
       <div className="relative flex w-full flex-col gap-20 pt-20">
         <div className="relative mx-auto flex w-full max-w-screen-xl flex-col gap-10 px-4">
-          <Reveal delay={0.25} className="z-10 flex flex-col gap-4">
+          <RevealMotion delay={0.25} className="z-10 flex flex-col gap-4">
             <div className="bg-gradient-to-br from-zinc-100 to-zinc-400 bg-clip-text text-center font-dm text-3xl font-semibold tracking-[-2.88px] text-transparent md:text-left md:text-5xl">
               About us
             </div>
@@ -59,35 +60,35 @@ export default function About() {
               blockchain, and software development, we help businesses thrive in
               a constantly evolving digital world.
             </div>
-          </Reveal>
+          </RevealMotion>
           <div className="relative flex flex-col gap-4 p-6 md:flex-row">
-            <Reveal
+            <RevealMotion
               delay={1}
               className="absolute left-0 top-0 flex h-24 w-24 items-center justify-center rounded-xl bg-black"
             >
               <Ma className="h-10 w-10" />
-            </Reveal>
-            <Reveal delay={0.5} className="w-full">
+            </RevealMotion>
+            <RevealMotion delay={0.5} className="w-full">
               <Image className="w-full" src={office} alt="office" />
-            </Reveal>
-            <Reveal delay={{ desktop: 0.75, mobile: 0.25 }} className="w-full">
+            </RevealMotion>
+            <RevealMotion delay={{ desktop: 0.75, mobile: 0.25 }} className="w-full">
               <Image className="w-full" src={work} alt="office" />
-            </Reveal>
-            <Reveal delay={{ desktop: 1, mobile: 0.25 }} className="w-full">
+            </RevealMotion>
+            <RevealMotion delay={{ desktop: 1, mobile: 0.25 }} className="w-full">
               <Image className="w-full" src={workagain} alt="office" />
-              <Reveal
+              <RevealMotion
                 delay={{ desktop: 1.5, mobile: 0.5 }}
                 className="absolute bottom-0 right-0 flex h-24 w-24 items-center justify-center rounded-xl bg-zinc-50"
               >
                 <Ma className="h-10 w-10 text-black" />
-              </Reveal>
-            </Reveal>
+              </RevealMotion>
+            </RevealMotion>
           </div>
           <div className="mb-20 flex w-full flex-col gap-16">
             <div className="relative">
               <Bg className="-top-44" />
             </div>
-            <Reveal delay={0.25} className="flex flex-col gap-4">
+            <RevealMotion delay={0.25} className="flex flex-col gap-4">
               <div className="bg-gradient-to-br from-zinc-100 to-zinc-400 bg-clip-text text-center font-dm text-3xl font-semibold tracking-[-2.88px] text-transparent md:text-5xl">
                 The Experts Behind the Innovation
               </div>
@@ -95,11 +96,12 @@ export default function About() {
                 A passionate team of experts dedicated to innovation,
                 creativity, and delivering exceptional solutions.
               </div>
-            </Reveal>
+            </RevealMotion>
             <div className="z-10 grid grid-cols-1 gap-4 lg:grid-cols-4 lg:gap-24">
               {staff.map((member) => (
-                <Reveal
-                  delay={{ desktop: member.desktop, mobile: member.mobile }}
+                <RevealTailwind
+                  delayDesktop={member.desktop}
+                  delayMobile={member.mobile}
                   key={member.name}
                   className="flex flex-col items-center justify-center gap-4 rounded-xl border border-zinc-800 bg-zinc-900 px-4 py-4"
                 >
@@ -118,7 +120,7 @@ export default function About() {
                       {member.role}
                     </div>
                   </div>
-                </Reveal>
+                </RevealTailwind>
               ))}
             </div>
           </div>

@@ -16,25 +16,29 @@ const staff = [
     name: "Ítalo Andrade",
     role: "Founder & CEO",
     img: italo,
-    delay: 0.5,
+    desktop: 0.5,
+    mobile: 0.25,
   },
   {
     name: "Cairo Andrade",
     role: "Product Manager",
     img: cairo,
-    delay: 0.75,
+    desktop: 0.75,
+    mobile: 0.25,
   },
   {
     name: "Caio Lemos",
     role: "Full Stack Júnior",
     img: caio,
-    delay: 1,
+    desktop: 1,
+    mobile: 0.25,
   },
   {
     name: "Vinicius Morais",
     role: "Product Designer",
     img: vinicius,
-    delay: 1.25,
+    desktop: 1.25,
+    mobile: 0.25,
   },
 ];
 
@@ -66,13 +70,13 @@ export default function About() {
             <Reveal delay={0.5} className="w-full">
               <Image className="w-full" src={office} alt="office" />
             </Reveal>
-            <Reveal delay={0.75} className="w-full">
+            <Reveal delay={{ desktop: 0.75, mobile: 0.25 }} className="w-full">
               <Image className="w-full" src={work} alt="office" />
             </Reveal>
-            <Reveal delay={1} className="w-full">
+            <Reveal delay={{ desktop: 1, mobile: 0.25 }} className="w-full">
               <Image className="w-full" src={workagain} alt="office" />
               <Reveal
-                delay={1.5}
+                delay={{ desktop: 1.5, mobile: 0.5 }}
                 className="absolute bottom-0 right-0 flex h-24 w-24 items-center justify-center rounded-xl bg-zinc-50"
               >
                 <Ma className="h-10 w-10 text-black" />
@@ -95,7 +99,7 @@ export default function About() {
             <div className="z-10 grid grid-cols-1 gap-4 lg:grid-cols-4 lg:gap-24">
               {staff.map((member) => (
                 <Reveal
-                  delay={member.delay}
+                  delay={{ desktop: member.desktop, mobile: member.mobile }}
                   key={member.name}
                   className="flex flex-col items-center justify-center gap-4 rounded-xl border border-zinc-800 bg-zinc-900 px-4 py-4"
                 >

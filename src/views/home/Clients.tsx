@@ -1,6 +1,6 @@
 import { Icon } from "@iconify/react";
 import Bg from "../layout/Bg";
-import Reveal from "./Reveal";
+import RevealMotion from "../../components/RevealMotion";
 import { cloneElement } from "react";
 
 const marketSegments = [
@@ -32,7 +32,7 @@ export default function Clients() {
     <div className="relative">
       <Bg />
       <div className="relative mx-auto flex w-full max-w-screen-xl flex-col items-center gap-10 px-4">
-        <Reveal delay={0.25}>
+        <RevealMotion delay={0.25}>
           <div className="flex flex-col items-center gap-4">
             <div className="bg-gradient-to-br from-zinc-100 to-zinc-400 bg-clip-text font-dm text-3xl font-semibold tracking-[-2.88px] text-transparent md:text-5xl">
               Some of our clients
@@ -41,10 +41,10 @@ export default function Clients() {
               Trusted by businesses across Brazil, the US, and Turkey.
             </div>
           </div>
-        </Reveal>
+        </RevealMotion>
         <div className="flex w-full flex-col justify-center gap-8 md:flex-row">
           {marketSegments.map((segment) => (
-            <Reveal key={segment.market} delay={segment.delay}>
+            <RevealMotion key={segment.market} delay={segment.delay}>
               <div className="flex h-full w-full flex-col items-center justify-center gap-4 rounded-lg border border-zinc-800 bg-zinc-900 px-4 py-10">
                 <div className="rounded bg-white p-4">
                   {cloneElement(segment.icon, {
@@ -60,7 +60,7 @@ export default function Clients() {
                   </div>
                 </div>
               </div>
-            </Reveal>
+            </RevealMotion>
           ))}
         </div>
       </div>

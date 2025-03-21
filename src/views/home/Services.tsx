@@ -4,7 +4,7 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 import Accordion from "@italodeandra/ui/components/Accordion";
 import { cloneElement } from "react";
 import Bg from "../layout/Bg";
-import Reveal from "./Reveal";
+import RevealMotion from "../../components/RevealMotion";
 
 const services = [
   {
@@ -34,7 +34,7 @@ export default function Sevices() {
     <div className="relative">
       <Bg className="-top-44" />
       <div className="relative mx-auto flex w-full max-w-screen-xl flex-col items-center gap-10 px-4">
-        <Reveal delay={0.25}>
+        <RevealMotion delay={0.25}>
           <div className="flex flex-col gap-4 md:items-center">
             <div className="bg-gradient-to-br from-zinc-100 to-zinc-400 bg-clip-text text-center font-dm text-3xl font-semibold text-transparent md:text-5xl lg:text-left lg:tracking-[-2.88px]">
               Our services
@@ -44,8 +44,8 @@ export default function Sevices() {
               to meet your needs.
             </div>
           </div>
-        </Reveal>
-        <Reveal className="flex w-full" delay={0.5}>
+        </RevealMotion>
+        <RevealMotion className="flex w-full" delay={0.5}>
           <div className="flex w-full flex-col gap-4 lg:hidden">
             {services.map((service) => (
               <Accordion key={service.title}>
@@ -69,10 +69,10 @@ export default function Sevices() {
               </Accordion>
             ))}
           </div>
-        </Reveal>
+        </RevealMotion>
         <div className="hidden w-full justify-center gap-8 lg:flex">
           {services.map((service) => (
-            <Reveal delay={service.delay} key={service.title}>
+            <RevealMotion delay={service.delay} key={service.title}>
               <div className="flex h-60 max-w-[340px] flex-col items-center justify-center gap-4 rounded-lg border border-zinc-800 bg-zinc-900 px-4">
                 <div className="rounded-full bg-white p-4">
                   {cloneElement(service.icon, {
@@ -88,7 +88,7 @@ export default function Sevices() {
                   </div>
                 </div>
               </div>
-            </Reveal>
+            </RevealMotion>
           ))}
         </div>
       </div>

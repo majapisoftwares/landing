@@ -54,7 +54,7 @@ export default function Sevices() {
                   triggerClassName="gap-2 justify-center items-center md:flex-row dark:bg-zinc-900 dark:hover:bg-zinc-950/30 font-tight text-lg lg:text-2xl px-8 py-5"
                   contentClassName="text-center text-zinc-400 font-dm"
                   title={
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center text-center gap-3">
                       {service.title}
                       <div className="rounded-full bg-white p-2">
                         {cloneElement(service.icon, {

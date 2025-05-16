@@ -1,4 +1,4 @@
-import Button from "@italodeandra/ui/components/Button";
+import Button from "@majapisoftwares/ui/components/Button";
 import Link from "next/link";
 import Logo from "../../Logo";
 import Routes from "../../../routes";
@@ -6,10 +6,10 @@ import NavigationDrawer from "./NavigationDrawer";
 
 export default function Header() {
   return (
-    <div className="fixed z-50 flex w-full border-b border-zinc-700 backdrop-blur-lg">
-      <div className="mx-auto flex w-full max-w-screen-xl justify-between p-4">
+    <div className="fixed z-50 flex w-full border-b border-zinc-800 backdrop-blur-lg">
+      <div className="mx-auto flex w-full max-w-(--breakpoint-xl) justify-between p-4">
         <Link href="/" className="flex items-center">
-          <Logo className="w-32" />
+          <Logo className="w-30" />
         </Link>
         <div className="hidden gap-4 md:flex">
           <Button

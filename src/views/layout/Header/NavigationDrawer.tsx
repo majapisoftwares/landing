@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import Button from "@italodeandra/ui/components/Button";
+import Button from "@majapisoftwares/ui/components/Button";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { XMarkIcon } from "@heroicons/react/16/solid";
 import Routes from "../../../routes";
@@ -15,7 +15,7 @@ export default function NavigationDrawer() {
       <Button
         icon
         onClick={toggleDrawer}
-        className="border-none focus:!ring-0 focus:!ring-offset-0 dark:hover:border-none"
+        className="border-none focus:ring-0! focus:ring-offset-0! dark:hover:border-none"
       >
         <Icon icon="mdi:menu" className="h-7 w-7" />
       </Button>
@@ -30,7 +30,7 @@ export default function NavigationDrawer() {
           <Button
             icon
             onClick={toggleDrawer}
-            className="border-none focus:!ring-0 focus:!ring-offset-0 dark:hover:border-none"
+            className="border-none focus:ring-0! focus:ring-offset-0! dark:hover:border-none"
           >
             <XMarkIcon className="h-7 w-7" />
           </Button>

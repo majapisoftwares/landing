@@ -1,5 +1,5 @@
 import { CSSProperties, ReactNode, useEffect, useRef, useState } from "react";
-import clsx from "@italodeandra/ui/utils/clsx";
+import clsx from "@majapisoftwares/ui/utils/clsx";
 
 export function RevealTailwind({
   children,
@@ -34,7 +34,7 @@ export function RevealTailwind({
     <div
       ref={intersectionRef}
       className={clsx(
-        "transition-[opacity,transform] delay-[--delay-mobile] duration-500 md:delay-[--delay-desktop]",
+        "transition-[opacity,transform] delay-(--delay-mobile) duration-500 md:delay-(--delay-desktop)",
         "translate-y-[75px] opacity-0",
         "data-[visible=true]:translate-y-0 data-[visible=true]:opacity-100",
         className,

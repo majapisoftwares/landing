@@ -1,4 +1,4 @@
-import prepareSendMail from "@italodeandra/next/mailer/sendMail";
+import prepareSendMail from "@majapisoftwares/next/mailer/sendMail";
 import { LANDING_URL } from "./constants";
 
 const sendMail = prepareSendMail({

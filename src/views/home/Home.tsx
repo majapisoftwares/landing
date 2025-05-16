@@ -26,7 +26,7 @@ export function Home() {
         <RevealMotion delay={0.75}>
           <Contact />
         </RevealMotion>
-        <div className="h-96 bg-gradient-to-t from-zinc-900 from-30% to-zinc-900/0" />
+        <div className="h-96 bg-linear-to-t from-zinc-900 from-30% to-zinc-900/0" />
       </div>
     </div>
   );

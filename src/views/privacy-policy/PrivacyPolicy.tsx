@@ -1,4 +1,4 @@
-import Button from "@italodeandra/ui/components/Button";
+import Button from "@majapisoftwares/ui/components/Button";
 import RevealMotion from "../../components/RevealMotion";
 import Bg from "../layout/Bg";
 import Flare from "../layout/Flare";
@@ -11,10 +11,10 @@ export default function PrivacyPolicy() {
       <Flare />
       <Bg className="-top-4" />
       <div className="relative flex w-full flex-col gap-20 pt-20">
-        <div className="relative mx-auto flex h-screen w-full max-w-screen-xl flex-col gap-10 px-4">
+        <div className="relative mx-auto flex h-screen w-full max-w-(--breakpoint-xl) flex-col gap-10 px-4">
           <RevealMotion delay={0.25}>
             <div className="z-10 flex flex-col gap-4">
-              <div className="bg-gradient-to-br from-zinc-100 to-zinc-400 bg-clip-text text-center font-dm text-3xl font-semibold tracking-[-2.88px] text-transparent md:text-left md:text-5xl">
+              <div className="bg-linear-to-br from-zinc-100 to-zinc-400 bg-clip-text text-center font-dm text-3xl font-semibold tracking-[-2.88px] text-transparent md:text-left md:text-5xl">
                 Privacy Policy
               </div>
               <div className="max-w-[500px] self-center text-center font-dm text-lg leading-8 text-zinc-400 md:self-start md:text-left md:text-xl">

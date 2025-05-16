@@ -1,5 +1,8 @@
-@import "../node_modules/@italodeandra/ui/base.css";
+@import '@majapisoftwares/ui/base.css';
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@theme {
+    --font-dm: 'DM Sans Variable', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-tight: 'Inter Tight Variable', ui-sans-serif, system-ui, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}

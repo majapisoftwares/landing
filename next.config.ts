@@ -1,5 +1,5 @@
 import type { NextConfig } from "next";
-import nextConfig from "@italodeandra/next/next.config.js";
+import nextConfig from "@majapisoftwares/next/next.config.js";
 import { merge } from "lodash-es";
 
 const config: NextConfig = {

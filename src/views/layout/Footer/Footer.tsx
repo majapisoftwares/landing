@@ -1,14 +1,14 @@
 import Logo from "../../Logo";
-import Button from "@italodeandra/ui/components/Button";
+import Button from "@majapisoftwares/ui/components/Button";
 import { Icon } from "@iconify/react/dist/iconify.js";
-import Link from "@italodeandra/ui/components/Link";
+import Link from "@majapisoftwares/ui/components/Link";
 import Routes from "../../../routes";
 import { INSTAGRAM_LINK, LINKEDIN_LINK } from "../../../constants";
 
 export default function Footer() {
   return (
     <div className="flex w-full border-t border-zinc-700 bg-zinc-900">
-      <div className="mx-auto flex w-full max-w-screen-xl flex-col-reverse items-center justify-between gap-8 px-4 py-20 md:flex-row md:gap-4">
+      <div className="mx-auto flex w-full max-w-(--breakpoint-xl) flex-col-reverse items-center justify-between gap-8 px-4 py-20 md:flex-row md:gap-4">
         <div className="flex flex-col items-center gap-4 md:items-start">
           <Link href="/" className="flex items-center">
             <Logo className="w-32" />

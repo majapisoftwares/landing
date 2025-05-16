@@ -1,16 +1,16 @@
 import { ArrowLongRightIcon } from "@heroicons/react/20/solid";
-import Button from "@italodeandra/ui/components/Button";
-import Accordion from "@italodeandra/ui/components/Accordion";
+import Button from "@majapisoftwares/ui/components/Button";
+import Accordion from "@majapisoftwares/ui/components/Accordion";
 import { BoltIcon, GlobeAltIcon } from "@heroicons/react/24/outline";
 import { Icon } from "@iconify/react";
 import { WHATSAPP_LINK } from "../../constants";
 
 export default function WhyChooseUs() {
   return (
-    <div className="relative z-10 mx-auto flex w-full max-w-screen-xl flex-col gap-10 px-4">
+    <div className="relative z-10 mx-auto flex w-full max-w-(--breakpoint-xl) flex-col gap-10 px-4">
       <div className="flex flex-col gap-12 lg:flex-row lg:gap-4">
         <div className="flex w-full flex-col items-center justify-center gap-4 self-start lg:items-start lg:gap-10">
-          <div className="bg-gradient-to-br from-zinc-100 to-zinc-400 bg-clip-text text-center font-dm text-3xl font-semibold text-transparent md:text-5xl md:tracking-[-2.88px] lg:text-left">
+          <div className="bg-linear-to-br from-zinc-100 to-zinc-400 bg-clip-text text-center font-dm text-3xl font-semibold text-transparent md:text-5xl md:tracking-[-2.88px] lg:text-left">
             Why choose us
           </div>
           <div className="max-w-[506px] text-center font-dm text-xl text-zinc-400  lg:text-left ">

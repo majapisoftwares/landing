@@ -1,7 +1,7 @@
 import Image, { StaticImageData } from "next/image";
 import Bg from "../layout/Bg";
 import { ReactElement } from "react";
-import clsx from "@italodeandra/ui/utils/clsx";
+import clsx from "@majapisoftwares/ui/utils/clsx";
 import RevealMotion from "../../components/RevealMotion";
 
 export default function Content({
@@ -61,7 +61,7 @@ export default function Content({
           >
             <div
               className={clsx(
-                "bg-gradient-to-br from-zinc-100 to-zinc-400 bg-clip-text text-center font-dm text-3xl font-semibold text-transparent md:text-5xl md:tracking-[-2.88px]",
+                "bg-linear-to-br from-zinc-100 to-zinc-400 bg-clip-text text-center font-dm text-3xl font-semibold text-transparent md:text-5xl md:tracking-[-2.88px]",
                 left ? "md:text-right" : "md:text-left",
               )}
             >
@@ -79,7 +79,7 @@ export default function Content({
           <div className="flex flex-col gap-4">
             <div
               className={clsx(
-                "bg-gradient-to-br from-zinc-100 to-zinc-400 bg-clip-text text-center font-dm text-2xl font-semibold text-transparent md:text-4xl md:tracking-[-2.88px]",
+                "bg-linear-to-br from-zinc-100 to-zinc-400 bg-clip-text text-center font-dm text-2xl font-semibold text-transparent md:text-4xl md:tracking-[-2.88px]",
                 left ? "md:text-right" : "md:text-left",
               )}
             >

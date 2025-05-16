@@ -31,10 +31,10 @@ export default function Clients() {
   return (
     <div className="relative">
       <Bg />
-      <div className="relative mx-auto flex w-full max-w-screen-xl flex-col items-center gap-10 px-4">
+      <div className="relative mx-auto flex w-full max-w-(--breakpoint-xl) flex-col items-center gap-10 px-4">
         <RevealMotion delay={0.25}>
           <div className="flex flex-col items-center gap-4">
-            <div className="bg-gradient-to-br from-zinc-100 to-zinc-400 bg-clip-text font-dm text-3xl font-semibold tracking-[-2.88px] text-transparent md:text-5xl">
+            <div className="bg-linear-to-br from-zinc-100 to-zinc-400 bg-clip-text font-dm text-3xl font-semibold tracking-[-2.88px] text-transparent md:text-5xl">
               Some of our clients
             </div>
             <div className="max-w-[550px] text-center font-dm text-lg leading-8 text-zinc-400 md:text-xl">

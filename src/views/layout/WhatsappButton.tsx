@@ -1,5 +1,5 @@
 import { Icon } from "@iconify/react/dist/iconify.js";
-import Button from "@italodeandra/ui/components/Button";
+import Button from "@majapisoftwares/ui/components/Button";
 import { motion } from "framer-motion";
 import { WHATSAPP_LINK } from "../../constants";
 

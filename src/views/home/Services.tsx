@@ -1,7 +1,7 @@
 import { ComputerDesktopIcon } from "@heroicons/react/20/solid";
 import { SparklesIcon } from "@heroicons/react/24/outline";
 import { Icon } from "@iconify/react/dist/iconify.js";
-import Accordion from "@italodeandra/ui/components/Accordion";
+import Accordion from "@majapisoftwares/ui/components/Accordion";
 import { cloneElement } from "react";
 import Bg from "../layout/Bg";
 import RevealMotion from "../../components/RevealMotion";
@@ -33,10 +33,10 @@ export default function Sevices() {
   return (
     <div className="relative">
       <Bg className="-top-44" />
-      <div className="relative mx-auto flex w-full max-w-screen-xl flex-col items-center gap-10 px-4">
+      <div className="relative mx-auto flex w-full max-w-(--breakpoint-xl) flex-col items-center gap-10 px-4">
         <RevealMotion delay={0.25}>
           <div className="flex flex-col gap-4 md:items-center">
-            <div className="bg-gradient-to-br from-zinc-100 to-zinc-400 bg-clip-text text-center font-dm text-3xl font-semibold text-transparent md:text-5xl lg:text-left lg:tracking-[-2.88px]">
+            <div className="bg-linear-to-br from-zinc-100 to-zinc-400 bg-clip-text text-center font-dm text-3xl font-semibold text-transparent md:text-5xl lg:text-left lg:tracking-[-2.88px]">
               Our services
             </div>
             <div className="max-w-[500px] text-center font-dm text-lg text-zinc-400 md:text-xl lg:leading-8">

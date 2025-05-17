@@ -1,11 +1,11 @@
 import Hero from "./Hero";
 import WhyChooseUs from "./WhyChooseUs";
-import Projects from "./Projects";
-import Clients from "./Clients";
-import Contact from "./Contact";
-import Services from "./Services";
 import Flare from "../layout/Flare";
 import RevealMotion from "../../components/RevealMotion";
+import { ServiceOverview } from "./service-overview/ServiceOverview";
+import Contact from "./Contact";
+import { OurProcess } from "./our-process/OurProcess";
+import { Technologies } from "./technologies/Technologies";
 
 export function Home() {
   return (
@@ -18,11 +18,15 @@ export function Home() {
         <RevealMotion delay={0.75}>
           <WhyChooseUs />
         </RevealMotion>
-        <Services />
         <RevealMotion delay={0.75}>
-          <Projects />
+          <ServiceOverview />
         </RevealMotion>
-        <Clients />
+        <RevealMotion delay={0.75}>
+          <OurProcess />
+        </RevealMotion>
+        <RevealMotion delay={0.75}>
+          <Technologies />
+        </RevealMotion>
         <RevealMotion delay={0.75}>
           <Contact />
         </RevealMotion>

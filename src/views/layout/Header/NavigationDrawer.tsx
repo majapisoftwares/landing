@@ -24,7 +24,7 @@ export default function NavigationDrawer() {
         initial={{ x: "100%" }}
         animate={{ x: isOpen ? "0%" : "100%" }}
         transition={{ type: "tween", duration: 0.3 }}
-        className="fixed left-0 top-0 z-50 h-screen w-screen bg-zinc-900 p-4 shadow-lg"
+        className="fixed top-0 left-0 z-50 h-screen w-screen bg-zinc-900 p-4 shadow-lg"
       >
         <div className="mb-6 flex w-full">
           <Button
@@ -40,23 +40,15 @@ export default function NavigationDrawer() {
             variant="text"
             href={Routes.Home}
             onClick={() => setIsOpen(false)}
-            className="border-0 font-dm text-[28px] text-zinc-50"
+            className="font-dm border-0 text-[28px] text-zinc-50"
           >
             Home
           </Button>
           <Button
             variant="text"
-            href={Routes.Solutions}
-            onClick={() => setIsOpen(false)}
-            className="border-0 font-dm text-[28px] text-zinc-50"
-          >
-            Solutions
-          </Button>
-          <Button
-            variant="text"
             href={Routes.About}
             onClick={() => setIsOpen(false)}
-            className="border-0 font-dm text-[28px] text-zinc-50"
+            className="font-dm border-0 text-[28px] text-zinc-50"
           >
             About
           </Button>
@@ -64,7 +56,7 @@ export default function NavigationDrawer() {
             variant="text"
             href={Routes.Contact}
             onClick={() => setIsOpen(false)}
-            className="border-0 font-dm text-[28px] text-zinc-50"
+            className="font-dm border-0 text-[28px] text-zinc-50"
           >
             Contact Us
           </Button>

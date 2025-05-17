@@ -8,5 +8,8 @@ const intl = {
 
 export function useTranslation(prePath?: string) {
   const { locale } = useRouter();
-  return useUiTranslation(intl[locale], prePath);
+  return useUiTranslation(
+    locale ? intl[locale as keyof typeof intl] : undefined,
+    prePath,
+  );
 }

@@ -128,25 +128,55 @@ export function Orbit({ className }: { className?: string }) {
           </radialGradient>
         </defs>
       </svg>
-      <div className="absolute top-5 left-1/2 flex -translate-x-1/2 items-center justify-center rounded-full bg-white p-2 sm:top-17">
+      <div
+        className="animate-bubble absolute top-5 left-1/2 flex -translate-x-1/2 items-center justify-center rounded-full bg-white p-2 sm:top-17"
+        style={{
+          animationDelay: `${Math.random() * 2}s`,
+        }}
+      >
         <Icon icon="vscode-icons:file-type-mongo" className="sm:h-10 sm:w-10" />
       </div>
-      <div className="absolute top-20 left-1/2 flex -translate-x-11 items-center justify-center rounded-full bg-white p-2 sm:top-70 sm:-translate-x-38">
+      <div
+        className="animate-bubble absolute top-20 left-1/2 flex -translate-x-11 items-center justify-center rounded-full bg-white p-2 sm:top-70 sm:-translate-x-38"
+        style={{
+          animationDelay: `${Math.random() * 2}s`,
+        }}
+      >
         <Icon
           icon="vscode-icons:file-type-tailwind"
           className="sm:h-10 sm:w-10"
         />
       </div>
-      <div className="absolute top-20 left-1/2 flex translate-x-3 items-center justify-center rounded-full bg-white p-2 sm:top-70 sm:translate-x-24">
+      <div
+        className="animate-bubble absolute top-20 left-1/2 flex translate-x-3 items-center justify-center rounded-full bg-white p-2 sm:top-70 sm:translate-x-24"
+        style={{
+          animationDelay: `${Math.random() * 2}s`,
+        }}
+      >
         <Icon icon="material-icon-theme:figma" className="sm:h-10 sm:w-10" />
       </div>
-      <div className="absolute top-42 left-1/2 flex -translate-x-27 items-center justify-center rounded-full bg-white p-2 sm:top-125 sm:-translate-x-68">
+      <div
+        className="animate-bubble absolute top-42 left-1/2 flex -translate-x-27 items-center justify-center rounded-full bg-white p-2 sm:top-125 sm:-translate-x-68"
+        style={{
+          animationDelay: `${Math.random() * 2}s`,
+        }}
+      >
         <Icon icon="mage:notion" className="text-black sm:h-10 sm:w-10" />
       </div>
-      <div className="absolute top-44 left-1/2 flex -translate-x-1/2 items-center justify-center rounded-full bg-white p-2 sm:top-124">
+      <div
+        className="animate-bubble absolute top-44 left-1/2 flex -translate-x-1/2 items-center justify-center rounded-full bg-white p-2 sm:top-124"
+        style={{
+          animationDelay: `${Math.random() * 2}s`,
+        }}
+      >
         <Icon icon="devicon:nextjs" className="sm:h-10 sm:w-10" />
       </div>
-      <div className="absolute top-42 left-1/2 flex translate-x-19 items-center justify-center rounded-full bg-white p-2 sm:top-125 sm:translate-x-54">
+      <div
+        className="animate-bubble absolute top-42 left-1/2 flex translate-x-19 items-center justify-center rounded-full bg-white p-2 sm:top-125 sm:translate-x-54"
+        style={{
+          animationDelay: `${Math.random() * 2}s`,
+        }}
+      >
         <Icon icon="devicon:nodejs" className="sm:h-10 sm:w-10" />
       </div>
     </div>

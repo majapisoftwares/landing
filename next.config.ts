@@ -8,13 +8,34 @@ const config: NextConfig = {
       beforeFiles: [
         {
           source: "/file/:path*",
-          destination: "/api/file-storage/:path*"
-        }
+          destination: "/api/file-storage/:path*",
+        },
       ],
       afterFiles: [],
-      fallback: []
+      fallback: [],
     };
-  }
+  },
+  i18n: {
+    locales: ["en-US", "pt-BR"],
+    defaultLocale: "en-US",
+    domains: [
+      {
+        domain: "majapi.com",
+        defaultLocale: "en-US",
+      },
+      {
+        domain: "majapi.com.br",
+        defaultLocale: "pt-BR",
+      },
+      // {
+      //   domain: 'example.fr',
+      //   defaultLocale: 'fr',
+      //   // an optional http field can also be used to test
+      //   // locale domains locally with http instead of https
+      //   http: true,
+      // },
+    ],
+  },
 };
 
 export default merge(nextConfig, config);

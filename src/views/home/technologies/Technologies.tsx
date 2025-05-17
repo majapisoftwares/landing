@@ -1,7 +1,10 @@
 import Bg from "../../layout/Bg";
 import { Orbit } from "./Orbit";
+import { useTranslation } from "../../../intl/useTranslation";
 
 export function Technologies() {
+  const t = useTranslation();
+
   return (
     <div className="relative">
       <Bg />
@@ -11,19 +14,19 @@ export function Technologies() {
             Majapi
           </div>
           <div className="font-dm text-center text-2xl leading-8 tracking-[-0.288px] text-zinc-500">
-            Using modern technologies and methodologies, our projects become
-            unique.
+            {t(
+              "Using modern technologies and methodologies, our projects become unique.",
+            )}
           </div>
         </div>
         <div className="flex flex-col items-center gap-4 xl:flex-row">
           <Orbit />
           <div className="w-full max-w-[503px] text-[22px] leading-7 text-zinc-400">
-            Here in{" "}
-            <span className="font-mono font-medium text-zinc-50">Majapi</span>,
-            we simplify technology by working closely with our clients to ensure
-            clear communication and custom solutions. As an extension of your
-            team, we immerse ourselves in your business, delivering impactful
-            results.
+            {t("Here in")}{" "}
+            <span className="font-mono font-medium text-zinc-50">Majapi</span>,{" "}
+            {t(
+              "we simplify technology by working closely with our clients to ensure clear communication and custom solutions. As an extension of your team, we immerse ourselves in your business, delivering impactful results.",
+            )}
           </div>
         </div>
       </div>

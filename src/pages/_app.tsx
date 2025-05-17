@@ -26,11 +26,46 @@ import { Dialogs } from "@majapisoftwares/ui/components/Dialog";
 import "@fontsource-variable/dm-sans";
 import "@fontsource-variable/inter-tight";
 import "@fontsource-variable/fira-code";
+import { useTranslation } from "../intl/useTranslation";
 
 dayjs.extend(relativeTime);
 dayjs.extend(localizedFormat);
 
 setupNProgress(PRIMARY_COLOR);
+
+function Seo() {
+  const t = useTranslation();
+
+  return (
+    <DefaultSeo
+      titleTemplate={`%s - ${APP_NAME}`}
+      defaultTitle={APP_NAME}
+      description={t(APP_DESCRIPTION)}
+      additionalMetaTags={[
+        {
+          name: "apple-mobile-web-app-title",
+          content: APP_NAME,
+        },
+        {
+          name: "keywords",
+          content: APP_KEYWORDS,
+        },
+        {
+          name: "msapplication-TileColor",
+          content: PRIMARY_COLOR,
+        },
+        {
+          name: "theme-color",
+          content: PRIMARY_COLOR,
+        },
+        {
+          name: "viewport",
+          content: "initial-scale=1, width=device-width, maximum-scale=1",
+        },
+      ]}
+    />
+  );
+}
 
 export default function App({ Component, pageProps }: AppProps) {
   hydrateNavigationDrawerState(pageProps.cookies);
@@ -42,33 +77,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <>
-      <DefaultSeo
-        titleTemplate={`%s - ${APP_NAME}`}
-        defaultTitle={APP_NAME}
-        description={APP_DESCRIPTION}
-        additionalMetaTags={[
-          {
-            name: "apple-mobile-web-app-title",
-            content: APP_NAME,
-          },
-          {
-            name: "keywords",
-            content: APP_KEYWORDS,
-          },
-          {
-            name: "msapplication-TileColor",
-            content: PRIMARY_COLOR,
-          },
-          {
-            name: "theme-color",
-            content: PRIMARY_COLOR,
-          },
-          {
-            name: "viewport",
-            content: "initial-scale=1, width=device-width, maximum-scale=1",
-          },
-        ]}
-      />
+      <Seo />
       <QueryClientProvider client={queryClient}>
         <HydrationBoundary state={pageProps.dehydratedState}>
           <NuqsAdapter>

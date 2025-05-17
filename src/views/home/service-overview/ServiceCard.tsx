@@ -16,7 +16,7 @@ export function ServiceCard({
   }[];
 }) {
   return (
-    <div className="flex h-full max-w-[402px] flex-col items-center justify-center gap-6 rounded-[10px] border border-zinc-800 bg-[rgba(24,24,27,0.50)] p-6 backdrop-blur-sm">
+    <div className="flex max-w-[402px] flex-col items-center justify-center gap-6 rounded-[10px] border border-zinc-800 bg-[rgba(24,24,27,0.50)] p-6 backdrop-blur-sm">
       <div className="flex h-[60px] w-[60px] flex-col items-center justify-center gap-2.5 rounded-full bg-white text-zinc-800">
         {cloneElement(icon, {
           className: "h-[23px] w-[23px]",

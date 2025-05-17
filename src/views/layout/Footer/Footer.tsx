@@ -4,8 +4,11 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 import Link from "@majapisoftwares/ui/components/Link";
 import Routes from "../../../routes";
 import { INSTAGRAM_LINK, LINKEDIN_LINK } from "../../../constants";
+import { useTranslation } from "../../../intl/useTranslation";
 
 export default function Footer() {
+  const t = useTranslation();
+
   return (
     <div className="flex w-full border-t border-zinc-700 bg-zinc-900">
       <div className="mx-auto flex w-full max-w-(--breakpoint-xl) flex-col-reverse items-center justify-between gap-8 px-4 py-20 md:flex-row md:gap-4">
@@ -13,40 +16,31 @@ export default function Footer() {
           <Link href="/" className="flex items-center">
             <Logo className="w-32" />
           </Link>
-          <div className="flex flex-col items-center gap-2 md:items-start">
+          <div className="flex flex-col items-center gap-2 text-center sm:text-left md:items-start">
             <div className="text-sm font-normal tracking-[-0.1px]">
-              © {new Date().getFullYear()} Majapi Softwares. All rights reserved.
+              © {new Date().getFullYear()} Majapi Softwares.{" "}
+              {t("All rights reserved.")}
             </div>
             <div className="text-sm font-normal tracking-[-0.1px]">
               <Link
                 className="text-white no-underline hover:underline dark:hover:decoration-white"
-                href={Routes.TermsConditions}
-              >
-                Terms & Conditions
-              </Link>{" "}
-              ∙{" "}
-              <Link
-                className="text-white no-underline hover:underline dark:hover:decoration-white"
                 href={Routes.PrivacyPolicy}
               >
-                Privacy Policy
+                {t("Privacy Policy")}
               </Link>
             </div>
           </div>
         </div>
         <div className="hidden gap-2 md:flex">
-          <Button href={Routes.Solutions} variant="text">
-            Solutions
-          </Button>
           <Button href={Routes.About} variant="text">
-            About
+            {t("About us")}
           </Button>
           <Button href={Routes.Contact} variant="text">
-            Contact
+            {t("Contact us")}
           </Button>
         </div>
         <div className="flex flex-col items-center">
-          <div className="font-tight text-xl">Follow us on</div>
+          <div className="font-tight text-xl">{t("Follow us on")}</div>
           <div className="flex">
             <Button href={LINKEDIN_LINK} target="_blank" variant="text" icon>
               <Icon icon="mdi:linkedin" className="h-10 w-10" />

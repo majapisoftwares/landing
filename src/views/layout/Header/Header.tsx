@@ -3,8 +3,11 @@ import Link from "next/link";
 import Logo from "../../Logo";
 import Routes from "../../../routes";
 import NavigationDrawer from "./NavigationDrawer";
+import { useTranslation } from "../../../intl/useTranslation";
 
 export default function Header() {
+  const t = useTranslation();
+
   return (
     <div className="fixed z-50 flex w-full border-b border-zinc-800 backdrop-blur-lg">
       <div className="mx-auto flex w-full max-w-(--breakpoint-xl) justify-between p-4">
@@ -15,9 +18,10 @@ export default function Header() {
           <Button
             href={Routes.About}
             variant="text"
+            rounded
             className="font-dm text-white"
           >
-            About
+            {t("About us")}
           </Button>
           <Button
             variant="filled"
@@ -25,7 +29,7 @@ export default function Header() {
             rounded
             className="font-dm border-zinc-100 bg-zinc-100 text-zinc-800"
           >
-            Contact Us
+            {t("Contact us")}
           </Button>
         </div>
         <div className="md:hidden">

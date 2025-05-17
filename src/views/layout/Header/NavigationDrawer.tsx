@@ -4,8 +4,10 @@ import Button from "@majapisoftwares/ui/components/Button";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { XMarkIcon } from "@heroicons/react/16/solid";
 import Routes from "../../../routes";
+import { useTranslation } from "../../../intl/useTranslation";
 
 export default function NavigationDrawer() {
+  const t = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDrawer = () => setIsOpen(!isOpen);
@@ -42,7 +44,7 @@ export default function NavigationDrawer() {
             onClick={() => setIsOpen(false)}
             className="font-dm border-0 text-[28px] text-zinc-50"
           >
-            Home
+            {t("Home")}
           </Button>
           <Button
             variant="text"
@@ -50,7 +52,7 @@ export default function NavigationDrawer() {
             onClick={() => setIsOpen(false)}
             className="font-dm border-0 text-[28px] text-zinc-50"
           >
-            About
+            {t("About us")}
           </Button>
           <Button
             variant="text"
@@ -58,7 +60,7 @@ export default function NavigationDrawer() {
             onClick={() => setIsOpen(false)}
             className="font-dm border-0 text-[28px] text-zinc-50"
           >
-            Contact Us
+            {t("Contact us")}
           </Button>
         </div>
       </motion.div>

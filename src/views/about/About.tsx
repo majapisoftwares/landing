@@ -9,6 +9,7 @@ import italo from "./italo.webp";
 import cairo from "./cairo.webp";
 import caio from "./caio.webp";
 import vinicius from "./vinicius.webp";
+import { useTranslation } from "../../intl/useTranslation";
 
 const staff = [
   {
@@ -34,6 +35,8 @@ const staff = [
 ];
 
 export default function About() {
+  const t = useTranslation();
+
   return (
     <div className="relative overflow-x-hidden overflow-y-hidden bg-zinc-900/80 pt-20">
       <Flare />
@@ -42,13 +45,12 @@ export default function About() {
         <div className="relative mx-auto flex w-full max-w-(--breakpoint-xl) flex-col gap-10 px-4">
           <div className="z-10 flex flex-col gap-4">
             <div className="font-dm bg-linear-to-br from-zinc-100 to-zinc-400 bg-clip-text text-center text-3xl font-semibold tracking-[-2.88px] text-transparent md:text-left md:text-5xl">
-              About us
+              {t("About us")}
             </div>
             <div className="font-dm max-w-[500px] self-center text-center text-lg leading-8 text-zinc-400 md:self-start md:text-left md:text-xl">
-              We are a technology-driven company dedicated to delivering
-              innovative and scalable solutions. With expertise in AI,
-              blockchain, and software development, we help businesses thrive in
-              a constantly evolving digital world.
+              {t(
+                "We are a technology-driven company dedicated to delivering innovative and scalable solutions. With expertise in AI, blockchain, and software development, we help businesses thrive in a constantly evolving digital world.",
+              )}
             </div>
           </div>
           <div className="relative mx-auto">
@@ -58,21 +60,21 @@ export default function About() {
                   <Image
                     className="aspect-square object-cover"
                     src={office}
-                    alt="office"
+                    alt={t("office")}
                   />
                 </div>
                 <div className="block w-full overflow-hidden rounded-xl">
                   <Image
                     className="aspect-square object-cover"
                     src={work}
-                    alt="office"
+                    alt={t("office")}
                   />
                 </div>
                 <div className="block w-full overflow-hidden rounded-xl">
                   <Image
                     className="aspect-square object-cover"
                     src={workagain}
-                    alt="office"
+                    alt={t("office")}
                   />
                 </div>
               </div>
@@ -90,11 +92,12 @@ export default function About() {
             </div>
             <div className="flex flex-col gap-4">
               <div className="font-dm bg-linear-to-br from-zinc-100 to-zinc-400 bg-clip-text text-center text-3xl font-semibold tracking-[-2.88px] text-transparent md:text-5xl">
-                The Experts Behind the Innovation
+                {t("The experts behind the innovation")}
               </div>
               <div className="font-dm max-w-[630px] self-center text-center text-lg leading-8 text-zinc-400 md:text-xl">
-                A passionate team of experts dedicated to innovation,
-                creativity, and delivering exceptional solutions.
+                {t(
+                  "A passionate team of experts dedicated to innovation, creativity, and delivering exceptional solutions.",
+                )}
               </div>
             </div>
             <div className="z-10 grid grid-cols-1 gap-4 lg:grid-cols-4 lg:gap-24">

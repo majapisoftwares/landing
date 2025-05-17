@@ -1,9 +1,7 @@
 const Routes = {
   Home: "/",
-  Solutions: "/solutions",
   About: "/about",
   Contact: "/contact",
-  TermsConditions: "/terms-conditions",
   PrivacyPolicy: "/privacy-policy",
   Panel: "/panel",
 

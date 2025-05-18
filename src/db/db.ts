@@ -1,6 +1,6 @@
-import authMigration from "@italodeandra/auth/db/migration";
-import authSeed from "@italodeandra/auth/db/seed";
-import { connectDb as connect } from "@italodeandra/next/db";
+import authMigration from "@majapisoftwares/auth/db/migration";
+import authSeed from "@majapisoftwares/auth/db/seed";
+import { connectDb as connect } from "@majapisoftwares/next/db";
 import migration from "./migration";
 import devSeed from "./dev-seed";
 import { MULTITENANT_MODE } from "../constants";

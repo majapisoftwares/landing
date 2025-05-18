@@ -1,7 +1,7 @@
-import { useAuthUser } from "@italodeandra/auth/api/getUser";
+import { useAuthUser } from "@majapisoftwares/auth/api/getUser";
 import { GetServerSideProps } from "next";
 import { getCookies } from "cookies-next";
-import SignUpView from "@italodeandra/auth/views/SignUpView";
+import SignUpView from "@majapisoftwares/auth/views/SignUpView";
 
 export const getServerSideProps: GetServerSideProps = async ({ req, res }) => ({
   props: {

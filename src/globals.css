@@ -1,5 +1,47 @@
-@import "../node_modules/@italodeandra/ui/base.css";
+@import '@majapisoftwares/ui/base.css';
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@theme {
+    --font-dm: 'DM Sans Variable', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-tight: 'Inter Tight Variable', ui-sans-serif, system-ui, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-mono: 'Fira Code Variable', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    'Liberation Mono', 'Courier New', ui-monospace, monospace, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+    --animate-shake: shake 0.82s infinite cubic-bezier(.36,.07,.19,.97) both;
+
+    @keyframes shake {
+        0%,
+        100% {
+            transform: rotate(0deg);
+        }
+        10% {
+            transform: rotate(-2deg);
+        }
+        20% {
+            transform: rotate(2deg);
+        }
+        30% {
+            transform: rotate(-1deg);
+        }
+        40% {
+            transform: rotate(1deg);
+        }
+        50% {
+            transform: rotate(0deg);
+        }
+        60% {
+            transform: rotate(-1deg);
+        }
+        70% {
+            transform: rotate(1deg);
+        }
+        80% {
+            transform: rotate(-2deg);
+        }
+        90% {
+            transform: rotate(0deg);
+        }
+    }
+}

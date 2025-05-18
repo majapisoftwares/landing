@@ -1,5 +1,5 @@
-import { useAuthUser } from "@italodeandra/auth/api/getUser";
-import ForgotPasswordView from "@italodeandra/auth/views/ForgotPasswordView";
+import { useAuthUser } from "@majapisoftwares/auth/api/getUser";
+import ForgotPasswordView from "@majapisoftwares/auth/views/ForgotPasswordView";
 import { GetServerSideProps } from "next";
 import { getCookies } from "cookies-next";
 

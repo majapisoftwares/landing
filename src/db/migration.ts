@@ -1,4 +1,4 @@
-import papr from "@italodeandra/next/db";
+import papr from "@majapisoftwares/next/db";
 
 export default async function migration() {
   console.info("Updating schemas");

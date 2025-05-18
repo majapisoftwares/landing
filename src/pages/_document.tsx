@@ -1,11 +1,11 @@
 // noinspection HtmlUnknownTarget
 
 import { Head, Html, Main, NextScript } from "next/document";
-import scrolledScript from "@italodeandra/ui/bootstrap/scrolledScript";
+import scrolledScript from "@majapisoftwares/ui/bootstrap/scrolledScript";
 
 export default function Document() {
   return (
-    <Html lang="en" className="dark h-full">
+    <Html className="dark h-full">
       <Head>
         <script dangerouslySetInnerHTML={{ __html: scrolledScript }} />
         <link

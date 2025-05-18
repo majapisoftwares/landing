@@ -1,4 +1,4 @@
-import clsx from "@italodeandra/ui/utils/clsx";
+import clsx from "@majapisoftwares/ui/utils/clsx";
 
 export default function Bg({ className }: { className?: string }) {
   return (

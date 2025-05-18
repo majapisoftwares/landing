@@ -5,7 +5,7 @@ import scrolledScript from "@majapisoftwares/ui/bootstrap/scrolledScript";
 
 export default function Document() {
   return (
-    <Html lang="en" className="dark h-full">
+    <Html className="dark h-full">
       <Head>
         <script dangerouslySetInnerHTML={{ __html: scrolledScript }} />
         <link

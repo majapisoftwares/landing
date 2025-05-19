@@ -12,7 +12,7 @@ export default function Hero() {
       <Bg className="-top-44" />
       <div className="relative mx-auto flex w-full max-w-(--breakpoint-xl) flex-col items-center gap-5 px-4 md:gap-10">
         <div className="flex flex-col items-center gap-2 lg:gap-4">
-          <div className="font-dm bg-linear-to-br from-zinc-100 to-zinc-400 bg-clip-text py-2 text-center text-5xl font-semibold tracking-[-1.92px] text-transparent md:max-w-[670px] md:text-7xl lg:max-w-[767px] lg:text-[90px] lg:leading-[98px] lg:tracking-[-5.4px]">
+          <div className="font-dm max-w-[850px] bg-linear-to-br from-zinc-100 to-zinc-400 bg-clip-text py-2 text-center text-5xl font-semibold tracking-[-1.92px] text-transparent md:text-7xl lg:text-[90px] lg:leading-[98px] lg:tracking-[-5.4px]">
             {t("Transforming ideas into digital solutions")}
           </div>
           <div className="font-dm max-w-[400px] text-center text-lg text-zinc-400 md:max-w-[510px] md:text-xl md:leading-8">

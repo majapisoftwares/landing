@@ -1,5 +1,5 @@
 const intlPtBr = {
-  "About us": "Sobren nós",
+  "About us": "Sobre nós",
   "Contact us": "Entre em contato",
   Home: "Início",
   "Transforming ideas into digital solutions":

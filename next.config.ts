@@ -24,6 +24,18 @@ const browserOnlyAliases = [
 ];
 
 const config: NextConfig = {
+  webpack(webpackConfig, { isServer }) {
+    if (!isServer) {
+      webpackConfig.resolve.alias = {
+        ...webpackConfig.resolve.alias,
+        ...Object.fromEntries(
+          browserOnlyAliases.map((moduleName) => [moduleName, false]),
+        ),
+      };
+    }
+
+    return webpackConfig;
+  },
   turbopack: {
     resolveAlias: Object.fromEntries(
       browserOnlyAliases.map((moduleName) => [
@@ -60,8 +72,9 @@ const config: NextConfig = {
   },
 };
 
-// Next.js 16 uses Turbopack by default. The shared config still exposes a
-// webpack hook, so omit it after merging and use the equivalent aliases above.
-const { webpack: _webpack, ...mergedConfig } = merge({}, nextConfig, config);
+// Keep the shared config while using the local webpack hook above for builds
+// that explicitly opt into webpack.
+const { webpack: _sharedWebpack, ...baseConfig } = nextConfig;
+const mergedConfig = merge({}, baseConfig, config);
 
 export default mergedConfig;

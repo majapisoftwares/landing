@@ -89,7 +89,7 @@ export default function CaseStudies() {
                 locale={false}
                 className="shrink-0 snap-start pr-6 last:pr-0"
               >
-                <div className="relative flex min-h-[430px] w-[min(352px,calc(100vw-2rem))] flex-col overflow-hidden rounded-2xl border border-zinc-800 bg-[rgba(5,5,5,0.31)] p-2 shadow-[0_42px_25px_rgba(0,0,0,0.05),0_5px_10px_rgba(0,0,0,0.1)]">
+                <div className="relative flex h-[440px] w-[min(352px,calc(100vw-4.25rem))] flex-col overflow-hidden rounded-2xl border border-zinc-800 bg-[rgba(5,5,5,0.31)] p-2 shadow-[0_42px_25px_rgba(0,0,0,0.05),0_5px_10px_rgba(0,0,0,0.1)] sm:w-[min(352px,calc(100vw-2rem))]">
                   <div className="relative h-[240px] shrink-0 overflow-hidden rounded-lg">
                     <img
                       src={item.cardImage}
@@ -115,14 +115,14 @@ export default function CaseStudies() {
                       </div>
                     )}
                   </div>
-                  <div className="flex min-w-0 flex-col gap-1 p-4">
+                  <div className="flex min-h-0 min-w-0 flex-1 flex-col gap-1 p-4">
                     <h2 className="font-dm text-[22px] leading-[1.5] text-zinc-100">
                       {t(item.name)}
                     </h2>
                     <p className="font-dm text-sm leading-5 tracking-[-0.28px] text-[#929292]">
                       {t(item.description)}
                     </p>
-                    <div className="mt-3 flex gap-2">
+                    <div className="mt-auto flex gap-2 pt-3">
                       {item.tags.slice(0, 3).map((tag) => (
                         <span
                           key={tag}

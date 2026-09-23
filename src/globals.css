@@ -357,6 +357,21 @@
   background: linear-gradient(to left, #000003 0%, transparent 100%);
 }
 
+@media (max-width: 639px) {
+  .cases-carousel::before,
+  .cases-carousel::after {
+    display: none;
+  }
+
+  .cases-carousel-track {
+    padding-inline: 0;
+  }
+
+  .cases-carousel > button {
+    display: none;
+  }
+}
+
 .team-card-photo-blur {
   pointer-events: none;
   background: rgb(0 0 0 / 0.01);

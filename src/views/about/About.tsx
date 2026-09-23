@@ -118,7 +118,7 @@ export default function About() {
                       {member.name}
                     </div>
                     <div className="font-dm text-center text-lg text-zinc-50">
-                      {member.role}
+                      {t(member.role)}
                     </div>
                   </div>
                 </div>

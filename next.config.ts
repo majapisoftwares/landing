@@ -2,7 +2,36 @@ import type { NextConfig } from "next";
 import nextConfig from "@majapisoftwares/next/next.config.js";
 import { merge } from "lodash-es";
 
+const browserOnlyAliases = [
+  "mongodb",
+  "crypto",
+  "jsonwebtoken",
+  "bson",
+  "nodemailer",
+  "mailgen",
+  "fs",
+  "sharp",
+  "papr",
+  "mongodb-memory-server",
+  "@adiwajshing/baileys",
+  "@hapi/boom",
+  "minio",
+  "openai",
+  "mime-types",
+  "@react-email",
+  "open-graph-scraper",
+  "playwright-core",
+];
+
 const config: NextConfig = {
+  turbopack: {
+    resolveAlias: Object.fromEntries(
+      browserOnlyAliases.map((moduleName) => [
+        moduleName,
+        { browser: "./src/shims/empty.ts" },
+      ]),
+    ),
+  },
   async rewrites() {
     return {
       beforeFiles: [
@@ -31,4 +60,8 @@ const config: NextConfig = {
   },
 };
 
-export default merge(nextConfig, config);
+// Next.js 16 uses Turbopack by default. The shared config still exposes a
+// webpack hook, so omit it after merging and use the equivalent aliases above.
+const { webpack: _webpack, ...mergedConfig } = merge({}, nextConfig, config);
+
+export default mergedConfig;

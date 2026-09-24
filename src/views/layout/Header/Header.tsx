@@ -43,7 +43,7 @@ export default function Header() {
             href={Routes.Contact}
             variant="filled"
             rounded
-            className="h-9 rounded-[40px] bg-white px-[13px] py-[9px] font-[Inter] text-[14px] leading-6 font-medium text-zinc-950 shadow-[0_0_0_1px_rgba(26,0,255,0.12)] transition-transform active:scale-[0.96] md:ml-auto md:px-4 md:text-xs"
+            className="h-9 rounded-[40px] bg-white px-[13px] py-[9px] font-inter text-[14px] leading-6 font-medium text-zinc-950 shadow-[0_0_0_1px_rgba(26,0,255,0.12)] transition-transform active:scale-[0.96] md:ml-auto md:px-4 md:text-xs"
           >
             {t("Contact")}
           </Button>

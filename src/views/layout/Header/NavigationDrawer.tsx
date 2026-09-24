@@ -88,7 +88,7 @@ export default function NavigationDrawer() {
               rounded
               href={Routes.Contact}
               onClick={() => setIsOpen(false)}
-              className="mt-4 h-12 w-full rounded-full bg-white px-7 font-[Inter] text-[17px] font-medium text-zinc-950 shadow-[0_0_0_1px_rgba(26,0,255,0.12)] transition-transform active:scale-[0.96]"
+              className="mt-4 h-12 w-full rounded-full bg-white px-7 font-inter text-[17px] font-medium text-zinc-950 shadow-[0_0_0_1px_rgba(26,0,255,0.12)] transition-transform active:scale-[0.96]"
             >
               {t("Contact")}
             </Button>

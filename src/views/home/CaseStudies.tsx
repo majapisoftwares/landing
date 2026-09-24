@@ -54,7 +54,7 @@ export default function CaseStudies() {
   return (
     <section
       id="cases"
-      className="relative z-10 bg-[#000003] px-4 sm:px-8 lg:px-12"
+      className="relative z-10 bg-[#000003]"
     >
       <div className="mx-auto flex w-full max-w-[1104px] flex-col gap-16">
         <div className="relative h-16">
@@ -87,9 +87,9 @@ export default function CaseStudies() {
                 key={item.name}
                 href={Routes.Case(item.slug)}
                 locale={false}
-                className="shrink-0 snap-start pr-6 last:pr-0"
+                className="shrink-0 snap-center"
               >
-                <div className="relative flex h-[440px] w-[min(352px,calc(100vw-4.25rem))] flex-col overflow-hidden rounded-2xl border border-zinc-800 bg-[rgba(5,5,5,0.31)] p-2 shadow-[0_42px_25px_rgba(0,0,0,0.05),0_5px_10px_rgba(0,0,0,0.1)] sm:w-[min(352px,calc(100vw-2rem))]">
+                <div className="relative flex h-[440px] w-full flex-col overflow-hidden rounded-2xl border border-zinc-800 bg-[rgba(5,5,5,0.31)] p-2 shadow-[0_42px_25px_rgba(0,0,0,0.05),0_5px_10px_rgba(0,0,0,0.1)]">
                   <div className="relative h-[240px] shrink-0 overflow-hidden rounded-lg">
                     <img
                       src={item.cardImage}

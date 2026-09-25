@@ -34,7 +34,9 @@ export default function CaseStudies() {
     const carousel = carouselRef.current;
     if (!carousel) return;
 
-    const scrollDistance = Math.min(carousel.clientWidth * 0.82, 376);
+    const firstCard = carousel.firstElementChild as HTMLElement | null;
+    const cardGap = Number.parseFloat(getComputedStyle(carousel).columnGap) || 16;
+    const scrollDistance = (firstCard?.offsetWidth ?? 352) + cardGap;
 
     carousel.scrollBy({
       left: (direction === "next" ? 1 : -1) * scrollDistance,

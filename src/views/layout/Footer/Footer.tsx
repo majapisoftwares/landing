@@ -19,7 +19,7 @@ export default function Footer() {
       <div className="footer-background-texture pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-[560px] opacity-80" />
       <div className="footer-bottom-flare pointer-events-none absolute inset-x-0 bottom-0 z-[2] h-[470px] opacity-90" />
       <div className="relative z-10">
-        <section className="mb-20 flex min-h-[430px] items-start justify-center px-5 pt-24 sm:min-h-[500px] sm:pt-28 lg:min-h-[545px] lg:pt-48">
+        <section className="mb-20 flex min-h-[430px] items-start justify-center px-5 pt-24 sm:min-h-[500px] sm:pt-28 lg:min-h-[545px] lg:pt-24">
           <Reveal
             className="flex max-w-[691px] flex-col items-center gap-[34px] text-center"
             viewportAmount={0.35}

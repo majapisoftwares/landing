@@ -337,6 +337,20 @@
   scrollbar-width: none;
 }
 
+@media (min-width: 768px) {
+  .cases-carousel-track {
+    --case-card-width: calc((100% - 2rem) / 3);
+    width: 100%;
+    margin-inline: auto;
+    padding-inline: 0;
+  }
+
+  .cases-carousel::before,
+  .cases-carousel::after {
+    display: none;
+  }
+}
+
 .cases-carousel-track > a {
   width: var(--case-card-width);
 }

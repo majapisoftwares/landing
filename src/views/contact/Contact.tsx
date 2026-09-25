@@ -8,6 +8,9 @@ const fieldClassName =
 export default function Contact() {
   const t = useTranslation();
   const shouldReduceMotion = useReducedMotion();
+  const [status, setStatus] = useState<
+    "idle" | "sending" | "success" | "error"
+  >("idle");
   const [form, setForm] = useState({
     firstName: "",
     lastName: "",
@@ -20,6 +23,28 @@ export default function Contact() {
   const entrance = shouldReduceMotion
     ? { initial: false as const }
     : { initial: { opacity: 0, y: 20 } };
+
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setStatus("sending");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      if (!response.ok) {
+        throw new Error("Unable to send contact form");
+      }
+
+      setForm({ firstName: "", lastName: "", email: "", message: "" });
+      setStatus("success");
+    } catch {
+      setStatus("error");
+    }
+  }
 
   return (
     <section className="contact-page relative isolate min-h-dvh overflow-hidden bg-[#000003] px-4 pt-36 pb-24 sm:px-8 sm:pt-44 lg:px-12">
@@ -52,7 +77,7 @@ export default function Contact() {
             ease: "easeOut",
           }}
           className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2"
-          onSubmit={(event) => event.preventDefault()}
+          onSubmit={handleSubmit}
         >
           <label className="font-dm flex flex-col gap-2 text-xs text-zinc-200">
             {t("First name")}
@@ -128,19 +153,30 @@ export default function Contact() {
                 ? "bg-zinc-100 text-zinc-900 shadow-[0_8px_22px_rgba(255,255,255,0.23)] hover:bg-white hover:shadow-[0_10px_28px_rgba(255,255,255,0.32)]"
                 : "cursor-not-allowed bg-zinc-800 text-zinc-500"
             }`}
-            disabled={!isComplete}
+            disabled={!isComplete || status === "sending"}
             type="submit"
             whileHover={
-              shouldReduceMotion || !isComplete
+              shouldReduceMotion || !isComplete || status === "sending"
                 ? undefined
                 : { scale: 1.01, y: -1 }
             }
             whileTap={
-              shouldReduceMotion || !isComplete ? undefined : { scale: 0.96 }
+              shouldReduceMotion || !isComplete || status === "sending"
+                ? undefined
+                : { scale: 0.96 }
             }
           >
-            {t("Submit")}
+            {status === "sending" ? t("Sending...") : t("Submit")}
           </motion.button>
+          <p
+            aria-live="polite"
+            className={`font-dm col-span-full text-center text-xs ${
+              status === "error" ? "text-red-400" : "text-zinc-400"
+            }`}
+          >
+            {status === "success" && t("Message sent successfully.")}
+            {status === "error" && t("We couldn't send your message. Please try again.")}
+          </p>
         </motion.form>
       </motion.div>
     </section>

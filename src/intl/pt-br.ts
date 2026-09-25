@@ -150,6 +150,10 @@ const intlPtBr = {
   "Tell us a little about your project":
     "Conte-nos um pouco sobre o seu projeto",
   Submit: "Enviar",
+  "Sending...": "Enviando...",
+  "Message sent successfully.": "Mensagem enviada com sucesso.",
+  "We couldn't send your message. Please try again.":
+    "Não foi possível enviar sua mensagem. Tente novamente.",
   "Main image for case": "Imagem principal do case",
   "About the project": "Sobre o projeto",
   Challenges: "Desafios",

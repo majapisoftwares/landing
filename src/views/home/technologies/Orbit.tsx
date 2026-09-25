@@ -1,5 +1,5 @@
 import { Icon } from "@iconify/react";
-import clsx from "@majapisoftwares/ui/utils/clsx";
+import clsx from "clsx";
 
 export function Orbit({ className }: { className?: string }) {
   return (
@@ -131,7 +131,7 @@ export function Orbit({ className }: { className?: string }) {
       <div
         className="animate-bubble absolute top-5 left-1/2 flex -translate-x-1/2 items-center justify-center rounded-full bg-white p-2 sm:top-17"
         style={{
-          animationDelay: `${Math.random() * 2}s`,
+          animationDelay: "0s",
         }}
       >
         <Icon icon="vscode-icons:file-type-mongo" className="sm:h-10 sm:w-10" />
@@ -139,7 +139,7 @@ export function Orbit({ className }: { className?: string }) {
       <div
         className="animate-bubble absolute top-20 left-1/2 flex -translate-x-11 items-center justify-center rounded-full bg-white p-2 sm:top-70 sm:-translate-x-38"
         style={{
-          animationDelay: `${Math.random() * 2}s`,
+          animationDelay: "0.35s",
         }}
       >
         <Icon
@@ -150,7 +150,7 @@ export function Orbit({ className }: { className?: string }) {
       <div
         className="animate-bubble absolute top-20 left-1/2 flex translate-x-3 items-center justify-center rounded-full bg-white p-2 sm:top-70 sm:translate-x-24"
         style={{
-          animationDelay: `${Math.random() * 2}s`,
+          animationDelay: "0.7s",
         }}
       >
         <Icon icon="material-icon-theme:figma" className="sm:h-10 sm:w-10" />
@@ -158,7 +158,7 @@ export function Orbit({ className }: { className?: string }) {
       <div
         className="animate-bubble absolute top-42 left-1/2 flex -translate-x-27 items-center justify-center rounded-full bg-white p-2 sm:top-125 sm:-translate-x-68"
         style={{
-          animationDelay: `${Math.random() * 2}s`,
+          animationDelay: "1.05s",
         }}
       >
         <Icon icon="mage:notion" className="text-black sm:h-10 sm:w-10" />
@@ -166,7 +166,7 @@ export function Orbit({ className }: { className?: string }) {
       <div
         className="animate-bubble absolute top-44 left-1/2 flex -translate-x-1/2 items-center justify-center rounded-full bg-white p-2 sm:top-124"
         style={{
-          animationDelay: `${Math.random() * 2}s`,
+          animationDelay: "1.4s",
         }}
       >
         <Icon icon="devicon:nextjs" className="sm:h-10 sm:w-10" />
@@ -174,7 +174,7 @@ export function Orbit({ className }: { className?: string }) {
       <div
         className="animate-bubble absolute top-42 left-1/2 flex translate-x-19 items-center justify-center rounded-full bg-white p-2 sm:top-125 sm:translate-x-54"
         style={{
-          animationDelay: `${Math.random() * 2}s`,
+          animationDelay: "1.75s",
         }}
       >
         <Icon icon="devicon:nodejs" className="sm:h-10 sm:w-10" />

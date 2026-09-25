@@ -1,4 +1,4 @@
-export default function Flare() {
+export default function Flare({ className }: { className?: string }) {
   return (
     <svg
       width="1799"
@@ -6,7 +6,8 @@ export default function Flare() {
       viewBox="0 0 1799 1924"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="absolute left-1/2 -mt-[900px] -translate-x-1/2 opacity-30"
+      aria-hidden="true"
+      className={`pointer-events-none absolute left-1/2 z-0 -mt-[900px] -translate-x-[70%] opacity-30 ${className ?? ""}`}
     >
       <g opacity="0.25">
         <g filter="url(#filter0_f_741_188)">
@@ -14,7 +15,7 @@ export default function Flare() {
             cx="471.154"
             cy="994.344"
             rx="80.565"
-            ry="353.524"  
+            ry="353.524"
             transform="rotate(14.9409 471.154 994.344)"
             fill="#D9D9D9"
           />

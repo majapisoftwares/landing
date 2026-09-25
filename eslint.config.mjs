@@ -1,3 +1,3 @@
-import eslintConfig from "@majapisoftwares/next/eslint.config.mjs";
+import nextVitals from "eslint-config-next/core-web-vitals";
 
-export default eslintConfig;
+export default nextVitals;

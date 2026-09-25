@@ -1,9 +1,14 @@
-export default function Logo({ className }: { className?: string }) {
+type LogoProps = {
+  className?: string;
+  markOnly?: boolean;
+};
+
+export default function Logo({ className, markOnly = false }: LogoProps) {
   return (
     <svg
-      width="147"
+      width={markOnly ? "26" : "147"}
       height="31"
-      viewBox="0 0 147 31"
+      viewBox={markOnly ? "0 0 26 31" : "0 0 147 31"}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}

@@ -2,7 +2,48 @@ import type { NextConfig } from "next";
 import nextConfig from "@majapisoftwares/next/next.config.js";
 import { merge } from "lodash-es";
 
+const browserOnlyAliases = [
+  "mongodb",
+  "crypto",
+  "jsonwebtoken",
+  "bson",
+  "nodemailer",
+  "mailgen",
+  "fs",
+  "sharp",
+  "papr",
+  "mongodb-memory-server",
+  "@adiwajshing/baileys",
+  "@hapi/boom",
+  "minio",
+  "openai",
+  "mime-types",
+  "@react-email",
+  "open-graph-scraper",
+  "playwright-core",
+];
+
 const config: NextConfig = {
+  webpack(webpackConfig, { isServer }) {
+    if (!isServer) {
+      webpackConfig.resolve.alias = {
+        ...webpackConfig.resolve.alias,
+        ...Object.fromEntries(
+          browserOnlyAliases.map((moduleName) => [moduleName, false]),
+        ),
+      };
+    }
+
+    return webpackConfig;
+  },
+  turbopack: {
+    resolveAlias: Object.fromEntries(
+      browserOnlyAliases.map((moduleName) => [
+        moduleName,
+        { browser: "./src/shims/empty.ts" },
+      ]),
+    ),
+  },
   async rewrites() {
     return {
       beforeFiles: [
@@ -31,4 +72,9 @@ const config: NextConfig = {
   },
 };
 
-export default merge(nextConfig, config);
+// Keep the shared config while using the local webpack hook above for builds
+// that explicitly opt into webpack.
+const { webpack: _sharedWebpack, ...baseConfig } = nextConfig;
+const mergedConfig = merge({}, baseConfig, config);
+
+export default mergedConfig;

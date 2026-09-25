@@ -1,4 +1,4 @@
-import clsx from "@majapisoftwares/ui/utils/clsx";
+import clsx from "clsx";
 
 export function Arrow({ className }: { className?: string }) {
   return (

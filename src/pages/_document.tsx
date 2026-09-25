@@ -1,13 +1,11 @@
 // noinspection HtmlUnknownTarget
 
 import { Head, Html, Main, NextScript } from "next/document";
-import scrolledScript from "@majapisoftwares/ui/bootstrap/scrolledScript";
 
 export default function Document() {
   return (
     <Html className="dark h-full">
       <Head>
-        <script dangerouslySetInnerHTML={{ __html: scrolledScript }} />
         <link
           rel="icon"
           type="image/png"
@@ -23,7 +21,7 @@ export default function Document() {
         />
         <link rel="manifest" href="/icons/site.webmanifest" />
       </Head>
-      <body className="ui-theme-default bg-zinc-900/80 antialiased">
+      <body className="bg-[#000003] antialiased">
         <Main />
         <NextScript />
       </body>

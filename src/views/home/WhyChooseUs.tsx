@@ -1,89 +1,74 @@
-import { ArrowLongRightIcon } from "@heroicons/react/20/solid";
-import Button from "@majapisoftwares/ui/components/Button";
-import Accordion from "@majapisoftwares/ui/components/Accordion";
-import { BoltIcon, GlobeAltIcon } from "@heroicons/react/24/outline";
-import { Icon } from "@iconify/react";
-import { WHATSAPP_LINK } from "../../constants";
 import { useTranslation } from "../../intl/useTranslation";
+import { Reveal } from "./Reveal";
+
+const benefits = [
+  {
+    image: "/images/why-choose-us/agility.png",
+    imageClassName: "h-[234px] w-[185px]",
+    title: "Agility & Efficiency",
+    description: "Fast, scalable, and high-performance software development.",
+  },
+  {
+    image: "/images/why-choose-us/innovation.png",
+    imageClassName: "h-[244px] w-[198px] rotate-[11deg]",
+    title: "Innovative Solutions",
+    description: "Cutting-edge technology tailored to your business needs.",
+  },
+  {
+    image: "/images/why-choose-us/global.png",
+    imageClassName: "h-[215px] w-[216px]",
+    title: "Global Expertise",
+    description: "Trusted by clients in Brazil, the US, and Turkey.",
+  },
+];
 
 export default function WhyChooseUs() {
   const t = useTranslation();
 
   return (
-    <div className="relative z-10 mx-auto flex w-full max-w-(--breakpoint-xl) flex-col gap-10 px-4">
-      <div className="flex flex-col gap-12 lg:flex-row lg:gap-4">
-        <div className="flex w-full flex-col items-center justify-center gap-4 self-start lg:items-start lg:gap-10">
-          <div className="font-dm bg-linear-to-br from-zinc-100 to-zinc-400 bg-clip-text text-center text-3xl font-semibold text-transparent md:text-5xl md:tracking-[-2.88px] lg:text-left">
+    <section
+      id="why-choose-us"
+      className="relative z-10 overflow-hidden bg-[#000003] px-5 pb-8 sm:px-8 lg:min-h-[700px] lg:px-12"
+    >
+      <div className="section-gradient-line pointer-events-none absolute top-0 left-1/2 w-[min(1088px,100%)] -translate-x-1/2" />
+      <div className="relative mx-auto max-w-[1104px]">
+        <div className="relative h-16">
+          <p className="font-tight absolute top-8 left-1/2 flex -translate-x-1/2 items-center justify-center gap-1.5 text-center text-xs font-normal tracking-[-0.12px] whitespace-nowrap text-zinc-100 uppercase lg:text-base">
+            <span aria-hidden="true">マ</span>
+            <span className="size-[3px] rounded-full bg-zinc-100" />
             {t("Why choose us")}
-          </div>
-          <div className="font-dm max-w-[506px] text-center text-xl text-zinc-400 lg:text-left">
-            {t(
-              "At Majapi, we blend innovation, agility, and deep technical expertise to build tailor-made, high-performance solutions. With a global footprint spanning Brazil, the US, and Turkey, we deliver cutting-edge technology, dedicated support, and scalable results, empowering your business to grow with confidence.",
-            )}
-          </div>
-          <div className="hidden lg:flex">
-            <Button
-              variant="filled"
-              href={WHATSAPP_LINK}
-              target="_blank"
-              className="font-dm rounded-[50px] border border-zinc-500 bg-zinc-100 px-8 py-3 text-base text-zinc-800"
-              trailing={<ArrowLongRightIcon className="h-6 w-6" />}
-            >
-              {t("Schedule a meeting")}
-            </Button>
-          </div>
+          </p>
         </div>
-        <div className="flex w-full flex-col gap-4 sm:gap-6">
-          <Accordion>
-            <Accordion.Item
-              className="rounded-lg border border-zinc-800 lg:mx-auto lg:w-[380px] dark:bg-zinc-900"
-              triggerClassName="gap-2 justify-center items-center dark:bg-zinc-900 dark:hover:bg-zinc-950/30 font-tight text-lg lg:text-2xl px-8 py-5"
-              contentClassName="text-center text-zinc-400 md:text-lg font-dm"
-              title={
-                <div className="flex gap-3">
-                  {t("Agility & Efficiency")}
-                  <BoltIcon className="h-8 w-8 rounded-full bg-white p-2 text-black" />
-                </div>
-              }
+
+        <div className="mt-16 grid gap-14 sm:grid-cols-2 lg:grid-cols-[306px_306px_306px] lg:justify-between lg:gap-0">
+          {benefits.map((benefit, index) => (
+            <Reveal
+              className="relative flex min-h-[320px] flex-col items-start"
+              key={benefit.title}
+              delay={index * 0.1}
             >
-              {t("Fast, scalable, and high-performance software development.")}
-            </Accordion.Item>
-          </Accordion>
-          <Accordion>
-            <Accordion.Item
-              className="rounded-lg border border-zinc-800 lg:ml-auto lg:w-[380px] dark:bg-zinc-900"
-              triggerClassName="gap-2 justify-center items-center dark:bg-zinc-900 dark:hover:bg-zinc-950/30 font-tight text-lg lg:text-2xl px-8 py-5"
-              contentClassName="text-center text-zinc-400 md:text-lg font-dm"
-              title={
-                <div className="flex gap-3">
-                  {t("Innovative Solutions")}
-                  <Icon
-                    icon="tabler:bulb"
-                    className="h-8 w-8 rounded-full bg-white p-2 text-black"
-                  />
-                </div>
-              }
-            >
-              {t("Cutting-edge technology tailored to your business needs.")}
-            </Accordion.Item>
-          </Accordion>
-          <Accordion>
-            <Accordion.Item
-              className="rounded-lg border border-zinc-800 lg:mx-auto lg:w-[380px] dark:bg-zinc-900"
-              triggerClassName="gap-2 justify-center items-center dark:bg-zinc-900 dark:hover:bg-zinc-950/30 font-tight text-lg lg:text-2xl px-8 py-5"
-              contentClassName="text-center text-zinc-400 md:text-lg font-dm"
-              title={
-                <div className="flex gap-3">
-                  {t("Global Expertise")}
-                  <GlobeAltIcon className="h-8 w-8 rounded-full bg-white p-2 text-black" />
-                </div>
-              }
-            >
-              {t("Trusted by clients in Brazil, the US, and Turkey.")}
-            </Accordion.Item>
-          </Accordion>
+              {index > 0 && (
+                <div className="absolute top-0 -left-[47px] hidden h-[340px] w-px bg-linear-to-b from-transparent via-white/10 to-transparent lg:block" />
+              )}
+              <div className="flex h-[273px] w-full items-center justify-center">
+                <img
+                  alt=""
+                  className={`${benefit.imageClassName} object-contain`}
+                  src={benefit.image}
+                />
+              </div>
+              <div className="mt-8 max-w-[306px]">
+                <h2 className="font-dm text-xl font-semibold tracking-[-0.2px] text-white lg:text-2xl">
+                  {t(benefit.title)}
+                </h2>
+                <p className="font-dm mt-5 text-sm leading-6 text-zinc-300 lg:text-base">
+                  {t(benefit.description)}
+                </p>
+              </div>
+            </Reveal>
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }

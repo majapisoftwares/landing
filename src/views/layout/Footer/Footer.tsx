@@ -55,7 +55,7 @@ export default function Footer() {
               {t("All rights reserved.")}
             </p>
           </div>
-          <div className="flex flex-col items-center gap-1.5 sm:items-start">
+          <div className="flex flex-col items-center gap-1.5">
             <div className="text-sm font-normal">{t("Follow us on")}</div>
             <div className="flex gap-1">
               <Button

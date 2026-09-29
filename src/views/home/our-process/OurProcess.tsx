@@ -76,7 +76,7 @@ export function OurProcess() {
                     className="mx-auto w-full max-w-[1111px]"
                   >
                     <article
-                      className={`flex min-h-[250px] w-full items-center gap-8 rounded-[24px] border border-zinc-800 px-6 py-8 shadow-[0_4px_50px_rgba(14,15,12,0.06)] backdrop-blur-xl md:gap-14 md:px-[61px] md:py-[31px] ${
+                      className={`flex min-h-[250px] w-full items-center gap-8 rounded-[24px] border border-zinc-800 bg-[#000003] px-6 py-8 shadow-[0_4px_50px_rgba(14,15,12,0.06)] md:gap-14 md:px-[61px] md:py-[31px] ${
                         isReversed
                           ? "flex-col md:flex-row-reverse md:text-right"
                           : "flex-col md:flex-row md:text-left"

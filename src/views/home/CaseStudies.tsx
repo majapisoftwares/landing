@@ -84,60 +84,64 @@ export default function CaseStudies() {
             onScroll={updateControls}
             className="cases-carousel-track flex snap-x snap-mandatory overflow-x-auto scroll-smooth pb-2"
           >
-            {cases.map((item) => (
-              <Link
-                key={item.name}
-                href={Routes.Case(item.slug)}
-                locale={false}
-                className="shrink-0 snap-center"
-              >
-                <div className="relative flex h-[440px] w-full flex-col overflow-hidden rounded-2xl border border-zinc-800 bg-[rgba(5,5,5,0.31)] p-2 shadow-[0_42px_25px_rgba(0,0,0,0.05),0_5px_10px_rgba(0,0,0,0.1)]">
-                  <div className="relative h-[240px] shrink-0 overflow-hidden rounded-lg">
-                    <img
-                      src={item.cardImage}
-                      alt={`${t("Open case")} ${t(item.name)}`}
-                      className="size-full object-cover"
-                    />
-                    {item.logo && (
-                      <div className="absolute inset-0 flex items-center justify-center bg-black/35">
-                        {item.name === "Trackfy" ? (
-                          <div className="flex items-center gap-2 text-white drop-shadow-lg">
-                            <img src={item.logo} alt="" className="size-9" />
-                            <span className="font-dm text-[40px] leading-none font-medium">
-                              trackfy
-                            </span>
-                          </div>
-                        ) : (
-                          <img
-                            src={item.logo}
-                            alt={t("Kawasaki Consortium")}
-                            className="w-[258px]"
-                          />
-                        )}
+            {cases.map((item) => {
+              const previewLogo = item.logo ?? item.heroLogo;
+
+              return (
+                <Link
+                  key={item.name}
+                  href={Routes.Case(item.slug)}
+                  locale={false}
+                  className="shrink-0 snap-center"
+                >
+                  <div className="relative flex h-[440px] w-full flex-col overflow-hidden rounded-2xl border border-zinc-800 bg-[rgba(5,5,5,0.31)] p-2 shadow-[0_42px_25px_rgba(0,0,0,0.05),0_5px_10px_rgba(0,0,0,0.1)]">
+                    <div className="relative h-[240px] shrink-0 overflow-hidden rounded-lg">
+                      <img
+                        src={item.cardImage}
+                        alt={`${t("Open case")} ${t(item.name)}`}
+                        className="size-full object-cover"
+                      />
+                      {previewLogo && (
+                        <div className="absolute inset-0 flex items-center justify-center bg-black/35">
+                          {item.name === "Trackfy" ? (
+                            <div className="flex items-center gap-2 text-white drop-shadow-lg">
+                              <img src={previewLogo} alt="" className="size-9" />
+                              <span className="font-dm text-[40px] leading-none font-medium">
+                                trackfy
+                              </span>
+                            </div>
+                          ) : (
+                            <img
+                              src={previewLogo}
+                              alt={`${t(item.name)} logo`}
+                              className={item.previewLogoClassName ?? "w-[258px]"}
+                            />
+                          )}
+                        </div>
+                      )}
+                    </div>
+                    <div className="flex min-h-0 min-w-0 flex-1 flex-col gap-1 p-4">
+                      <h2 className="font-dm text-[22px] leading-[1.5] text-zinc-100">
+                        {t(item.name)}
+                      </h2>
+                      <p className="font-dm text-sm leading-5 tracking-[-0.28px] text-[#929292]">
+                        {t(item.description)}
+                      </p>
+                      <div className="mt-auto flex gap-2 pt-3">
+                        {item.tags.slice(0, 3).map((tag) => (
+                          <span
+                            key={tag}
+                            className="font-dm flex h-[38px] flex-1 items-center justify-center rounded-full bg-[#09090b] px-2.5 py-2 text-center text-sm leading-5 tracking-[-0.28px] text-[#929292]"
+                          >
+                            {t(tag)}
+                          </span>
+                        ))}
                       </div>
-                    )}
-                  </div>
-                  <div className="flex min-h-0 min-w-0 flex-1 flex-col gap-1 p-4">
-                    <h2 className="font-dm text-[22px] leading-[1.5] text-zinc-100">
-                      {t(item.name)}
-                    </h2>
-                    <p className="font-dm text-sm leading-5 tracking-[-0.28px] text-[#929292]">
-                      {t(item.description)}
-                    </p>
-                    <div className="mt-auto flex gap-2 pt-3">
-                      {item.tags.slice(0, 3).map((tag) => (
-                        <span
-                          key={tag}
-                          className="font-dm flex h-[38px] flex-1 items-center justify-center rounded-full bg-[#09090b] px-2.5 py-2 text-center text-sm leading-5 tracking-[-0.28px] text-[#929292]"
-                        >
-                          {t(tag)}
-                        </span>
-                      ))}
                     </div>
                   </div>
-                </div>
-              </Link>
-            ))}
+                </Link>
+              );
+            })}
           </div>
           <button
             type="button"

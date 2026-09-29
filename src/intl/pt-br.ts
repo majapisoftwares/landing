@@ -168,6 +168,10 @@ const intlPtBr = {
   "Nissan Consortium": "Consórcio Nissan",
   "Kawasaki Consortium": "Consórcio Kawasaki",
   "Renault Consortium": "Consórcio Renault",
+  "Home Care · Management Software": "Home Care · Software de Gestão",
+  "Pulse Software": "Pulse Software",
+  "Sailor Software": "Sailor Software",
+  "Finance · Management Platform": "Financeiro · Plataforma de Gestão",
   "Digital Product": "Produto Digital",
   B2B: "B2B",
   "We created an interactive digital experience to showcase Nissan vehicles and bring users closer to the possibilities of joining the consortium.":
@@ -220,6 +224,32 @@ const intlPtBr = {
     "Desenvolvemos todo o sistema do Trackfy, permitindo que o usuário acompanhe episódios e temporadas, organize seus conteúdos, descubra tendências e receba sugestões com base no que está assistindo.",
   "Everything was designed to make discovering and following entertainment simpler and more intuitive.":
     "Tudo foi pensado para tornar a descoberta e o acompanhamento de entretenimento mais simples e intuitivo.",
+  "Pulse was developed for a hospital transport company to digitize and organize essential operational processes in a single platform.":
+    "O Pulse foi desenvolvido para uma empresa de remoções hospitalares com o objetivo de digitalizar e organizar processos essenciais da operação em uma única plataforma.",
+  "We created the entire product experience to balance the complexity of healthcare management with a simple, clear, and efficient interface for everyday use.":
+    "Criamos toda a experiência do produto buscando equilibrar a complexidade da gestão em saúde com uma interface simples, clara e eficiente para o uso diário.",
+  "Hospital transport operations involve different teams, information, documents, and processes that need to remain accessible and up to date.":
+    "Operações de remoções hospitalares envolvem diferentes equipes, informações, documentos e processos que precisam estar sempre acessíveis e atualizados.",
+  "We developed centralized software to support operations management, organize information, and make workflows faster and safer.":
+    "Desenvolvemos um software centralizado para apoiar a gestão da operação, organizar informações e tornar os fluxos de trabalho mais rápidos e seguros.",
+  "The result is a platform designed to follow the company's routine and support decision-making for everyone involved in care and management.":
+    "O resultado é uma plataforma pensada para acompanhar a rotina da empresa e facilitar a tomada de decisão de quem está envolvido no cuidado e na gestão.",
+  "A complete platform to centralize and organize vehicle recovery operations.":
+    "Uma plataforma completa para centralizar e organizar a operação de recuperação de veículos.",
+  "Sailor was developed for a company in the financial sector with the goal of centralizing and organizing the entire vehicle recovery operation in a single platform.":
+    "O Sailor foi desenvolvido para uma empresa do setor financeiro com o objetivo de centralizar e organizar toda a operação de recuperação de veículos em uma única plataforma.",
+  "We created a complete system to connect information, processes, and teams, bringing more control and clarity to an operation involving different stages and owners.":
+    "Criamos um sistema completo para conectar informações, processos e equipes, trazendo mais controle e clareza para uma operação que envolve diferentes etapas e responsáveis.",
+  "Vehicle recovery requires constant monitoring, up-to-date information, and integration between different areas of the operation.":
+    "A recuperação de veículos exige acompanhamento constante, atualização de informações e integração entre diferentes áreas da operação.",
+  "Our challenge was to turn this complex flow into a simpler and more structured experience, allowing each user to quickly find what they need and clearly follow the progress of every case.":
+    "Nosso desafio foi transformar esse fluxo complexo em uma experiência mais simples e estruturada, permitindo que cada usuário encontre rapidamente o que precisa e acompanhe o andamento de cada caso com clareza.",
+  "We developed a complete platform to manage the vehicle recovery process from end to end.":
+    "Desenvolvemos uma plataforma completa para gerenciar o processo de recuperação de veículos de ponta a ponta.",
+  "The system centralizes information, organizes requests, tracks operational stages, and simplifies the management of financial and operational processes.":
+    "O sistema centraliza informações, organiza demandas, acompanha etapas da operação e facilita a gestão dos processos financeiros e operacionais.",
+  "Everything was designed to reduce rework, improve information visibility, and make the operation faster and more efficient.":
+    "Tudo foi pensado para reduzir retrabalho, melhorar a visualização das informações e tornar a operação mais ágil e eficiente.",
   "Schedule a meeting": "Agendar uma reunião",
   "Why choose us": "Por que nos escolher",
   "At Majapi, we blend innovation, agility, and deep technical expertise to build tailor-made, high-performance solutions. With a global footprint spanning Brazil, the US, and Turkey, we deliver cutting-edge technology, dedicated support, and scalable results, empowering your business to grow with confidence.":

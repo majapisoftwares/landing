@@ -11,9 +11,11 @@ export type CaseStudy = {
   cardImage: string;
   heroImage: string;
   logo?: string;
+  previewLogoClassName?: string;
   heroLogo?: string;
+  heroLogoClassName?: string;
   heroWordmark?: string;
-  heroOverlayOpacity?: "40" | "76";
+  heroOverlayOpacity?: "40" | "56" | "76";
   heroAspect?: "square" | "wide";
   description: string;
   sections: CaseSection[];

@@ -48,7 +48,7 @@ export default function CasePage({ caseStudy }: { caseStudy: CaseStudy }) {
               />
               {(caseStudy.heroLogo || caseStudy.heroWordmark) && (
                 <div
-                  className={`pointer-events-none absolute inset-0 flex items-center justify-center ${caseStudy.heroOverlayOpacity === "76" ? "bg-black/[0.76]" : "bg-black/40"}`}
+                    className={`pointer-events-none absolute inset-0 flex items-center justify-center ${caseStudy.heroOverlayOpacity === "76" ? "bg-black/[0.76]" : caseStudy.heroOverlayOpacity === "56" ? "bg-black/[0.56]" : "bg-black/40"}`}
                 >
                   {caseStudy.heroWordmark ? (
                     <div className="flex items-center gap-2">
@@ -67,7 +67,11 @@ export default function CasePage({ caseStudy }: { caseStudy: CaseStudy }) {
                     <img
                       src={caseStudy.heroLogo}
                       alt=""
-                      className="w-[44%] max-w-[244px]"
+                      className={
+                        caseStudy.heroLogoClassName === "intrinsic"
+                          ? undefined
+                          : `w-[44%] max-w-[244px] ${caseStudy.heroLogoClassName ?? ""}`
+                      }
                     />
                   )}
                 </div>

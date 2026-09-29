@@ -9,6 +9,7 @@ import { useTranslation } from "../../../intl/useTranslation";
 import { LineShadowText } from "@/components/ui/line-shadow-text";
 import { Reveal } from "../../home/Reveal";
 import { RainbowButton } from "@/components/ui/rainbow-button";
+import LanguageSwitcher from "../Header/LanguageSwitcher";
 
 export default function Footer() {
   const t = useTranslation();
@@ -45,37 +46,45 @@ export default function Footer() {
           </Reveal>
         </section>
 
-        <div className="mx-auto flex w-full max-w-[920px] flex-col items-center justify-between gap-10 px-5 pt-12 pb-10 sm:flex-row sm:items-end sm:py-[58px]">
-          <div className="flex flex-col items-center gap-4 sm:items-start">
-            <Link href="/" className="flex items-center" aria-label="Majapi">
-              <Logo className="w-[116px]" />
-            </Link>
-            <p className="text-center text-xs font-normal tracking-[-0.1px] text-zinc-400 sm:text-left">
-              © {new Date().getFullYear()} Majapi Softwares.{" "}
-              {t("All rights reserved.")}
-            </p>
-          </div>
-          <div className="flex flex-col items-center gap-1.5">
-            <div className="text-sm font-normal">{t("Follow us on")}</div>
-            <div className="flex gap-1">
-              <Button
-                href={LINKEDIN_LINK}
-                target="_blank"
-                variant="text"
-                icon
-                aria-label="LinkedIn"
-              >
-                <Icon icon="mdi:linkedin" className="h-7 w-7" />
-              </Button>
-              <Button
-                href={INSTAGRAM_LINK}
-                target="_blank"
-                variant="text"
-                icon
-                aria-label="Instagram"
-              >
-                <Icon icon="mdi:instagram" className="h-7 w-7" />
-              </Button>
+        <div className="w-full px-4 sm:px-8 lg:px-12">
+          <div className="mx-auto w-full max-w-[1104px] pt-12 pb-10 sm:py-[58px]">
+            <div className="flex flex-col items-center justify-between gap-8 sm:flex-row">
+              <Link href="/" className="flex items-center" aria-label="Majapi">
+                <Logo className="w-[116px]" />
+              </Link>
+              <div className="flex items-center gap-3">
+                <div className="text-sm font-normal">{t("Follow us on")}</div>
+                <div className="flex gap-1">
+                  <Button
+                    href={LINKEDIN_LINK}
+                    target="_blank"
+                    variant="text"
+                    icon
+                    aria-label="LinkedIn"
+                  >
+                    <Icon icon="mdi:linkedin" className="h-7 w-7" />
+                  </Button>
+                  <Button
+                    href={INSTAGRAM_LINK}
+                    target="_blank"
+                    variant="text"
+                    icon
+                    aria-label="Instagram"
+                  >
+                    <Icon icon="mdi:instagram" className="h-7 w-7" />
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-8 h-px w-full bg-white/15" aria-hidden="true" />
+
+            <div className="mt-5 flex flex-col items-center justify-between gap-5 sm:flex-row sm:items-center">
+              <p className="text-center text-xs font-normal tracking-[-0.1px] text-zinc-400 sm:text-left">
+                © {new Date().getFullYear()} Majapi Softwares.{" "}
+                {t("All rights reserved.")}
+              </p>
+              <LanguageSwitcher />
             </div>
           </div>
         </div>

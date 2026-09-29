@@ -266,7 +266,7 @@ const intlPtBr = {
   "All rights reserved.": "Todos os direitos reservados.",
   "Terms & Conditions": "Termos e Condições",
   "Privacy Policy": "Política de Privacidade",
-  "Follow us on": "Siga a gente em",
+  "Follow us on": "Siga a gente:",
   "In case of questions or for assistance regarding the provisions contained in this document, please contact the Data Protection Officer at the email below.":
     "Em caso de dúvidas ou para assistência em relação às disposições contidas neste documento, entre em contato com o Encarregado de Proteção de Dados pelo e-mail abaixo.",
 };

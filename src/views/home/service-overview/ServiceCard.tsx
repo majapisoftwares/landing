@@ -1,38 +1,66 @@
-import { cloneElement, ReactElement } from "react";
-import { ServiceBadge } from "./ServiceBadge";
+import { motion, useReducedMotion } from "motion/react";
+import { BrainCircuit, Code2, Lightbulb, Palette } from "lucide-react";
+import useIsMobile from "../../../hooks/useIsMobile";
 
-export function ServiceCard({
-  icon,
-  title,
-  description,
-  badges,
-}: {
-  icon: ReactElement<{ className?: string }>;
+type ServiceCardProps = {
+  image: string;
+  category: string;
   title: string;
   description: string;
-  badges: {
-    icon: ReactElement<{ className?: string }>;
-    label: string;
-  }[];
-}) {
+};
+
+export function ServiceCard({
+  image,
+  category,
+  title,
+  description,
+}: ServiceCardProps) {
+  const shouldReduceMotion = useReducedMotion();
+  const isMobile = useIsMobile();
+  const ServiceIcon =
+    category === "Design"
+      ? Palette
+      : category === "Technology" || category === "Tecnologia"
+        ? Code2
+        : category === "Intelligence" || category === "Inteligência"
+          ? BrainCircuit
+          : Lightbulb;
+
   return (
-    <div className="flex max-w-[402px] flex-col items-center justify-center gap-6 rounded-[10px] border border-zinc-800 bg-[rgba(24,24,27,0.50)] p-6 backdrop-blur-sm">
-      <div className="flex h-[60px] w-[60px] flex-col items-center justify-center gap-2.5 rounded-full bg-white text-zinc-800">
-        {cloneElement(icon, {
-          className: "h-[23px] w-[23px]",
-        })}
+    <motion.article
+      className="group relative isolate flex h-[466px] min-w-0 overflow-hidden rounded-[8px] border border-white/10 bg-black transition-[border-color,box-shadow] duration-200 ease-out md:hover:border-white/20 md:hover:shadow-[0_0_32px_rgb(255_255_255_/_0.08)] focus-visible:border-white/30 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/60"
+      style={{
+        backgroundImage: `linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000 100%), url(${image})`,
+        backgroundPosition: "center, center",
+        backgroundRepeat: "no-repeat, no-repeat",
+        backgroundSize: "100% 100%, cover",
+        backdropFilter: "blur(50px)",
+      }}
+      role="group"
+      tabIndex={0}
+      whileHover={
+        shouldReduceMotion || isMobile ? undefined : { y: -8, scale: 1.015 }
+      }
+      transition={{ duration: 0.25, ease: "easeOut" }}
+    >
+      <div className="absolute inset-0 z-0 bg-black/0 transition-[background-color] duration-200 ease-out md:group-hover:bg-black/20 md:group-focus-visible:bg-black/20" />
+
+      <div className="absolute top-5 left-5 z-10 flex size-[51px] items-center justify-center rounded-[11px] border border-white/10 bg-black/45 text-white shadow-[0_8px_24px_rgb(0_0_0_/_0.28)] backdrop-blur-md">
+        <ServiceIcon
+          aria-hidden="true"
+          className="size-[22px]"
+          strokeWidth={1.6}
+        />
       </div>
-      <div className="flex flex-col items-start justify-center gap-2 self-stretch">
-        <div className="text-center text-xl leading-7 font-semibold text-white">
+
+      <div className="absolute right-0 bottom-0 left-0 z-10 px-5 pb-7">
+        <h2 className="font-sora min-h-[50px] text-[21px] leading-tight font-normal text-white">
           {title}
-        </div>
-        <div className="text-sm leading-5 text-zinc-400">{description}</div>
+        </h2>
+        <p className="font-dm mt-3 max-h-[96px] translate-y-0 overflow-hidden text-[12px] leading-[1.35] font-normal text-white/80 opacity-100 transition-[max-height,opacity,transform] duration-200 ease-out md:max-h-0 md:translate-y-2 md:opacity-0 md:group-hover:max-h-[96px] md:group-hover:translate-y-0 md:group-hover:opacity-100 md:group-focus-visible:max-h-[96px] md:group-focus-visible:translate-y-0 md:group-focus-visible:opacity-100">
+          {description}
+        </p>
       </div>
-      <div className="mt-auto flex flex-wrap justify-evenly gap-2">
-        {badges.map((badge) => (
-          <ServiceBadge key={badge.label} {...badge} />
-        ))}
-      </div>
-    </div>
+    </motion.article>
   );
 }

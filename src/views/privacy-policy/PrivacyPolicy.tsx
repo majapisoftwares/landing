@@ -1,4 +1,4 @@
-import Button from "@majapisoftwares/ui/components/Button";
+import { Button } from "@/components/ui/button";
 import Bg from "../layout/Bg";
 import Flare from "../layout/Flare";
 import { Icon } from "@iconify/react/dist/iconify.js";

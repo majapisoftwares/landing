@@ -1,5 +1,7 @@
 const Routes = {
   Home: "/",
+  Cases: "/cases",
+  Case: (slug: string) => `/cases/${slug}`,
   About: "/about",
   Contact: "/contact",
   PrivacyPolicy: "/privacy-policy",

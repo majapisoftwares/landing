@@ -1,16 +1,13 @@
 import "../globals.css";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
-import AppProps from "@majapisoftwares/ui/bootstrap/AppProps";
 import localizedFormat from "dayjs/plugin/localizedFormat";
-import setupNProgress from "@majapisoftwares/ui/bootstrap/nprogress";
 import {
   APP_DESCRIPTION,
   APP_KEYWORDS,
   APP_NAME,
   PRIMARY_COLOR,
 } from "../constants";
-import { hydrateNavigationDrawerState } from "@majapisoftwares/ui/components/NavigationDrawer";
 import { hydrateAuthState } from "@majapisoftwares/auth/auth.state";
 import getQueryClient from "@majapisoftwares/next/api/getQueryClient";
 import { DefaultSeo } from "next-seo";
@@ -19,19 +16,17 @@ import { HydrationBoundary, QueryClientProvider } from "@tanstack/react-query";
 import AuthProvider from "@majapisoftwares/auth/AuthProvider";
 import Routes from "../routes";
 import "@fontsource-variable/inter";
-import "@majapisoftwares/ui/bootstrap/suppressConsoleLog";
-import "@majapisoftwares/ui/bootstrap/setupFocusManager";
 import { NuqsAdapter } from "nuqs/adapters/next/pages";
-import { Dialogs } from "@majapisoftwares/ui/components/Dialog";
+import type { AppProps } from "next/app";
+import type { ReactNode } from "react";
 import "@fontsource-variable/dm-sans";
 import "@fontsource-variable/inter-tight";
 import "@fontsource-variable/fira-code";
+import "@fontsource-variable/sora";
 import { useTranslation } from "../intl/useTranslation";
 
 dayjs.extend(relativeTime);
 dayjs.extend(localizedFormat);
-
-setupNProgress(PRIMARY_COLOR);
 
 function Seo() {
   const t = useTranslation();
@@ -67,8 +62,13 @@ function Seo() {
   );
 }
 
-export default function App({ Component, pageProps }: AppProps) {
-  hydrateNavigationDrawerState(pageProps.cookies);
+type AppPropsWithLayout = AppProps & {
+  Component: AppProps["Component"] & {
+    getLayout?: (page: ReactNode) => ReactNode;
+  };
+};
+
+export default function App({ Component, pageProps }: AppPropsWithLayout) {
   hydrateAuthState(pageProps.cookies);
 
   const queryClient = getQueryClient();
@@ -82,7 +82,6 @@ export default function App({ Component, pageProps }: AppProps) {
         <HydrationBoundary state={pageProps.dehydratedState}>
           <NuqsAdapter>
             <AuthProvider Routes={Routes}>
-              <Dialogs />
               {getLayout(<Component {...pageProps} />)}
             </AuthProvider>
           </NuqsAdapter>

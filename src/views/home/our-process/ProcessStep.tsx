@@ -1,5 +1,5 @@
 import { cloneElement, ReactElement } from "react";
-import clsx from "@majapisoftwares/ui/utils/clsx";
+import clsx from "clsx";
 import { motion } from "framer-motion";
 
 export function ProcessStep({

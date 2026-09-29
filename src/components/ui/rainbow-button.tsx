@@ -3,7 +3,10 @@ import type {
   AnchorHTMLAttributes,
   ButtonHTMLAttributes,
 } from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import { cn } from "@/lib/utils";
+import { localizedHref } from "@/lib/localizedHref";
 
 const rainbowButtonVariants = cva(
   "relative inline-flex shrink-0 cursor-pointer items-center justify-center gap-2 whitespace-nowrap rounded-sm text-sm font-medium outline-none transition-all focus-visible:ring-2 focus-visible:ring-zinc-300 disabled:pointer-events-none disabled:opacity-50",
@@ -49,6 +52,7 @@ export function RainbowButton({
   children,
   ...props
 }: RainbowButtonProps) {
+  const router = useRouter();
   const classes = cn(
     rainbowButtonVariants({ variant, size }),
     hoverText && "group",
@@ -78,6 +82,25 @@ export function RainbowButton({
   );
 
   if ("href" in props) {
+    if (props.href.startsWith("/")) {
+      const hrefWithLocale = localizedHref(
+        props.href,
+        router.locale,
+        router.defaultLocale,
+      );
+
+      return (
+        <Link
+          className={classes}
+          {...props}
+          href={hrefWithLocale}
+          locale={false}
+        >
+          {content}
+        </Link>
+      );
+    }
+
     return (
       <a className={classes} {...props}>
         {content}

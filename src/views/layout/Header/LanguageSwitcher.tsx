@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import { setCookie } from "cookies-next/client";
 
 type Locale = "en-US" | "pt-BR";
 
@@ -9,6 +10,8 @@ const locales: Array<{
   { code: "pt-BR", label: "Português (Brasil)" },
   { code: "en-US", label: "English (United States)" },
 ];
+
+const localeCookieMaxAge = 60 * 60 * 24 * 365;
 
 function BrazilFlag() {
   return (
@@ -60,9 +63,14 @@ export default function LanguageSwitcher() {
   const handleLocaleChange = (locale: Locale) => {
     if (locale === currentLocale) return;
 
+    setCookie("NEXT_LOCALE", locale, {
+      maxAge: localeCookieMaxAge,
+      sameSite: "lax",
+    });
+
     void router.push(
       { pathname: router.pathname, query: router.query },
-      router.asPath,
+      undefined,
       { locale },
     );
   };

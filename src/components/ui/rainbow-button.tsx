@@ -87,7 +87,6 @@ export function RainbowButton({
         props.href,
         router.locale,
         router.defaultLocale,
-        router.isLocaleDomain,
       );
 
       return (
@@ -95,7 +94,7 @@ export function RainbowButton({
           className={classes}
           {...props}
           href={hrefWithLocale}
-          locale={router.isLocaleDomain ? router.locale : false}
+          locale={false}
         >
           {content}
         </Link>

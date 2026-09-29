@@ -2,17 +2,16 @@ export function localizedHref(
   href: string,
   locale: string | undefined,
   defaultLocale: string | undefined,
-  isLocaleDomain: boolean,
 ) {
+  const activeLocale = locale ?? defaultLocale;
+
   if (
-    isLocaleDomain ||
-    !locale ||
-    locale === defaultLocale ||
-    href === `/${locale}` ||
-    href.startsWith(`/${locale}/`)
+    !activeLocale ||
+    href === `/${activeLocale}` ||
+    href.startsWith(`/${activeLocale}/`)
   ) {
     return href;
   }
 
-  return `/${locale}${href}`;
+  return `/${activeLocale}${href}`;
 }

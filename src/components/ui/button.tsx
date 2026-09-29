@@ -34,13 +34,12 @@ export function Button({ className, variant, size, leading, trailing, icon, roun
         href,
         router.locale,
         router.defaultLocale,
-        router.isLocaleDomain,
       );
 
       return (
         <Link
           href={hrefWithLocale}
-          locale={router.isLocaleDomain ? router.locale : false}
+          locale={false}
           className={classes}
           {...props}
         >

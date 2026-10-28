@@ -59,13 +59,14 @@ const config: NextConfig = {
   i18n: {
     locales: ["en-US", "pt-BR"],
     defaultLocale: "en-US",
+    // The host redirects each apex to www, so requests arrive on the www hosts.
     domains: [
       {
-        domain: "majapi.com",
+        domain: "www.majapi.com",
         defaultLocale: "en-US",
       },
       {
-        domain: "majapi.com.br",
+        domain: "www.majapi.com.br",
         defaultLocale: "pt-BR",
       },
     ],
